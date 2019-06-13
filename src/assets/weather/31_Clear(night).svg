@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>31_Clear(night)</title>
+    <desc>Created with Sketch.</desc>
+    <g id="31_Clear(night)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-Copy-7" x="0" y="0" width="24" height="24"></rect>
+            <g id="33_Fair(night)" transform="translate(4.000000, 2.000000)">
+                <path d="M9.41701602,19.0476307 C5.4758003,19.0538557 1.9524581,16.5552771 0.602801049,12.797329 C-0.746713024,9.03923583 0.366139463,4.82572171 3.38700457,2.25679941 C6.40786968,-0.312267929 10.6902153,-0.687047471 14.0999429,1.31912537 L14.9744188,1.83299686 L14.0999429,2.34686832 C11.5645484,3.82916202 10.0019531,6.5727107 10.0019531,9.54237445 C10.0019531,12.5118931 11.5645484,15.2554419 14.0999429,16.7378806 L14.9744188,17.251752 L14.0999429,17.7656235 C12.6771151,18.603221 11.0619284,19.0454435 9.41701602,19.0476307 L9.41701602,19.0476307 Z" id="Path" fill="#F7D260" fill-rule="nonzero"></path>
+                <g id="Group" transform="translate(5.304878, 2.413441)"></g>
+            </g>
+        </g>
+    </g>
+</svg>

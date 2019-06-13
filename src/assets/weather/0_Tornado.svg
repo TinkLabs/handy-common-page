@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>0_Tornado</title>
+    <desc>Created with Sketch.</desc>
+    <g id="0_Tornado" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+                <path d="M7.5,20 L4.54254148,20 L4.40444945,19.5625305 C2.20062258,12.5856018 3.56689453,11.0624695 5.1487732,9.2956543 C6.30493164,8.00567625 7.5,6.67129516 7.5,2.5 L20,2.5 C20,9.08874512 16.2756348,10.8456421 12.9893494,12.3962402 C10.0437927,13.785553 7.5,14.9862671 7.5,19.375 L7.5,20 Z" id="Path" fill="#92C5FF"></path>
+                <g id="Group" fill="#1998F1">
+                    <polygon id="Path" points="0 18.75 11.25 18.75 11.25 20 0 20"></polygon>
+                    <polygon id="Path" points="5 0 16.25 0 16.25 1.25 5 1.25"></polygon>
+                    <polygon id="Path" points="5 3.75 12.5 3.75 12.5 5 5 5"></polygon>
+                    <polygon id="Path" points="3.75 6.25 13.75 6.25 13.75 7.5 3.75 7.5"></polygon>
+                    <polygon id="Path" points="2.5 0 3.75 0 3.75 1.25 2.5 1.25"></polygon>
+                    <polygon id="Path" points="1.25 6.25 2.5 6.25 2.5 7.5 1.25 7.5"></polygon>
+                    <polygon id="Path" points="15 6.25 16.25 6.25 16.25 7.5 15 7.5"></polygon>
+                    <polygon id="Path" points="18.75 13.75 20 13.75 20 15 18.75 15"></polygon>
+                    <polygon id="Path" points="12.5 13.75 17.5 13.75 17.5 15 12.5 15"></polygon>
+                    <polygon id="Path" points="10 16.25 15 16.25 15 17.5 10 17.5"></polygon>
+                    <polygon id="Path" points="16.25 3.75 17.5 3.75 17.5 5 16.25 5"></polygon>
+                    <polygon id="Path" points="13.75 3.75 15 3.75 15 5 13.75 5"></polygon>
+                    <polygon id="Path" points="0 0 1.25 0 1.25 1.25 0 1.25"></polygon>
+                    <polygon id="Path" points="17.5 0 18.75 0 18.75 1.25 17.5 1.25"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

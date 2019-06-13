@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>19_Dust</title>
+    <desc>Created with Sketch.</desc>
+    <g id="19_Dust" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-Copy-6" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+            <g id="32_Sunny" transform="translate(2.000000, 3.000000)" fill-rule="nonzero">
+                <g id="Group" fill="#F7D260">
+                    <polygon id="Path" points="9.375 0 10.625 0 10.625 2.5 9.375 2.5"></polygon>
+                    <polygon id="Path" points="1.86218262 2.74612426 2.74612426 1.8623352 4.513855 3.63006594 3.63006594 4.51400758"></polygon>
+                    <polygon id="Path" points="17.5 8.375 20 8.375 20 9.625 17.5 9.625"></polygon>
+                    <polygon id="Path" points="0 8.375 2.5 8.375 2.5 9.625 0 9.625"></polygon>
+                    <polygon id="Path" points="15.4867554 3.62991332 17.2544861 1.86218262 18.1384277 2.74597168 16.370697 4.513855"></polygon>
+                </g>
+                <path d="M3.75,10 C3.75,6.54815672 6.54815672,3.75 10,3.75 C13.4518433,3.75 16.25,6.54815672 16.25,10 L16.25,10" id="Path" fill="#FF6853"></path>
+                <polygon id="Path-Copy-21" fill="#EAE2CC" points="11 12 13 12 13 14 11 14"></polygon>
+                <polygon id="Path-Copy-22" fill="#EAE2CC" points="13 16 15 16 15 18 13 18"></polygon>
+                <polygon id="Path-Copy-24" fill="#EAE2CC" points="9 16 11 16 11 18 9 18"></polygon>
+                <polygon id="Path-Copy-23" fill="#EAE2CC" points="15 12 17 12 17 14 15 14"></polygon>
+                <polygon id="Path-Copy-26" fill="#EAE2CC" points="3 12 5 12 5 14 3 14"></polygon>
+                <polygon id="Path-Copy-28" fill="#EAE2CC" points="7 12 9 12 9 14 7 14"></polygon>
+                <polygon id="Path-Copy-29" fill="#EAE2CC" points="5 16 7 16 7 18 5 18"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

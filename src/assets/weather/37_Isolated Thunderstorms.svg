@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>37_Isolated Thunderstorms</title>
+    <desc>Created with Sketch.</desc>
+    <g id="37_Isolated-Thunderstorms" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-Copy-2" x="0" y="0" width="24" height="24"></rect>
+            <g id="4_Thunderstorms" transform="translate(2.000000, 2.000000)" fill="#F7D260" fill-rule="nonzero">
+                <g id="Group">
+                    <path d="M2.30419718,9.07180785 C1.70159683,8.71643066 1.50657853,7.94815063 1.86851136,7.35626219 L2.54393305,6.25 L0,6.25 L2.4860176,2.17819215 C3.08861794,2.53356934 3.28363624,3.30184938 2.92170338,3.89373781 L2.24628172,5 L4.79021477,5 L2.30419718,9.07180785 Z" id="Path"></path>
+                    <polygon id="Path" points="9.78460871 20 10.5884381 12.5 4.73866535 12.5 8.27166415 0 16.6119574 0 14.0680243 8.125 18.9675487 8.125"></polygon>
+                    <polygon id="Path" points="13.2069005 17.5 14.478867 17.5 14.478867 18.75 13.2069005 18.75"></polygon>
+                    <polygon id="Path" points="15.7508335 17.5 17.0228001 17.5 17.0228001 18.75 15.7508335 18.75"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

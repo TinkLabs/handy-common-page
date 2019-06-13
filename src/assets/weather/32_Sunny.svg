@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>32_Sunny</title>
+    <desc>Created with Sketch.</desc>
+    <g id="32_Sunny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-Copy-6" x="0" y="0" width="24" height="24"></rect>
+            <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+                <g id="Group" fill="#F7D260">
+                    <polygon id="Path" points="9.375 0 10.625 0 10.625 2.5 9.375 2.5"></polygon>
+                    <polygon id="Path" points="9.375 17.5 10.625 17.5 10.625 20 9.375 20"></polygon>
+                    <polygon id="Path" points="1.86218262 2.74612426 2.74612426 1.8623352 4.513855 3.63006594 3.63006594 4.51400758"></polygon>
+                    <polygon id="Path" points="15.486908 16.3699341 16.3708496 15.4859924 18.1385803 17.2538757 17.2546387 18.1376648"></polygon>
+                    <polygon id="Path" points="17.5 9.375 20 9.375 20 10.625 17.5 10.625"></polygon>
+                    <polygon id="Path" points="0 9.375 2.5 9.375 2.5 10.625 0 10.625"></polygon>
+                    <polygon id="Path" points="15.4867554 3.62991332 17.2544861 1.86218262 18.1384277 2.74597168 16.370697 4.513855"></polygon>
+                    <polygon id="Path" points="1.8623352 17.2540283 3.63021852 15.486145 4.51400758 16.3700867 2.74627687 18.1378174"></polygon>
+                </g>
+                <path d="M16.25,10 C16.25,13.4518433 13.4518433,16.25 10,16.25 C6.54815672,16.25 3.75,13.4518433 3.75,10 C3.75,6.54815672 6.54815672,3.75 10,3.75 C13.4518433,3.75 16.25,6.54815672 16.25,10 Z" id="Path" fill="#FF6853"></path>
+                <path d="M10,14.375 C6.91375734,14.3695068 4.29290773,12.1134949 3.828125,9.0625 C3.4387207,11.5019226 4.52270508,13.9416504 6.59393313,15.2879334 C8.66516113,16.6342163 11.3348389,16.6342163 13.4060669,15.2879334 C15.4772949,13.9416504 16.5612793,11.5019226 16.171875,9.0625 C15.7070923,12.1134949 13.0862427,14.3695068 10,14.375 Z" id="Path" fill="#F45747"></path>
+            </g>
+        </g>
+    </g>
+</svg>
