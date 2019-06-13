@@ -36,8 +36,14 @@ const WeatherPage = (props) => {
           <SwitchBox onChange={onSwitch} />
         </div>
       </div>
-      <div>
-          xxx
+      <div className={styles.weathertodaydiv}>
+          <div className={styles.weatherpicdiv}>
+            <img className={styles.weathermainimg} src={require('../assets/weather/28_Mostly Cloudy(day).svg')}/>
+          </div>
+          <div className={styles.weathertempdiv}>
+            <span className={styles.weathertempnum}>23℃</span>
+            <p className={styles.weatherrange}>21℃ ~ 26℃</p>
+          </div>
       </div>
       <div>
       </div>
