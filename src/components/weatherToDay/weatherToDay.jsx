@@ -27,9 +27,12 @@ class WeatherToDay extends React.Component {
 
     isC = () => (this.props.temptype == 1)
 
+    icon = () => (this.props.temptype == 1?'℃':'℉')
+
     render() {
         let current = this.props.wdata.current;
         let c = this.isC();
+        let ic = this.icon();
         return <div className={styles.weathertodaydiv}>
                     <div className={styles.weatherpicdiv}>
                         <img className={styles.weathermainimg} 
@@ -41,15 +44,15 @@ class WeatherToDay extends React.Component {
                         <span className={styles.weathertempnum}>
                         {
                             c ? current.temp_c:current.temp_f
-                        }℃
+                        }{ic}
                         </span>
                         <p className={styles.weatherrange}>
                         {
                             c ? current.low_c:current.low_f
-                        }℃ ~ 
+                        }{ic} ~ 
                         {
                             c ? current.high_c:current.high_f
-                        }℃
+                        }{ic}
                         </p>
                     </div>
                 </div>

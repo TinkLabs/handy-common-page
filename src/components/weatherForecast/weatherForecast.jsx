@@ -26,12 +26,15 @@ class WeatherForecast extends React.Component {
     }
 
     isC = () => (this.props.temptype == 1)
+
+    icon = () => (this.props.temptype == 1?'℃':'℉')
     
     render() {
       var tablehead = [];
       var tableimg = [];
       var tabledesc = [];
       let c = this.isC();
+      let ic = this.icon();
       for (let i = 0;i<this.props.wdata.forecast.length;i++){
         let one = this.props.wdata.forecast[i];
         tablehead.push(
@@ -48,7 +51,7 @@ class WeatherForecast extends React.Component {
 
         tabledesc.push(
           <td key={'tabledesc'+i} className={styles.weathersubrange}>
-            {c?one.low_c:one.low_f}~{c?one.high_c:one.high_f}℃
+            {c?one.low_c:one.low_f}~{c?one.high_c:one.high_f}{ic}
             </td>
         )
       }
