@@ -5,6 +5,7 @@ import { connect } from 'dva';
 
 const BasicInfo = (props) => {
 
+
   return (
     <ul className={styles.infolist}>
         <li className={styles.infoli}>

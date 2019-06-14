@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import TopBar from '../components/TopBar.js';
 import BasicInfo from '../components/basicInfo.js';
 import SwitchBox from '../components/switch.js';
+import WeatherToDay from '../components/weatherToDay/weatherToDay';
+import WeatherForecast from '../components/weatherForecast/weatherForecast';
 import styles from './WeatherPage.css';
 import { connect } from 'dva';
 
@@ -15,8 +17,8 @@ const WeatherPage = (props) => {
   }
   init()
 
-  var switchit = () => {
-    console.log("xx");
+  var onReturn = () => {
+    console.log("back to some page");
   }
 
   var onSwitch = (data) => {
@@ -28,7 +30,7 @@ const WeatherPage = (props) => {
 
   return (
     <div>
-    <TopBar onReturn={switchit} ></TopBar>
+    <TopBar onReturn={onReturn} ></TopBar>
     <div className={styles.content}>
       <div className={styles.weatherinfobody}>
         <BasicInfo />
@@ -36,41 +38,8 @@ const WeatherPage = (props) => {
           <SwitchBox onChange={onSwitch} />
         </div>
       </div>
-      <div className={styles.weathertodaydiv}>
-          <div className={styles.weatherpicdiv}>
-            <img className={styles.weathermainimg} src={require('../assets/weather/28_Mostly Cloudy(day).svg')}/>
-          </div>
-          <div className={styles.weathertempdiv}>
-            <span className={styles.weathertempnum}>23℃</span>
-            <p className={styles.weatherrange}>21℃ ~ 26℃</p>
-          </div>
-      </div>
-
-      <div>
-        <table className={styles.weathertable}>
-          <tr>
-            <td>Web</td>
-            <td>Thu</td>
-            <td>Fri</td>
-            <td>Sat</td>
-            <td>Sun</td>
-          </tr>
-          <tr>
-            <td><img className={styles.weathersubimg} src={require('../assets/weather/12_Rain.svg')}/></td>
-            <td><img className={styles.weathersubimg} src={require('../assets/weather/7_Mixed Snow And Sleet.svg')}/></td>
-            <td><img className={styles.weathersubimg} src={require('../assets/weather/11_Showers.svg')}/></td>
-            <td><img className={styles.weathersubimg} src={require('../assets/weather/23_Blustery.svg')}/></td>
-            <td><img className={styles.weathersubimg} src={require('../assets/weather/4_Thunderstorms.svg')}/></td>
-          </tr>
-          <tr>
-          <td className={styles.weathersubrange}>21~26℃</td>
-          <td className={styles.weathersubrange}>21~26℃</td>
-          <td className={styles.weathersubrange}>21~26℃</td>
-          <td className={styles.weathersubrange}>21~26℃</td>
-          <td className={styles.weathersubrange}>21~26℃</td>
-          </tr>
-        </table>
-      </div>
+      <WeatherToDay />
+      <WeatherForecast />
       <div className={styles.addiv}>
         <div className={styles.adone}>
         </div>
