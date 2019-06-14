@@ -9,14 +9,6 @@ import styles from './WeatherPage.css';
 import { connect } from 'dva';
 
 const WeatherPage = (props) => {
-  var init = () => {
-    props.dispatch({
-      type:"weather/initData",
-      payload:{}
-    })
-  }
-  init()
-
   var onReturn = () => {
     console.log("back to some page");
   }
@@ -54,7 +46,6 @@ WeatherPage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log(state.weather)
   return state.weather;
 }
 

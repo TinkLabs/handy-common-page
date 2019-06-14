@@ -11,10 +11,10 @@ class WeatherToDay extends React.Component {
         }
     }
     componentDidCatch(e) {
-      console.log("WeatherToDay didcatch",e.message);
+        //console.log("WeatherToDay didcatch",e.message);
     }
     componentDidMount() {
-        console.log("WeatherToDay props",this.props);
+        //console.log("WeatherToDay props",this.props);
     }
 
     parseImgSrc = (code) => {
@@ -34,7 +34,8 @@ class WeatherToDay extends React.Component {
                     <div className={styles.weatherpicdiv}>
                         <img className={styles.weathermainimg} 
                         alt={this.getImgDesc(current.code)} 
-                        src={this.parseImgSrc(current.code)}/>
+                        src={this.parseImgSrc(current.code)}
+                        />
                     </div>
                     <div className={styles.weathertempdiv}>
                         <span className={styles.weathertempnum}>

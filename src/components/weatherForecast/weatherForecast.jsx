@@ -11,10 +11,10 @@ class WeatherForecast extends React.Component {
         }
     }
     componentDidCatch(e) {
-      console.log("WeatherForecast didcatch",e.message);
+      //console.log("WeatherForecast didcatch",e.message);
     }
     componentDidMount() {
-      console.log("WeatherForecast props",this.props);
+      //console.log("WeatherForecast props",this.props);
     }
 
     parseImgSrc = (code) => {

@@ -4,8 +4,6 @@ import styles from './switchbox.css';
 import { connect } from 'dva';
 
 const SwitchBox = (props) => {
-
-console.log(props.temptype)
   return (
       <div className={styles.switchbox}>       
       {
