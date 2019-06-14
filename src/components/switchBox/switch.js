@@ -29,6 +29,6 @@ SwitchBox.propTypes = {
 
 function mapStateToProps(state) {
     return state.weather;
-  }
+}
 
 export default connect(mapStateToProps)(SwitchBox);
