@@ -1,6 +1,7 @@
 import React from 'react';
 import dva, { connect } from 'dva';
 import styles from './weatherforecast.css';
+import constants from '../../utils/constants';
 
 class WeatherForecast extends React.Component {
     constructor(props) {
@@ -10,19 +11,48 @@ class WeatherForecast extends React.Component {
         }
     }
     componentDidCatch(e) {
-      alert(e.message);
+      console.log("WeatherForecast didcatch",e.message);
     }
     componentDidMount() {
-        console.log("=========================",this.props);
-      // throw new Error('a');
+      console.log("WeatherForecast props",this.props);
     }
+
+    parseImgSrc = (code) => {
+      return require("../../assets/weather/"+ constants.weathermap[code].trim());
+    }
+
+    getImgDesc = (code) => {
+        return constants.weathermap[code].trim().split("_")[1].split('.')[0];
+    }
+
+    isC = () => (this.props.temptype == 1)
+    
     render() {
       var tablehead = [];
+      var tableimg = [];
+      var tabledesc = [];
+      let c = this.isC();
       for (let i = 0;i<this.props.wdata.forecast.length;i++){
+        let one = this.props.wdata.forecast[i];
         tablehead.push(
-          <td>{this.props.wdata.forecast[i].day}</td>
+          <td key={'tablehead'+i}>{one.day}</td>
+        )
+
+        tableimg.push(
+          <td key={'tableimg'+i}>
+              <img className={styles.weathersubimg}
+              alt={this.getImgDesc(one.code)}
+              src={this.parseImgSrc(one.code)}/>
+          </td>
+        )
+
+        tabledesc.push(
+          <td key={'tabledesc'+i} className={styles.weathersubrange}>
+            {c?one.low_c:one.low_f}~{c?one.high_c:one.high_f}℃
+            </td>
         )
       }
+
       return <div className={styles.weathertablediv}>
               <table className={styles.weathertable}>
               <tbody>
@@ -30,18 +60,10 @@ class WeatherForecast extends React.Component {
                   {tablehead}
                 </tr>
                 <tr>
-                  <td><img className={styles.weathersubimg} src={require('../../assets/weather/12_Rain.svg')}/></td>
-                  <td><img className={styles.weathersubimg} src={require('../../assets/weather/7_Mixed Snow And Sleet.svg')}/></td>
-                  <td><img className={styles.weathersubimg} src={require('../../assets/weather/11_Showers.svg')}/></td>
-                  <td><img className={styles.weathersubimg} src={require('../../assets/weather/23_Blustery.svg')}/></td>
-                  <td><img className={styles.weathersubimg} src={require('../../assets/weather/4_Thunderstorms.svg')}/></td>
+                  {tableimg}
                 </tr>
                 <tr>
-                <td className={styles.weathersubrange}>21~26℃</td>
-                <td className={styles.weathersubrange}>21~26℃</td>
-                <td className={styles.weathersubrange}>21~26℃</td>
-                <td className={styles.weathersubrange}>21~26℃</td>
-                <td className={styles.weathersubrange}>21~26℃</td>
+                  {tabledesc}
                 </tr>
                 </tbody>
               </table>
