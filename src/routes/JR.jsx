@@ -30,6 +30,9 @@ const JR = (props) => {
   }
 
   var onSubmit = () => {
+    if (Number(data.target.value)<100000000000 || Number(data.target.value)>999999999999){
+      return
+    }
     props.dispatch({
       type:"jr/validcode",
       payload:{suica:props.suica}
