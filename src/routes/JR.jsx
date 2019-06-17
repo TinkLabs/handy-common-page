@@ -7,7 +7,7 @@ const JR = (props) => {
 
 
   var onReturn = () => {
-    console.log("back to some page");
+    window.location.href = 'https://www.hiinc.com/ja/';
   }
 
   var onValid = (data) => {
@@ -35,7 +35,15 @@ const JR = (props) => {
         </div>
 
         <div className={styles.footer}>
-
+            <div>
+              <img  onClick={onReturn} className={styles.logo} src="https://www.handy-japan.com/cp/jr/img/hi_logo.svg"></img>
+            </div>
+            <div>
+            <a className={styles.maila} href="mailto:brandstrategy@ml.handytravel.co.jp">お問い合せ</a>
+            </div>
+            <div>
+            <p className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
+            </div>
         </div>
     </div>
   );

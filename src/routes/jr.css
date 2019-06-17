@@ -78,3 +78,18 @@ body{
     margin: 0 auto;
     box-sizing: border-box;
 }
+
+.logo{
+    max-width: 39px;
+    background: url('https://www.handy-japan.com/cp/jr/img/hi_logo.svg');
+}
+
+.maila{
+    color: #fff;
+    font-size: 90%;
+    line-height: 1.2;
+}
+.downp{
+    font-size: 75%;
+    /* margin-top: -2%; */
+}
