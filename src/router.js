@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch,IndexRoute } from 'dva/router';
+import { Router, Route, Switch,IndexRoute } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import WeatherPage from './routes/WeatherPage.jsx';
 import JR from './routes/JR.jsx';
@@ -11,7 +11,7 @@ function RouterConfig({ history }) {
         <Route path="/" >
           <Switch>
             <Route path="/weather"  component={WeatherPage} />
-            <Route path="/campaign"  component={JR} />
+            <Route path="/campaign/suica"  component={JR} />
           </Switch>
         </Route>
     </Router>
