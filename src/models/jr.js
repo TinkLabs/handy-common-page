@@ -44,7 +44,7 @@ export default {
       //监听地址，如果地址含有weather则跳转到登陆页
       setup({ dispatch, history }) {
         history.listen(location => {
-          if (location.pathname.includes('jr')) {
+          if (location.pathname.includes('suica')) {
             console.log("jr")
             document.title='Buy Welcome Suica Get Premium Goods';
           }
