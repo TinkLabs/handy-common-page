@@ -38,6 +38,9 @@ const JR = (props) => {
   }
 
   var onSubmit = () => {
+    if (props.btntext != "OK"){
+      return
+    }
     if (Number(props.suica)<100000000000 || Number(props.suica)>999999999999){
       props.dispatch({
         type:"jr/save",
