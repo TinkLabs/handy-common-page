@@ -98,3 +98,10 @@ body{
     font-size: 75%;
     /* margin-top: -2%; */
 }
+.okstatus{
+    color: green;
+}
+
+.failedstatus{
+    color: red;
+}

@@ -14,24 +14,22 @@ export default {
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
         let barcode = getBarcode();
-        const response = yield call(srv.validjrcode, barcode, suica);
+        const response = yield call(srv.suicaLog, barcode, suica);
         let result = response.data;
-        if (result.error){
-          yield put({type: 'save',
-                    payload:{
-                        success:false,
-                        num : 1
-                    }
-                });
-        }else{
-          yield put({
+        let success = false;
+        let nextsuica = suica;
+        if (result.code == 0){
+            success = true;
+            nextsuica = ""
+        }
+        yield put({
             type: 'save',
             payload:{
-                success:true,
-                num:1
+                success,
+                num:1,
+                nextsuica
             }
           });
-        }
       },
     },
     reducers: {

@@ -15,7 +15,14 @@ const JR = (props) => {
     if (data.target.value == ""){
       return
     }
-    // console.log("xxxxxx",data.target.value);
+    if (!Number(data.target.value)){
+      return
+    }
+
+    if (Number(data.target.value)>999999999999){
+      return
+    }
+
     props.dispatch({
       type:"jr/save",
       payload:{suica:data.target.value}
@@ -37,13 +44,18 @@ const JR = (props) => {
 
         <div className={styles.jrform}>
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
+            {
+              props.num == 0 ? <span></span>:
+              props.success ? <span className={styles.okstatus}>success!</span>:
+              <span className={styles.failedstatus}>failed!</span>
+            }
+            
 
             <div>
-            <input onChange={onValueChange} className={styles.number} type="text" name="name"></input>
-
-            <input onClick={onSubmit} className={styles.btn} type="submit" value="OK"></input>
+                <input value={props.suica} onChange={onValueChange} className={styles.number} type="text" name="name"></input>
+                <input onClick={onSubmit} className={styles.btn} type="submit" value="OK"></input>
             </div>
-            
+
         </div>
 
         <div className={styles.footer}>
