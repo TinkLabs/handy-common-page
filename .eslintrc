@@ -1,4 +1,4 @@
 {
   "extends": "umi",
-  "version": "latest"
+  "version": "^7.1.0"
 }
