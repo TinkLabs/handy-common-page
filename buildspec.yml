@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - npm install
+      - npm run build:$ENV
+      - find ./dist/static/js -type f -exec gzip -9 {} \; -exec mv {}.gz {} \;
+      # - find ./dist/static/css -type f -exec gzip -9 {} \; -exec mv {}.gz {} \;
+      - /usr/local/bin/aws s3 cp ./dist/ s3://$BUCKET --recursive
+      - /usr/local/bin/aws s3 cp s3://$BUCKET/static/js s3://$BUCKET/static/js --recursive --metadata-directive REPLACE --content-encoding gzip
+      # - /usr/local/bin/aws s3 cp s3://$BUCKET/static/css s3://$BUCKET/static/css --recursive --metadata-directive REPLACE --content-encoding gzip
+      - /usr/local/bin/aws s3 cp s3://$BUCKET/index.html s3://$BUCKET/index.html --metadata-directive REPLACE --cache-control no-cache
