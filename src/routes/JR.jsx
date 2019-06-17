@@ -20,7 +20,7 @@ const JR = (props) => {
   return (
     <div>
         <div className={styles.jrbackground}>
-          <img src="https://www.handy-japan.com/cp/jr/img/top_text.svg"></img>
+          <img className={styles.jrtext} src={require("../assets/jr/top_text.svg")}></img>
         </div>
 
         <div className={styles.jrform}>
@@ -36,7 +36,7 @@ const JR = (props) => {
 
         <div className={styles.footer}>
             <div>
-              <img  onClick={onReturn} className={styles.logo} src="https://www.handy-japan.com/cp/jr/img/hi_logo.svg"></img>
+              <img  onClick={onReturn} className={styles.logo} src={require("../assets/jr/hi_logo.svg")}></img>
             </div>
             <div>
             <a className={styles.maila} href="mailto:brandstrategy@ml.handytravel.co.jp">お問い合せ</a>
