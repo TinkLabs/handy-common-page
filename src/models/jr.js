@@ -10,6 +10,7 @@ export default {
       barcode:0,
       success:true,
       suica:"",
+      wrong:false,
     },
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
@@ -18,7 +19,7 @@ export default {
         let result = response.data;
         let success = false;
         let nextsuica = suica;
-        if (result.code == 0){
+        if (result.success){
             success = true;
             nextsuica = ""
         }
@@ -27,7 +28,8 @@ export default {
             payload:{
                 success,
                 num:1,
-                nextsuica
+                nextsuica,
+                wrong:false
             }
           });
       },
