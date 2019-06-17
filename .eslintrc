@@ -1,4 +1,4 @@
 {
   "extends": "umi",
-  "version": "999.999.999"
+  "version": "latest"
 }
