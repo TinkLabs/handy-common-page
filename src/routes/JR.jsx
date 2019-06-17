@@ -10,10 +10,22 @@ const JR = (props) => {
     window.location.href = 'https://www.hiinc.com/ja/';
   }
 
-  var onValid = (data) => {
+  var onValueChange = (data) => {
+    // console.log("get ",props.suica)
+    if (data.target.value == ""){
+      return
+    }
+    // console.log("xxxxxx",data.target.value);
     props.dispatch({
-      type:"jr/valid",
-      payload:{num:data}
+      type:"jr/save",
+      payload:{suica:data.target.value}
+    })
+  }
+
+  var onSubmit = () => {
+    props.dispatch({
+      type:"jr/validcode",
+      payload:{suica:props.suica}
     })
   }
 
@@ -27,9 +39,9 @@ const JR = (props) => {
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
 
             <div>
-            <input className={styles.number} type="text" name="name"></input>
+            <input onChange={onValueChange} className={styles.number} type="text" name="name"></input>
 
-            <input className={styles.btn} type="submit" value="OK"></input>
+            <input onClick={onSubmit} className={styles.btn} type="submit" value="OK"></input>
             </div>
             
         </div>

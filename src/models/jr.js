@@ -8,18 +8,27 @@ export default {
     state: {
       num:0,
       barcode:0,
+      success:true,
+      suica:"",
     },
     effects: {
-      * fetchWeather({payload: {barcode}}, {call, put}) {  // eslint-disable-line
-        const response = yield call(srv.fetchWeather, barcode);
+      * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
+        let barcode = getBarcode();
+        const response = yield call(srv.validjrcode, barcode, suica);
         let result = response.data;
         if (result.error){
-          yield put({type: 'save'});
+          yield put({type: 'save',
+                    payload:{
+                        success:false,
+                        num : 1
+                    }
+                });
         }else{
           yield put({
             type: 'save',
             payload:{
-              wdata:result
+                success:true,
+                num:1
             }
           });
         }

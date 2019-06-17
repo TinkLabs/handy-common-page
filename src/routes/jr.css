@@ -2,7 +2,7 @@ body{
     font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 }
 .jrbackground{
-    background: url('https://s3-ap-southeast-1.amazonaws.com/b2c.static.staging/content/posts/imgs/top_bg_sp.jpg') no-repeat center;
+    background: url('../assets/jr/top_bg_sp.jpg') no-repeat center;
     background-size: cover;
     padding: 100px 0px;
     position: relative;
