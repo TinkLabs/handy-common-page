@@ -1,4 +1,5 @@
 {
   "extends": "umi",
-  "version": "^7.1.0"
+  "plugins": ["react"],
+  "version": "latest"
 }
