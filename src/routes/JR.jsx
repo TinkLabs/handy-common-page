@@ -46,6 +46,11 @@ const JR = (props) => {
       return
     }
     props.dispatch({
+      type:"jr/save",
+      payload:{btntext:"waiting..."}
+    })
+
+    props.dispatch({
       type:"jr/validcode",
       payload:{suica:props.suica}
     })
@@ -69,7 +74,8 @@ const JR = (props) => {
 
             <div>
                 <input value={props.suica} onChange={onValueChange} className={styles.number} type="text" name="name"></input>
-                <input onClick={onSubmit} className={styles.btn} type="submit" value="OK"></input>
+
+                <input onClick={onSubmit} className={props.btntext=="OK"?styles.btn:styles.waitbtn} type="submit" value={props.btntext}></input>
             </div>
 
         </div>

@@ -11,6 +11,7 @@ export default {
       success:true,
       suica:"",
       wrong:false,
+      btntext:"OK",
     },
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
@@ -19,9 +20,9 @@ export default {
         let result = response.data;
         let success = false;
         let nextsuica = suica;
-        if (result.success){
+        if (result && result.success){
             success = true;
-            nextsuica = ""
+            nextsuica = "";
         }
         yield put({
             type: 'save',
@@ -29,7 +30,8 @@ export default {
                 success,
                 num:1,
                 nextsuica,
-                wrong:false
+                wrong:false,
+                btntext:"OK"
             }
           });
       },
