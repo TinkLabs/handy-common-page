@@ -68,10 +68,10 @@ const JR = (props) => {
         <div className={styles.jrform}>
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
             {
-              props.wrong?<span className={styles.failedstatus}>invalid code!</span>:
+              props.wrong?<span className={styles.failedstatus}>Please input 12 digits Suica number</span>:
               props.num == 0 ? <span></span>:
-              props.success ? <span className={styles.okstatus}>success!</span>:
-              <span className={styles.failedstatus}>failed!</span>
+              props.success ? <span className={styles.okstatus}>Success!</span>:
+              <span className={styles.failedstatus}>Failed!</span>
             }
             
 
