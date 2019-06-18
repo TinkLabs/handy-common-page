@@ -1,23 +1,6 @@
-
-  .lastupdate{
-    /* width: 119px; */
-    height: 18px;
-    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-    font-size: 10px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.56);
-    margin-bottom: 4px;
-
-  }
-
   .currencydiv{
-  max-width: 360px;
-  min-width: 325px;
+  /* max-width: 360px; */
+  /* min-width: 325px; */
   /* height: 213px; */
   border-radius: 4px;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
@@ -28,20 +11,52 @@
 
   .currencybasetitle{
     height: 24px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     margin-bottom: 18px;
     text-align: left;
-    padding-left: 24px;
+    /* display: flex; */
+    /* padding-left: 24px; */
   }
 
 .titleimg{
-    width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.selectimg{
+    width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.selcttext{
+  width: 34px;
+  height: 24px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.titletext{
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 24px;
+    padding-left: 8px;
+    font-size: 12px;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
   .currencybaseinput{
     height: 30px;
-    background-color: green;
-    margin-bottom: 18px;
+    /* background-color: green; */
+    /* margin-bottom: 12px; */
   }
   .splitdiv{
     height: 1px;
@@ -50,11 +65,24 @@
   }
   .currencyquotetitle{
     height: 24px;
-    background-color: antiquewhite;
-    margin-top: 18px;
-    margin-bottom:16px; 
+    /* background-color: antiquewhite; */
+    margin-bottom: 18px;
+    text-align: left;
+    margin-top: 16px;
+    /* display: flex; */
+    /* padding-left: 24px; */
   }
   .currencyquoteinput{
     height: 30px;
-    background-color: green;
+    /* background-color: green; */
+  }
+
+  .currencydown{
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/icon/expand-more-24-px.svg");
+  }
+
+  .am-picker-popup-header-left{
+      display: none;
   }
