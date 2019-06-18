@@ -28,7 +28,7 @@ const JR = (props) => {
 
     props.dispatch({
       type:"jr/save",
-      payload:{wrong:false}
+      payload:{wrong:false,num:0}
     })
 
     props.dispatch({
