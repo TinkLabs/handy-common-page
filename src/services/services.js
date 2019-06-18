@@ -11,7 +11,7 @@ export function fetchWeather(barcode){
 
 export function suicaLog2(barcode,suica){
   let timestamp = new Date().getTime();
-  return request(`http://staging.handy.travel/apis/suica_campaign_log?_barcode=357525080985059&_suica=${suica}&_send_time=${timestamp}`);
+  return request(`https://staging.handy.travel/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}`);
 }
 
 
@@ -22,5 +22,5 @@ export function suicaLog2(barcode,suica){
   // 
   export function suicaLog(barcode,suica){
     let timestamp = new Date().getTime();
-    return CMSHttp('GET', `http://staging.handy.travel/apis/suica_campaign_log?_barcode=357525080985059&_suica=${suica}&_send_time=${timestamp}`, {})
+    return CMSHttp('GET', `https://staging.handy.travel/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}`, {})
   }
