@@ -1,0 +1,51 @@
+
+  .lastupdate{
+    /* width: 119px; */
+    height: 18px;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.56);
+    margin-bottom: 4px;
+
+  }
+
+  .currencydiv{
+    /* width: 328px; */
+  /* height: 213px; */
+  border-radius: 4px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  padding: 25px;
+  }
+
+  .currencybasetitle{
+    height: 24px;
+    background-color: antiquewhite;
+    margin-bottom: 18px;
+  }
+  .currencybaseinput{
+    height: 30px;
+    background-color: green;
+    margin-bottom: 18px;
+  }
+  .splitdiv{
+    height: 1px;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  .currencyquotetitle{
+    height: 24px;
+    background-color: antiquewhite;
+    margin-top: 18px;
+    margin-bottom:16px; 
+  }
+  .currencyquoteinput{
+    height: 30px;
+    background-color: green;
+  }
