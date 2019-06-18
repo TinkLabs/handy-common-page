@@ -4,6 +4,7 @@
         "start:dev": "APP_ENV=dev roadhog server",
         "start:staging": "APP_ENV=staging roadhog server",
         "start": "APP_ENV=staging roadhog server",
+        "build": "APP_ENV=staging ESLINT=none roadhog build",
         "build:": "APP_ENV=staging ESLINT=none roadhog build",
         "build:dev": "APP_ENV=dev ESLINT=none roadhog build",
         "build:staging": "APP_ENV=staging ESLINT=none roadhog build",
