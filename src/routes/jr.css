@@ -2,18 +2,23 @@ body{
     font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 }
 .jrbackground{
-    background: url('https://www.handy-japan.com/cp/jr/img/top_bg_sp.jpg') no-repeat center;
+    background: url('../assets/jr/top_bg_sp.jpg') no-repeat center;
     background-size: cover;
     padding: 100px 0px;
     position: relative;
     height: 440px;
-    max-width: 464px;
+    /* max-width: 464px; */
+    text-align: center;
 }
 
 .jrinner{
     /* background: url('https://www.handy-japan.com/cp/jr/img/top_text.svg'); */
     max-width: 464px;
     /* height: ; */
+}
+
+.jrtext{
+    max-width: 375px;
 }
 
 .jrform{
@@ -70,6 +75,25 @@ body{
     -webkit-appearance: none;
 }
 
+.waitbtn{
+    outline: none;
+    color: #fff;
+    background: gray;
+    width: 100%;
+    max-width: 325px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1em;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
 .footer{
     text-align: center;
     padding: 30px 20px 20px;
@@ -81,7 +105,7 @@ body{
 
 .logo{
     max-width: 39px;
-    background: url('https://www.handy-japan.com/cp/jr/img/hi_logo.svg');
+    /* background: url('https://s3-ap-southeast-1.amazonaws.com/b2c.static.staging/content/posts/imgs/hi_logo.svg'); */
 }
 
 .maila{
@@ -92,4 +116,11 @@ body{
 .downp{
     font-size: 75%;
     /* margin-top: -2%; */
+}
+.okstatus{
+    color: green;
+}
+
+.failedstatus{
+    color: red;
 }

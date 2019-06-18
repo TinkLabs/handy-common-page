@@ -5,9 +5,7 @@ import { browserHistory } from 'react-router'
 import { createBrowserHistory as createHistory } from 'history';
 
 // 1. Initialize
-const app = dva({
-    history: createHistory(),
- });
+const app = dva();
 
 // 2. Plugins
 // app.use({});

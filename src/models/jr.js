@@ -8,21 +8,32 @@ export default {
     state: {
       num:0,
       barcode:0,
+      success:true,
+      suica:"",
+      wrong:false,
+      btntext:"OK",
     },
     effects: {
-      * fetchWeather({payload: {barcode}}, {call, put}) {  // eslint-disable-line
-        const response = yield call(srv.fetchWeather, barcode);
+      * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
+        let barcode = getBarcode();
+        const response = yield call(srv.suicaLog, barcode, suica);
         let result = response.data;
-        if (result.error){
-          yield put({type: 'save'});
-        }else{
-          yield put({
+        let success = false;
+        let nextsuica = suica;
+        if (result && result.success){
+            success = true;
+            nextsuica = "";
+        }
+        yield put({
             type: 'save',
             payload:{
-              wdata:result
+                success,
+                num:1,
+                nextsuica,
+                wrong:false,
+                btntext:"OK"
             }
           });
-        }
       },
     },
     reducers: {
@@ -35,7 +46,7 @@ export default {
       //监听地址，如果地址含有weather则跳转到登陆页
       setup({ dispatch, history }) {
         history.listen(location => {
-          if (location.pathname.includes('jr')) {
+          if (location.pathname.includes('suica')) {
             console.log("jr")
             document.title='Buy Welcome Suica Get Premium Goods';
           }
