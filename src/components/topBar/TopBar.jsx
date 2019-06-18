@@ -4,7 +4,7 @@ import { NavBar } from 'antd-mobile';
 import styles from './topbar.css';
 import { connect } from 'dva';
 
-const TopBar = ({ onReturn }) => {
+const TopBar = ({ onReturn,title }) => {
   return (
       <div>
         <NavBar
@@ -13,7 +13,7 @@ const TopBar = ({ onReturn }) => {
         icon={<span className={styles.toptitlearrow}></span>}
         onLeftClick={() => onReturn()}
         ><span className={styles.toptitle}
-        >Weather Forecast</span>
+        >{title}</span>
         </NavBar>
     </div>
   );

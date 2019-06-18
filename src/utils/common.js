@@ -2,11 +2,18 @@ var moment = require('moment');
 
 export function formatDate(d) {
     if (d) {
-        return moment('2019-06-14').format("dddd, MMM DD")
+        return moment(d).format("dddd, MMM DD")
     }
     return ""
-
 }
+
+export function formatCurrencyDate(d) {
+    if (d) {
+        return moment(d).format("MMM DD dddd")
+    }
+    return ""
+}
+
 export function dateFormat(ts) {
     var date = new Date(ts),
         year = date.getFullYear(),
