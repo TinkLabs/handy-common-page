@@ -18,7 +18,7 @@ class CurrencyPanel extends React.Component {
     }
 
     parseImgSrc = (code) => {
-      return require("../../assets/currency/"+ constants.currencymap[code].trim());
+      return ""//require("../../assets/currency/"+ constants.currencymap[code].trim());
     }
 
     getImgDesc = (code) => {
@@ -28,7 +28,8 @@ class CurrencyPanel extends React.Component {
     render() {
       return <div className={styles.currencydiv}>
                 <div className={styles.currencybasetitle}>
-
+                  <img className={styles.titleimg} src={require("../../assets/currency/USD_US Dollar.svg")} />
+                  <span>USD</span>
                 </div>
                 <div className={styles.currencybaseinput}>
 

@@ -16,19 +16,28 @@
   }
 
   .currencydiv{
-    /* width: 328px; */
+  max-width: 360px;
+  min-width: 325px;
   /* height: 213px; */
   border-radius: 4px;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
   padding: 25px;
+  margin: auto;
   }
 
   .currencybasetitle{
     height: 24px;
     background-color: antiquewhite;
     margin-bottom: 18px;
+    text-align: left;
+    padding-left: 24px;
   }
+
+.titleimg{
+    width: 16px;
+  height: 16px;
+}
   .currencybaseinput{
     height: 30px;
     background-color: green;

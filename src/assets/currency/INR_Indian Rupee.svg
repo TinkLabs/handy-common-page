@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>INR_Indian Rupee</title>
+    <desc>Created with Sketch.</desc>
+    <g id="INR_Indian-Rupee" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="10"></circle>
+            <path d="M10,0 C6.03539062,0 2.60976563,2.30722656 0.992265625,5.6521875 L19.0076953,5.6521875 C17.3902344,2.30722656 13.9645703,0 10,0 Z" id="Path" fill="#FF9811"></path>
+            <path d="M10,20 C13.9645703,20 17.3902344,17.6927734 19.0077344,14.3478125 L0.992265625,14.3478125 C2.60976562,17.6927734 6.03539062,20 10,20 Z" id="Path" fill="#6DA544"></path>
+            <circle id="Oval" fill="#0052B4" cx="10" cy="10" r="3.47824219"></circle>
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="2.17390625"></circle>
+            <polygon id="Path" fill="#0052B4" points="10 7.31742188 10.6706641 8.8384375 12.3231641 8.65871094 11.3412891 10 12.3231641 11.3412891 10.6706641 11.1615625 10 12.6825781 9.32933594 11.1615625 7.67683594 11.34125 8.65871094 10 7.67683594 8.65871094 9.32933594 8.8384375"></polygon>
+        </g>
+    </g>
+</svg>
