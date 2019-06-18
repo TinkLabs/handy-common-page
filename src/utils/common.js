@@ -9,7 +9,7 @@ export function formatDate(d) {
 
 export function formatCurrencyDate(d) {
     if (d) {
-        return moment(d).format("MMM DD dddd")
+        return moment(d).format("MMM DD YYYY")
     }
     return ""
 }

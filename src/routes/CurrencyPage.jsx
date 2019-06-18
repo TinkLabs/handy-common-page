@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TopBar from '../components/topBar/TopBar';
 import styles from './CurrencyPage.css';
 import { connect } from 'dva';
+import {formatCurrencyDate} from '../utils/common';
 
 const CurrencyPage = (props) => {
   var onReturn = () => {
@@ -20,7 +21,24 @@ const CurrencyPage = (props) => {
     <div>
     <TopBar onReturn={onReturn} title={"Currency Converter"}></TopBar>
     <div className={styles.content}>
-      <p className={styles.lastupdate}>Last update {props.lastupdate}</p>
+      <p className={styles.lastupdate}>Last update {formatCurrencyDate(props.lastupdate)}</p>
+      <div className={styles.currencydiv}>
+        <div className={styles.currencybasetitle}>
+
+        </div>
+        <div className={styles.currencybaseinput}>
+
+        </div>
+        <div className={styles.splitdiv}></div>
+        <div className={styles.currencyquotetitle}>
+
+        </div>
+        <div className={styles.currencyquoteinput}>
+
+        </div>
+
+      </div>
+
     </div>
   </div>
   );
