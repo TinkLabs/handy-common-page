@@ -28,7 +28,7 @@ if (isAndroid && window.Android && window.Android.getGlobalProperties) {
     console.log("in android system")
     globalProperties = JSON.parse(window.Android.getGlobalProperties())
     barcode = globalProperties.imei
-    campaignId = window.Android.getCampaignId()
+    // campaignId = window.Android.getCampaignId()
 }
 console.log("barcode:", barcode)
 
