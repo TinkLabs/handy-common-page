@@ -11,7 +11,7 @@ export function suicaLog2(barcode, suica) {
     return request(`${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}`);
 }
 
-export function suicaLog(barcode, suica) {
+export function suicaLog(barcode, suica, deviceuserid) {
     let timestamp = new Date().getTime();
-    return CMSHttp('GET', `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}`, {})
+    return CMSHttp('GET', `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}&_device_user_id=${deviceuserid}`, {})
 }
