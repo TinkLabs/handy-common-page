@@ -6,6 +6,7 @@ export default {
         temptype: 1,
         lastupdate: "2019-06-18",
         base: "USD",
+        quote:"HKD",
         rates: {},
         barcode: 0,
     },

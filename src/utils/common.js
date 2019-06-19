@@ -33,7 +33,7 @@ let campaignId = '';
 var isAndroid = typeof window.Android !== 'undefined'
 if (isAndroid && window.Android && window.Android.getGlobalProperties) {
     console.log("in android system")
-    globalProperties = JSON.parse(window.Android.getGlobalProperties())
+    globalProperties = JSON.parse("fafafa")
     barcode = globalProperties.imei
 //    campaignId = window.Android.getCampaignId()
 //alert(barcode)

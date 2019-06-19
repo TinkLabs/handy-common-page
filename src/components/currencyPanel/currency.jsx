@@ -5,93 +5,107 @@ import styles from './currency.less';
 import constants from '../../utils/constants';
 
 class CurrencyPanel extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          foo:"bar"
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      foo: "bar",
+      basevisible:false,
     }
-    componentDidCatch(e) {
-      //console.log("CurrencyPanel didcatch",e.message);
-    }
-    componentDidMount() {
-      //console.log("CurrencyPanel props",this.props);
-    }
+  }
+  componentDidCatch(e) {
+    //console.log("CurrencyPanel didcatch",e.message);
+  }
+  componentDidMount() {
+    //console.log("CurrencyPanel props",this.props);
+  }
 
-    parseImgSrc = (code) => {
-      return ""//require("../../assets/currency/"+ constants.currencymap[code].trim());
+  parseImgSrc = (code) => {
+    if (constants.currencymap[code]){
+      return require("../../assets/currency/"+ constants.currencymap[code].trim());
     }
+    return ""
+  }
 
-    getImgDesc = (code) => {
-        return constants.currencymap[code].trim().split("_")[1].split('.')[0];
-    }
+  getImgDesc = (code) => {
+    return constants.currencymap[code].trim().split("_")[1].split('.')[0];
+  }
 
-    onChangeColor = (color) => {
-      console.log(color)
-    };
-    
-    render() {
-      let colors = []
-      for (var i =0;i<20;i++){
+  onChangeBase = (color) => {
+    console.log(color)
+    // this.set({
+    //   type:"currency/save",
+    //   payload:{base:color}
+    // })
+  };
+
+  onClick = (e) => {
+    console.log("onclick")
+  }
+
+  render() {
+    let colors = []
+    for (var key in constants.currencymap){
         colors.push({
           label:
-          (<div className={styles.selectitem}>
-            <img className={styles.selectflag} src={require("../../assets/currency/USD_US Dollar.svg")} />
-            <span className={styles.selcttext}>USD</span>
-            <img className={styles.selectok} src={require("../../assets/icon/done-24-px.svg")} />
-          </div>),
-          value: 'USD'+i,
+            <div className={styles.selectitem} onClick={this.onChangeBase.bind(this,key)}>
+              <div className={styles.selectitemcontent}>
+              <img className={styles.selectflag} src={this.parseImgSrc(key)} />
+              <span className={styles.selcttext}>{key}</span>
+              {
+                this.props.base == key ?
+                <img className={styles.selectok} src={require("../../assets/icon/done-24-px.svg")} />:
+                <span></span>
+              }
+              </div>
+            </div>,
+          value: key,
         })
-      }
-      
-      //   {
-      //     label:
-      //     (<div>
-      //       <img style={{ ...colorStyle}} src={require("../../assets/currency/USD_US Dollar.svg")} />
-      //       <span className={styles.selcttext}>USD</span>
-      //     </div>),
-      //     value: '#0000FF',
-      //   },
-      // ];
-      
-      return <div className={styles.currencydiv}>
-                <Picker
-                  data={colors}
-                  value={['USD10']}
-                  cols={1}
-                  onChange={this.onChangeColor}
-                  title={<span className={styles.selecttitle}>Select the currency</span>}
-                  okText={<img className={styles.selecttitleclose} src={require("../../assets/icon/clear-24-px.svg")} />}
-                  dismissText={" "}
-                  className={styles.ampickerpopup}
-                  
-                >
-                  <div className={styles.currencybasetitle}>
-                    <img className={styles.titleimg} src={require("../../assets/currency/USD_US Dollar.svg")} />
-                    <span className={styles.titletext}>USD</span>
-                    <img className={styles.titletext} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
-                  </div>
-                </Picker>
-                <div className={styles.currencybaseinput}>
-
-                </div>
-                <div className={styles.splitdiv}></div>
-                <div className={styles.currencyquotetitle}>
-                  <img className={styles.titleimg} src={require("../../assets/currency/GBP_British Pound.svg")} />
-                  <span className={styles.titletext}>GBP</span>
-                  <img className={styles.titletext} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
-                </div>
-                <div className={styles.currencyquoteinput}>
-
-                </div>
-            </div>
     }
+
+    let xxx = <img className={styles.titleimg} onClick={this.onClick} src={require("../../assets/currency/GBP_British Pound.svg")} />;
+
+    return <div className={styles.currencydiv}>
+      <Picker
+      onClick={this.onClick}
+        data={colors}
+        value={[this.props.base]}
+        visible={this.state.basevisible}
+        cols={1}
+        onChange={this.onChangeBase}
+        title={<span className={styles.selecttitle}>Select the currency</span>}
+        okText={<img className={styles.selecttitleclose} src={require("../../assets/icon/clear-24-px.svg")} />}
+        dismissText={" "}
+        className={styles.ampickerpopup}
+        onSelect={this.onChangeBase}
+        // onPickerChange={this.onChangeBase}
+      >
+        <div className={styles.currencybasetitle} >
+          <img className={styles.titleimg} src={this.parseImgSrc(this.props.base)} />
+          <span className={styles.titletext}>{this.props.base}</span>
+          <img className={styles.titletextselectimg} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
+        </div>
+      </Picker>
+      <div className={styles.currencybaseinput}>
+
+      </div>
+      <div className={styles.splitdiv}></div>
+      <div className={styles.currencyquotetitle}>
+        <img className={styles.titleimg} onClick={this.onClick} src={require("../../assets/currency/GBP_British Pound.svg")} />
+        {xxx}
+        <span className={styles.titletext}>GBP</span>
+        <img className={styles.titletext} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
+      </div>
+      <div className={styles.currencyquoteinput}>
+
+      </div>
+    </div>
+  }
 }
 
 function mapStateToProps(state) {
-  const {lastupdate} = state.currency;
+  // const { lastupdate } = state.currency;
   return {
-    lastupdate
+    ...state.currency
   };
 }
 
