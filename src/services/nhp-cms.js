@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { alertlog } from '../utils/common';
 // import handleError from './handleError';
 
 /**
@@ -44,6 +45,8 @@ export default function(method, url, { bodyParams = {}, urlParams = {} }) {
       function axiosRetryInterceptor(err) {
         var config = err.config;
         // If config does not exist or the retry option is not set, reject
+        alertlog("~cmslog")
+        alertlog(err);
         if (!config || !config.retry) {
         //   handleError(err);
           return Promise.reject(err.response);

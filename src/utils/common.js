@@ -58,6 +58,12 @@ export function alertcode(){
     }
 }
 
+export function alertlog(msg){
+    if (isdebug){
+        alert(msg);
+    }
+}
+
 export function getBarcode() {
     return barcode;
 }
