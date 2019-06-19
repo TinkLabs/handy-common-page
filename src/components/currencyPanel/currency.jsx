@@ -1,7 +1,7 @@
 import React from 'react';
 import { Picker, List, WhiteSpace } from 'antd-mobile';
 import dva, { connect } from 'dva';
-import styles from './currency.css';
+import styles from './currency.less';
 import constants from '../../utils/constants';
 
 class CurrencyPanel extends React.Component {
@@ -31,22 +31,16 @@ class CurrencyPanel extends React.Component {
     };
     
     render() {
-      const colorStyle = {
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        width: '20px',
-        height: '20px',
-        marginRight: '10px',
-      };
-      const colors = []
+      let colors = []
       for (var i =0;i<20;i++){
         colors.push({
           label:
-          (<div>
-            <img style={{ ...colorStyle}} src={require("../../assets/currency/USD_US Dollar.svg")} />
+          (<div className={styles.selectitem}>
+            <img className={styles.selectflag} src={require("../../assets/currency/USD_US Dollar.svg")} />
             <span className={styles.selcttext}>USD</span>
+            <img className={styles.selectok} src={require("../../assets/icon/done-24-px.svg")} />
           </div>),
-          value: 'USD',
+          value: 'USD'+i,
         })
       }
       
@@ -63,12 +57,14 @@ class CurrencyPanel extends React.Component {
       return <div className={styles.currencydiv}>
                 <Picker
                   data={colors}
-                  value={['#00FF00']}
+                  value={['USD10']}
                   cols={1}
                   onChange={this.onChangeColor}
-                  title={"Select the currency"}
-                  okText={" "}
+                  title={<span className={styles.selecttitle}>Select the currency</span>}
+                  okText={<img className={styles.selecttitleclose} src={require("../../assets/icon/clear-24-px.svg")} />}
                   dismissText={" "}
+                  className={styles.ampickerpopup}
+                  
                 >
                   <div className={styles.currencybasetitle}>
                     <img className={styles.titleimg} src={require("../../assets/currency/USD_US Dollar.svg")} />
