@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './jr.css';
 import { connect } from 'dva';
+import { alertcode,getgetppp, setDebug } from '../utils/common';
 
 const JR = (props) => {
 
@@ -59,6 +60,20 @@ const JR = (props) => {
     })
   }
 
+  var alertit = () =>{
+    alertcode()
+    let de = props.debugcount;
+    de++;
+    props.dispatch({
+      type:"jr/save",
+      payload:{debugcount:de}
+    })
+  }
+
+  if (props.debugcount>3){
+    setDebug()
+  }
+
   return (
     <div>
         <div className={styles.jrbackground}>
@@ -91,7 +106,10 @@ const JR = (props) => {
             <a className={styles.maila} href="mailto:brandstrategy@ml.handytravel.co.jp">お問い合せ</a>
             </div>
             <div>
-            <p className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
+            <p onClick={alertit} className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
+            {
+              props.debugcount > 3?<p>{getgetppp()}...</p>:<p></p>
+            }
             </div>
         </div>
     </div>

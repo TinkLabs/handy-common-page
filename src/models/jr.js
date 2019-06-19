@@ -1,7 +1,7 @@
 import w from './mock.js';
 // import {fetchWeather} from '../services/services';
 import * as srv from '../services/services';
-import {getBarcode,getDeviceUserID} from '../utils/common';
+import {getBarcode,getDeviceUserID,isDebug} from '../utils/common';
 
 export default {
     namespace: 'jr',
@@ -12,12 +12,23 @@ export default {
       suica:"",
       wrong:false,
       btntext:"OK",
+      debugcount:0,
     },
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
         let barcode = getBarcode();
         let deviceuserid = getDeviceUserID();
         const response = yield call(srv.suicaLog, barcode, suica, deviceuserid);
+        if (isDebug()){
+          alert(response);
+          alert(JSON.stringify(response))
+        }
+        if (response.error){
+          if (isDebug()){
+            alert("errror!")
+            alert(err)
+          }
+        }
         let result = response.data;
         let success = false;
         let nextsuica = suica;
