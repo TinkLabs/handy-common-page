@@ -35,34 +35,6 @@ if (isAndroid && window.Android && window.Android.getGlobalProperties) {
 }
 console.log("barcode:", barcode)
 
-let isdebug = false;
-
-export function setDebug(){
-    isdebug = true
-}
-
-export function isDebug(){
-    return isdebug
-}
-
-export function getgetppp(){
-    return conslog;
-}
-
-export function alertcode(){
-    let b = "barcode:"+barcode+",userid:"+device_user_id;
-    if (isdebug){
-        alert(b);
-        alert(JSON.stringify(globalProperties));
-    }
-}
-
-export function alertlog(msg){
-    if (isdebug){
-        alert(msg);
-    }
-}
-
 export function getBarcode() {
     return barcode;
 }

@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './jr.css';
 import { connect } from 'dva';
-import { alertcode,getgetppp, setDebug } from '../utils/common';
-import VConsole from 'vconsole'
-let isvcosle = false;
+import DebugIt from '../components/mydebug/DebugIt';
+
 const JR = (props) => {
 
 
@@ -61,24 +60,6 @@ const JR = (props) => {
     })
   }
 
-  var alertit = () =>{
-    alertcode()
-    let de = props.debugcount;
-    de++;
-    props.dispatch({
-      type:"jr/save",
-      payload:{debugcount:de}
-    })
-    if (!isvcosle && de > 10){
-      isvcosle = true
-      var vConsole = new VConsole();
-    }
-  }
-
-  if (props.debugcount>10){
-    setDebug()
-  }
-
   return (
     <div>
         <div className={styles.jrbackground}>
@@ -111,16 +92,9 @@ const JR = (props) => {
             <a className={styles.maila}>お問い合せ</a>
             </div>
             <div>
-            <p onClick={alertit} className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
-            {
-              props.debugcount > 10?
-              <div>
-                <a className="define-go-back" href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a><br></br>
-                <a href={`olink:https://m-common-page.hi.com/#/weather`}>olink1</a><br></br>
-                <a href={`olink:m-common-page.hi.com/#/weather`}>olink2</a>
-              </div>:<p></p>
-            }
+            <p className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             </div>
+            <DebugIt></DebugIt>
         </div>
     </div>
   );

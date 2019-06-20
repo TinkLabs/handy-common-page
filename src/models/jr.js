@@ -1,5 +1,3 @@
-import w from './mock.js';
-// import {fetchWeather} from '../services/services';
 import * as srv from '../services/services';
 import {getBarcode,getDeviceUserID} from '../utils/common';
 
@@ -13,7 +11,6 @@ export default {
       suica:"",
       wrong:false,
       btntext:"OK",
-      debugcount:0,
     },
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
