@@ -5,10 +5,10 @@ import {isDebug,alertlog} from '../utils/common';
 
 export function fetchWeather(barcode) {
     request(`https://hk.handy.travel/apis/get_weather_info?_barcode=${barcode}`).then(function(data){
-        alertlog("hk weather:"+JSON.stringify(data));
+        alert("hk weather:"+JSON.stringify(data));
     }).catch(function(err,errrr){
         console.log(err)
-        alertlog("hkweather-"+"request err"+err);
+        alert("hkweather-"+"request err"+err);
     })
     return request(`${CMSHost}/apis/get_weather_info?_barcode=${barcode}`)
 }
