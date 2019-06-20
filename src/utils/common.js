@@ -36,6 +36,7 @@ if (isAndroid && window.Android && window.Android.getGlobalProperties) {
 console.log("barcode:", barcode)
 
 export function getBarcode() {
+    console.log("properties:",conslog)
     return barcode;
 }
 
