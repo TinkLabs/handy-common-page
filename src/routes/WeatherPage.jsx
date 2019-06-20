@@ -8,6 +8,7 @@ import WeatherForecast from '../components/weatherForecast/weatherForecast';
 import styles from './WeatherPage.css';
 import { connect } from 'dva';
 
+
 const WeatherPage = (props) => {
   var onReturn = () => {
     console.log("back to some page");

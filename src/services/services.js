@@ -1,24 +1,16 @@
 import request from '../utils/request';
+import axios from 'axios';
 import CMSHttp from './nhp-cms';
 import { CMSHost } from '../utils/env';
-import {isDebug,alertlog} from '../utils/common';
+
+export function fetchWeather2(barcode){
+    let param = {_barcode:barcode}
+    return axios.get(`${CMSHost}/apis/get_weather_info`, { params: param })
+}
 
 export function fetchWeather(barcode) {
-    request(`https://hk.handy.travel/apis/get_weather_info?_barcode=${barcode}`).then(function(data){
-        alert("hk prod weather:"+JSON.stringify(data));
-    }).catch(function(err,errrr){
-        console.log(err)
-        alert("hk prod weather-"+"request err"+err);
-    })
-
-    request(`${CMSHost}/apis/get_weather_info?_barcode=${barcode}`).then(function(data){
-        alert("hk staging weather:"+JSON.stringify(data));
-    }).catch(function(err,errrr){
-        console.log(err)
-        alert("hk staging"+"request err"+err);
-    })
-
-    return request(`https://hk.handy.travel/apis/get_weather_info?_barcode=${barcode}`)
+    let param = {_barcode:barcode}
+    return axios.get(`https://hk.handy.travel/apis/get_weather_info`, { params: param })
 }
 
 export function suicaLog2(barcode, suica) {
@@ -28,33 +20,12 @@ export function suicaLog2(barcode, suica) {
 
 export function suicaLog(barcode, suica, deviceuserid) {
     let timestamp = new Date().getTime();
-    let url = `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}&_device_user_id=${deviceuserid}`;
-    alertlog(url);
-
-    if (isDebug()){
-        try {
-            console.log("xx")
-            request(`${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}`).then(function(data,err){
-                alertlog("1-"+JSON.stringify(data)+JSON.stringify(err));
-            }).catch(function(err,errrr){
-                console.log(err)
-                alertlog("2-"+"request err"+err);
-            })
-    
-            CMSHttp('GET', `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}&_device_user_id=${deviceuserid}`, {}).then(function(data){
-                alertlog("3-"+JSON.stringify(data));
-            }).catch(function(err,errrr){
-                console.log(err)
-                alertlog("4-"+"request err"+err);
-            })
-        }
-        catch(e){
-            console.log("..",e);
-            let ee = "err"+e;
-            alertlog(ee);
-        }
+    // let url = `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}&_device_user_id=${deviceuserid}`;
+    let param = {
+        _barcode:barcode,
+        _suica:suica,
+        _send_time:timestamp,
+        _device_user_id:deviceuserid
     }
-    
-    
-    return CMSHttp('GET', `${CMSHost}/apis/suica_campaign_log?_barcode=${barcode}&_suica=${suica}&_send_time=${timestamp}&_device_user_id=${deviceuserid}`, {})
+    return axios.get(`${CMSHost}/apis/suica_campaign_log`, { params: param })
 }

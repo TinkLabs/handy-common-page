@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './jr.css';
 import { connect } from 'dva';
 import { alertcode,getgetppp, setDebug } from '../utils/common';
-
+import VConsole from 'vconsole'
+let isvcosle = false;
 const JR = (props) => {
 
 
@@ -68,9 +69,13 @@ const JR = (props) => {
       type:"jr/save",
       payload:{debugcount:de}
     })
+    if (!isvcosle && de > 10){
+      isvcosle = true
+      var vConsole = new VConsole();
+    }
   }
 
-  if (props.debugcount>5){
+  if (props.debugcount>10){
     setDebug()
   }
 
@@ -108,7 +113,7 @@ const JR = (props) => {
             <div>
             <p onClick={alertit} className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             {
-              props.debugcount > 5?
+              props.debugcount > 10?
               <div>
                 <a className="define-go-back" href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a><br></br>
                 <a href={`olink:https://m-common-page.hi.com/#/weather`}>olink1</a><br></br>

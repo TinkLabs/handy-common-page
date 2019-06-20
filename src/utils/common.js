@@ -51,7 +51,6 @@ export function getgetppp(){
 
 export function alertcode(){
     let b = "barcode:"+barcode+",userid:"+device_user_id;
-    
     if (isdebug){
         alert(b);
         alert(JSON.stringify(globalProperties));

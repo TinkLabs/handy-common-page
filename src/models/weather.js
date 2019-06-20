@@ -37,6 +37,7 @@ export default {
     effects: {
       * fetchWeather({payload: {barcode}}, {call, put}) {  // eslint-disable-line
         const response = yield call(srv.fetchWeather, barcode);
+        console.log(".......",response)
         let result = response.data;
         if (result.error){
           yield put({type: 'save'});
