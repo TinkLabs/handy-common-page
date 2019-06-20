@@ -103,12 +103,14 @@ const JR = (props) => {
               <img  onClick={onReturn} className={styles.logo} src={require("../assets/jr/hi_logo.svg")}></img>
             </div>
             <div>
-            <a className={styles.maila} href="mailto:brandstrategy@ml.handytravel.co.jp">お問い合せ</a>
+            <a className={styles.maila}>お問い合せ</a>
             </div>
             <div>
             <p onClick={alertit} className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             {
-              props.debugcount > 3?<p>{getgetppp()}...</p>:<p></p>
+              props.debugcount > 3?<a
+              className="define-go-back"
+              href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a>:<p></p>
             }
             </div>
         </div>
