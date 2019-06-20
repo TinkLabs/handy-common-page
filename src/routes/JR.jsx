@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './jr.css';
 import { connect } from 'dva';
+import DebugIt from '../components/mydebug/DebugIt';
 
 const JR = (props) => {
 
@@ -93,6 +94,7 @@ const JR = (props) => {
             <div>
             <p className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             </div>
+            <DebugIt></DebugIt>
         </div>
     </div>
   );
