@@ -70,7 +70,7 @@ const JR = (props) => {
     })
   }
 
-  if (props.debugcount>3){
+  if (props.debugcount>5){
     setDebug()
   }
 
@@ -108,9 +108,12 @@ const JR = (props) => {
             <div>
             <p onClick={alertit} className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             {
-              props.debugcount > 3?<a
-              className="define-go-back"
-              href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a>:<p></p>
+              props.debugcount > 5?
+              <div>
+                <a className="define-go-back" href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a>
+                <a href={`olink:https://m-common-page.hi.com/#/weather`}>olink1</a>
+                <a href={`olink:m-common-page.hi.com/#/weather`}>olink2</a>
+              </div>:<p></p>
             }
             </div>
         </div>
