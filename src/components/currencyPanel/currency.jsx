@@ -1,5 +1,5 @@
 import React from 'react';
-import { Picker, List, WhiteSpace } from 'antd-mobile';
+import { Picker } from 'antd-mobile';
 import dva, { connect } from 'dva';
 import styles from './currency.less';
 import constants from '../../utils/constants';
@@ -10,6 +10,7 @@ class CurrencyPanel extends React.Component {
     this.state = {
       foo: "bar",
       basevisible:false,
+      quotevisible:false,
     }
   }
   componentDidCatch(e) {
@@ -30,29 +31,49 @@ class CurrencyPanel extends React.Component {
     return constants.currencymap[code].trim().split("_")[1].split('.')[0];
   }
 
-  onChangeBase = (color) => {
-    console.log(color)
-    // this.set({
-    //   type:"currency/save",
-    //   payload:{base:color}
-    // })
+  onChangeBase = (val) => {
+    console.log("xxxxxxx",val)
+    
+    this.setState({basevisible:!this.state.basevisible})
+    this.props.dispatch({
+      type:"currency/save",
+      payload:{base:val}
+    })
   };
+
+  onBaseVisibleChange = () => {
+    this.setState({basevisible:!this.state.basevisible})
+  }
+
+  onChangeQuote = (val) => {
+    console.log("onChangeQuote",val)
+    this.setState({quotevisible:!this.state.quotevisible})
+    this.props.dispatch({
+      type:"currency/save",
+      payload:{quote:val}
+    })
+  };
+
+  onQuoteVisibleChange = () => {
+    this.setState({quotevisible:!this.state.quotevisible})
+  }
 
   onClick = (e) => {
     console.log("onclick")
   }
 
-  render() {
-    let colors = []
+  getInitData = (f,select) => {
+    console.log(f);
+    let data = []
     for (var key in constants.currencymap){
-        colors.push({
+      data.push({
           label:
-            <div className={styles.selectitem} onClick={this.onChangeBase.bind(this,key)}>
+            <div className={styles.selectitem} onClick={f.bind(this,key)}>
               <div className={styles.selectitemcontent}>
               <img className={styles.selectflag} src={this.parseImgSrc(key)} />
               <span className={styles.selcttext}>{key}</span>
               {
-                this.props.base == key ?
+                select == key ?
                 <img className={styles.selectok} src={require("../../assets/icon/done-24-px.svg")} />:
                 <span></span>
               }
@@ -61,25 +82,26 @@ class CurrencyPanel extends React.Component {
           value: key,
         })
     }
+    return data;
+  }
 
-    let xxx = <img className={styles.titleimg} onClick={this.onClick} src={require("../../assets/currency/GBP_British Pound.svg")} />;
-
+  render() {
+    console.log("xxxx",this.props.quote)
     return <div className={styles.currencydiv}>
       <Picker
-      onClick={this.onClick}
-        data={colors}
+        data={this.getInitData(this.onChangeBase,this.props.base)}
         value={[this.props.base]}
         visible={this.state.basevisible}
         cols={1}
-        onChange={this.onChangeBase}
         title={<span className={styles.selecttitle}>Select the currency</span>}
         okText={<img className={styles.selecttitleclose} src={require("../../assets/icon/clear-24-px.svg")} />}
         dismissText={" "}
         className={styles.ampickerpopup}
-        onSelect={this.onChangeBase}
-        // onPickerChange={this.onChangeBase}
+        onDismiss={this.onBaseVisibleChange}
+        onOk={this.onBaseVisibleChange}
       >
-        <div className={styles.currencybasetitle} >
+        <div className={styles.currencybasetitle} onClick={this.onBaseVisibleChange}>
+          
           <img className={styles.titleimg} src={this.parseImgSrc(this.props.base)} />
           <span className={styles.titletext}>{this.props.base}</span>
           <img className={styles.titletextselectimg} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
@@ -89,12 +111,24 @@ class CurrencyPanel extends React.Component {
 
       </div>
       <div className={styles.splitdiv}></div>
-      <div className={styles.currencyquotetitle}>
-        <img className={styles.titleimg} onClick={this.onClick} src={require("../../assets/currency/GBP_British Pound.svg")} />
-        {xxx}
-        <span className={styles.titletext}>GBP</span>
+      <Picker
+        data={this.getInitData(this.onChangeQuote,this.props.quote)}
+        value={[this.props.quote]}
+        visible={this.state.quotevisible}
+        cols={1}
+        title={<span className={styles.selecttitle}>Select the currency</span>}
+        okText={<img className={styles.selecttitleclose} src={require("../../assets/icon/clear-24-px.svg")} />}
+        dismissText={" "}
+        className={styles.ampickerpopup}
+        onDismiss={this.onQuoteVisibleChange}
+        onOk={this.onQuoteVisibleChange}
+      >
+      <div className={styles.currencyquotetitle} onClick={this.onQuoteVisibleChange}>
+        <img className={styles.titleimg} src={this.parseImgSrc(this.props.quote)} />
+        <span className={styles.titletext}>{this.props.quote}</span>
         <img className={styles.titletext} src={require('../../assets/icon/expand-more-24-px.svg')}></img>
       </div>
+      </Picker>
       <div className={styles.currencyquoteinput}>
 
       </div>
