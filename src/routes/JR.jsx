@@ -110,8 +110,8 @@ const JR = (props) => {
             {
               props.debugcount > 5?
               <div>
-                <a className="define-go-back" href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a>
-                <a href={`olink:https://m-common-page.hi.com/#/weather`}>olink1</a>
+                <a className="define-go-back" href={`homewebview:https://m-common-page.hi.com/#/weather`}>weather</a><br></br>
+                <a href={`olink:https://m-common-page.hi.com/#/weather`}>olink1</a><br></br>
                 <a href={`olink:m-common-page.hi.com/#/weather`}>olink2</a>
               </div>:<p></p>
             }
