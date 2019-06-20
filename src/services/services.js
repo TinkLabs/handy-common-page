@@ -5,12 +5,20 @@ import {isDebug,alertlog} from '../utils/common';
 
 export function fetchWeather(barcode) {
     request(`https://hk.handy.travel/apis/get_weather_info?_barcode=${barcode}`).then(function(data){
-        alert("hk weather:"+JSON.stringify(data));
+        alert("hk prod weather:"+JSON.stringify(data));
     }).catch(function(err,errrr){
         console.log(err)
-        alert("hkweather-"+"request err"+err);
+        alert("hk prod weather-"+"request err"+err);
     })
-    return request(`${CMSHost}/apis/get_weather_info?_barcode=${barcode}`)
+
+    request(`${CMSHost}/apis/get_weather_info?_barcode=${barcode}`).then(function(data){
+        alert("hk staging weather:"+JSON.stringify(data));
+    }).catch(function(err,errrr){
+        console.log(err)
+        alert("hk staging"+"request err"+err);
+    })
+
+    return request(`https://hk.handy.travel/apis/get_weather_info?_barcode=${barcode}`)
 }
 
 export function suicaLog2(barcode, suica) {
