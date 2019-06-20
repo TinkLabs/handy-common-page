@@ -1,7 +1,7 @@
 // 根据不同环境设置不同域名
 let B2CHost = 'https://b2c-gateway.hi.com';
 let hotelIdHost = 'https://handy-resources-api.handy.travel';
-let CMSHost = 'https://hk.handy.travel';
+let CMSHost = 'https://staging.handy.travel';
 let adsHost = 'https://b2c-ads.hi.com';
 
 switch (process.env.APP_ENV) {

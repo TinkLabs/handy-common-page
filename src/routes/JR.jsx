@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './jr.css';
 import { connect } from 'dva';
+import DebugIt from '../components/mydebug/DebugIt';
 
 const JR = (props) => {
 
@@ -28,7 +29,7 @@ const JR = (props) => {
 
     props.dispatch({
       type:"jr/save",
-      payload:{wrong:false}
+      payload:{wrong:false,num:0}
     })
 
     props.dispatch({
@@ -88,11 +89,12 @@ const JR = (props) => {
               <img  onClick={onReturn} className={styles.logo} src={require("../assets/jr/hi_logo.svg")}></img>
             </div>
             <div>
-            <a className={styles.maila} href="mailto:brandstrategy@ml.handytravel.co.jp">お問い合せ</a>
+            <a className={styles.maila}>お問い合せ</a>
             </div>
             <div>
             <p className={styles.downp}>2019 © hi Japan Co., Ltd. All Rights Reserved.</p>
             </div>
+            <DebugIt></DebugIt>
         </div>
     </div>
   );

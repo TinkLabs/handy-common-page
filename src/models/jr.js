@@ -1,7 +1,6 @@
-import w from './mock.js';
-// import {fetchWeather} from '../services/services';
 import * as srv from '../services/services';
-import {getBarcode} from '../utils/common';
+import {getBarcode,getDeviceUserID} from '../utils/common';
+
 
 export default {
     namespace: 'jr',
@@ -16,7 +15,11 @@ export default {
     effects: {
       * validcode({payload: {suica}}, {call, put}) {  // eslint-disable-line
         let barcode = getBarcode();
-        const response = yield call(srv.suicaLog, barcode, suica);
+        let deviceuserid = getDeviceUserID();
+        const response = yield call(srv.suicaLog, barcode, suica, deviceuserid);
+        if (response.error){
+          console.log("err",response.error)
+        }
         let result = response.data;
         let success = false;
         let nextsuica = suica;
@@ -49,6 +52,7 @@ export default {
           if (location.pathname.includes('suica')) {
             console.log("jr")
             document.title='Buy Welcome Suica Get Premium Goods';
+            
           }
         });
       },

@@ -29,17 +29,24 @@ export function dateFormat(ts) {
 let globalProperties = {};
 let barcode = '355655090012297';
 let campaignId = '';
-
+let device_user_id = 0;//globalProperties.device_user_id
+let conslog = '';
 var isAndroid = typeof window.Android !== 'undefined'
 if (isAndroid && window.Android && window.Android.getGlobalProperties) {
     console.log("in android system")
-    globalProperties = JSON.parse("fafafa")
+    globalProperties = JSON.parse(window.Android.getGlobalProperties())
     barcode = globalProperties.imei
-//    campaignId = window.Android.getCampaignId()
-//alert(barcode)
+    // campaignId = window.Android.getCampaignId()
+    device_user_id = globalProperties.device_user_id || 0
+    conslog = window.Android.getGlobalProperties();
 }
 console.log("barcode:", barcode)
 
 export function getBarcode() {
+    console.log("properties:",conslog)
     return barcode;
+}
+
+export function getDeviceUserID(){
+    return device_user_id;
 }

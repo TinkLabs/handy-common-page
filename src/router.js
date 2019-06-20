@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch,IndexRoute } from 'dva/router';
-import IndexPage from './routes/IndexPage';
+import { Router, Route, Switch } from 'dva/router';
 import WeatherPage from './routes/WeatherPage.jsx';
 import CurrencyPage from './routes/CurrencyPage.jsx';
 import JR from './routes/JR.jsx';
