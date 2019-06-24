@@ -5,6 +5,7 @@ import CurrencyPanel from '../components/currencyPanel/currency';
 import styles from './CurrencyPage.css';
 import { connect } from 'dva';
 import {formatCurrencyDate} from '../utils/common';
+import DebugIt from '../components/mydebug/DebugIt';
 
 const CurrencyPage = (props) => {
   var onReturn = () => {
@@ -18,6 +19,7 @@ const CurrencyPage = (props) => {
     })
   }
 
+  console.log(props)
   return (
     <div>
     <TopBar onReturn={onReturn} title={"Currency Converter"}></TopBar>
@@ -25,6 +27,7 @@ const CurrencyPage = (props) => {
       <p className={styles.lastupdate}>Last update {formatCurrencyDate(props.lastupdate)}</p>
       <CurrencyPanel />
     </div>
+    <DebugIt></DebugIt>
   </div>
   );
 };

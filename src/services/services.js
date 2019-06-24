@@ -12,6 +12,11 @@ export function fetchWeather(barcode) {
     return axios.get(`https://hk.handy.travel/apis/get_weather_info`, { params: param })
 }
 
+export function fetchCurrency(currency) {
+    return axios.get(`https://currency.handy.travel/currencies/${currency}/rates`)
+}
+
+
 export function suicaLog(barcode, suica, deviceuserid) {
     let timestamp = new Date().getTime();
     let param = {
