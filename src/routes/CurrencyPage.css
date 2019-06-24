@@ -38,7 +38,11 @@ body{
   .addiv{
     /* height: 500px; */
     /* background-color: antiquewhite; */
+    width: 300px;
     margin-top: 32px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .adone{

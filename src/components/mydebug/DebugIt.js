@@ -28,7 +28,7 @@ class DebugIt extends React.Component {
   }
   
   render() {
-    return <div onClick={this.countit} style={{backgroundColor:'red',width:'100%',height:'8px'}}></div>
+    return <div onClick={this.countit} style={{width:'100%',height:'8px'}}></div>
   }
 }
 

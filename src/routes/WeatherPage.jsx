@@ -6,6 +6,8 @@ import SwitchBox from '../components/switchBox/switch';
 import WeatherToDay from '../components/weatherToDay/weatherToDay';
 import WeatherForecast from '../components/weatherForecast/weatherForecast';
 import styles from './WeatherPage.css';
+import GPTAD from '../components/GPTAD/gptad';
+import {Bling as GPT} from "react-gpt";
 import { connect } from 'dva';
 
 
@@ -35,6 +37,10 @@ const WeatherPage = (props) => {
       <WeatherForecast />
       <div className={styles.addiv}>
         <div className={styles.adone}>
+        <GPT
+            adUnitPath={`/21623654641/Tinklabs/Weather`}
+            slotSize={[300, 250]}
+        />
         </div>
       </div>
     </div>
