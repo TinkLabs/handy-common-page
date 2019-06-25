@@ -6,9 +6,11 @@ import SwitchBox from '../components/switchBox/switch';
 import WeatherToDay from '../components/weatherToDay/weatherToDay';
 import WeatherForecast from '../components/weatherForecast/weatherForecast';
 import styles from './WeatherPage.css';
-import GPTAD from '../components/GPTAD/gptad';
-import {Bling as GPT} from "react-gpt";
+import GPTPanel from '../components/GPTPanel';
 import { connect } from 'dva';
+import {trackOnLoadWeather} from '../utils/mixpanel';
+import {AdWeatherPath} from '../utils/env';
+
 
 
 const WeatherPage = (props) => {
@@ -21,6 +23,7 @@ const WeatherPage = (props) => {
       type:"weather/changeTempType",
       payload:{temptype:data}
     })
+    trackOnLoadWeather(data == 1?"Celsius":"Fahrenheit");
   }
 
   return (
@@ -36,11 +39,8 @@ const WeatherPage = (props) => {
       <WeatherToDay />
       <WeatherForecast />
       <div className={styles.addiv}>
-        <div className={styles.adone}>
-        <GPT
-            adUnitPath={`/21623654641/Tinklabs/Weather`}
-            slotSize={[300, 250]}
-        />
+        <div className={styles.adone} id="ad1">
+        <GPTPanel path={AdWeatherPath} size={[360, 210]} target={[300,175]} parent={"#ad1"} />
         </div>
       </div>
     </div>

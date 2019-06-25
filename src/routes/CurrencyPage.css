@@ -47,7 +47,7 @@ body{
 
   .adone{
     height: 250px;
-    background-color: rgba(82, 82, 82, 0.7);
+    /* background-color: rgba(82, 82, 82, 0.7); */
     margin-bottom: 8px;
   }
 

@@ -32,15 +32,20 @@ let campaignId = '';
 let device_user_id = 0;//globalProperties.device_user_id
 let conslog = '';
 var isAndroid = typeof window.Android !== 'undefined'
-if (isAndroid && window.Android && window.Android.getGlobalProperties) {
-    console.log("in android system")
-    globalProperties = JSON.parse(window.Android.getGlobalProperties())
-    barcode = globalProperties.imei
-    // campaignId = window.Android.getCampaignId()
-    device_user_id = globalProperties.device_user_id || 0
-    conslog = window.Android.getGlobalProperties();
+
+export function initLocalConfig(){
+    console.log("init config..")
+    if (isAndroid && window.Android && window.Android.getGlobalProperties) {
+        console.log("in android system")
+        globalProperties = JSON.parse(window.Android.getGlobalProperties())
+        barcode = globalProperties.imei
+        // campaignId = window.Android.getCampaignId()
+        device_user_id = globalProperties.device_user_id || 0
+        conslog = window.Android.getGlobalProperties();
+    }else{
+        console.log("not in android system")
+    }
 }
-console.log("barcode:", barcode)
 
 export function getBarcode() {
     console.log("properties:",conslog)
@@ -49,4 +54,8 @@ export function getBarcode() {
 
 export function getDeviceUserID(){
     return device_user_id;
+}
+
+export function getGlobalProperties(){
+    return globalProperties;
 }

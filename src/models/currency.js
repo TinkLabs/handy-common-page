@@ -18,12 +18,12 @@ export default {
     },
     effects: {
         * fetchCurrency({ payload: { currency } }, { call, put }) { // eslint-disable-line
-            if (currencyDate != ""){
+            if (currencyDate !== ""){
                 let cacheRate = localStorage.getItem(currencyKey(currency));
                 if (cacheRate) {
                     try {
                         let obj = JSON.parse(cacheRate);
-                        if (obj.date == currencyDate && obj.rates != {}){
+                        if (obj.date === currencyDate && obj.rates !== {}){
                             yield put({
                                 type: 'saveRate',
                                 payload: {
@@ -41,19 +41,19 @@ export default {
             }
 
             const response = yield call(srv.fetchCurrency, currency);
-            if (response.status != 200){
+            if (response.status !== 200){
                 console.log("status",response.status);
                 return
             }
 
             let array = response.data.data || [];
-            if (array.length == 0){
+            if (array.length === 0){
                 console.log("array:",)
                 return
             }
             let item = response.data.data[0];
 
-            if (currencyDate == ""){
+            if (currencyDate === ""){
                 localStorage.setItem(currencyKey(currency),JSON.stringify(item));
                 currencyDate = item.date;
             }
@@ -81,14 +81,14 @@ export default {
             
             // quoteval
             let quoteval = "";
-            if (rates[state.base] && state.baseval != ""){
+            if (rates[state.base] && state.baseval !== ""){
                 let rq = rates[state.base][state.quote];
                 quoteval = rq * state.baseval;
             }
             
             // // basevalue
             // let baseval = "";
-            // if (rates[state.quote] && state.quoteval != ""){
+            // if (rates[state.quote] && state.quoteval !== ""){
             //     let rb = rates[state.quote][state.base];
             //     baseval = rb * state.quoteval;
             // }
@@ -101,14 +101,14 @@ export default {
         savebase(state,{payload:{baseval}}){
             let rates = state.rates;
             let r = rates[state.base][state.quote];
-            let quoteval = r * baseval;
+            let quoteval = (r * baseval).toFixed(4);
             return {...state,baseval,quoteval};
         },
 
         savequote(state,{payload:{quoteval}}){
             let rates = state.rates;
             let r = rates[state.quote][state.base];
-            let baseval = r * quoteval;
+            let baseval = (r * quoteval).toFixed(4);
             return {...state,baseval,quoteval};
         }
     },
@@ -118,7 +118,7 @@ export default {
         setup({ dispatch, history }) {
             history.listen(location => {
                 if (location.pathname.includes('currency')) {
-                    // i
+                    document.title='currency';
                     dispatch({
                         type:"fetchCurrency",
                         payload:{currency:"USD"}

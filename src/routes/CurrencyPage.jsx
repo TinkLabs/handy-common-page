@@ -6,21 +6,14 @@ import styles from './CurrencyPage.css';
 import { connect } from 'dva';
 import {formatCurrencyDate} from '../utils/common';
 import DebugIt from '../components/mydebug/DebugIt';
-import {Bling as GPT} from "react-gpt";
+import GPTPanel from '../components/GPTPanel/index';
+import {AdCurrencyPath} from '../utils/env';
 
 const CurrencyPage = (props) => {
   var onReturn = () => {
     console.log("back to some page");
   }
 
-  var onSwitch = (data) => {
-    props.dispatch({
-      type:"currency/changeTempType",
-      payload:{temptype:data}
-    })
-  }
-
-  console.log(props)
   return (
     <div>
     <TopBar onReturn={onReturn} title={"Currency Converter"}></TopBar>
@@ -28,15 +21,12 @@ const CurrencyPage = (props) => {
       <p className={styles.lastupdate}>Last update {formatCurrencyDate(props.lastupdate)}</p>
       <CurrencyPanel />
       <div className={styles.addiv}>
-        <div className={styles.adone}>
-        <GPT
-            adUnitPath={`/21623654641/Tinklabs/Weather`}
-            slotSize={[300, 250]}
-        />
+        <div className={styles.adone} id="ad1">
+        <GPTPanel path={AdCurrencyPath} size={[360, 210]} target={[300,175]} parent={"#ad1"} />
         </div>
       </div>
     </div>
-    <DebugIt></DebugIt>
+    <DebugIt />
   </div>
   );
 };
