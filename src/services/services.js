@@ -25,5 +25,5 @@ export function suicaLog(barcode, suica, deviceuserid) {
         _send_time:timestamp,
         _device_user_id:deviceuserid
     }
-    return axios.get(`${CMSHost}/apis/suica_campaign_log`, { params: param })
+    return axios.get(`https://staging.handy.travel/apis/suica_campaign_log`, { params: param })
 }
