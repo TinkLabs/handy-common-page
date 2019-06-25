@@ -16,6 +16,7 @@ import {AdWeatherPath} from '../utils/env';
 const WeatherPage = (props) => {
   var onReturn = () => {
     console.log("back to some page");
+    props.history.goBack();
   }
 
   var onSwitch = (data) => {

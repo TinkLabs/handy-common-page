@@ -11,7 +11,8 @@ import {AdCurrencyPath} from '../utils/env';
 
 const CurrencyPage = (props) => {
   var onReturn = () => {
-    console.log("back to some page");
+    console.log("back to some page",props.history);
+    props.history.goBack();
   }
 
   return (

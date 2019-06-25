@@ -110,13 +110,14 @@ export default {
             let r = rates[state.quote][state.base];
             let baseval = (r * quoteval).toFixed(4);
             return {...state,baseval,quoteval};
-        }
+        },
     },
 
     subscriptions: {
         //监听地址，如果地址含有currency则跳转到登陆页
         setup({ dispatch, history }) {
             history.listen(location => {
+                console.log("history",history)
                 if (location.pathname.includes('currency')) {
                     document.title='currency';
                     dispatch({
