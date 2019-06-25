@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>THB_Thai Baht</title>
+    <desc>Created with Sketch.</desc>
+    <g id="THB_Thai-Baht" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="10"></circle>
+            <path d="M19.3780078,6.52175781 L0.621992187,6.52175781 C0.22,7.60507813 0,8.77679688 0,10 C0,11.2232031 0.22,12.3949219 0.621992187,13.4782422 L19.3780469,13.4782422 C19.78,12.3949219 20,11.2232031 20,10 C20,8.77679687 19.78,7.60507813 19.3780078,6.52175781 Z" id="Path" fill="#0052B4"></path>
+            <g id="Group" transform="translate(2.382812, 0.000000)" fill="#D80027">
+                <path d="M7.6171875,0 C4.58628906,0 1.87054687,1.34859375 0.0366796875,3.47824219 L15.1976562,3.47824219 C13.3638281,1.34859375 10.6480859,0 7.6171875,0 Z" id="Path"></path>
+                <path d="M15.1976953,16.5217578 L0.0366796875,16.5217578 C1.87054687,18.6514063 4.58628906,20 7.6171875,20 C10.6480859,20 13.3638281,18.6514063 15.1976953,16.5217578 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

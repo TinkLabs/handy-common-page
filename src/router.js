@@ -1,7 +1,12 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import WeatherPage from './routes/WeatherPage.jsx';
+import CurrencyPage from './routes/CurrencyPage.jsx';
 import JR from './routes/JR.jsx';
+import {initLocalConfig} from './utils/common';
+import {initMixpanel} from './utils/mixpanel';
+initLocalConfig();
+initMixpanel();
 
 function RouterConfig({ history }) {
   return (
@@ -9,6 +14,7 @@ function RouterConfig({ history }) {
         <Route path="/" >
           <Switch>
             <Route path="/weather"  component={WeatherPage} />
+            <Route path="/currency"  component={CurrencyPage} />
             <Route path="/campaign/suica"  component={JR} />
           </Switch>
         </Route>

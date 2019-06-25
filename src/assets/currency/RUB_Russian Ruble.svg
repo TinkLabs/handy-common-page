@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>RUB_Russian Ruble</title>
+    <desc>Created with Sketch.</desc>
+    <g id="RUB_Russian-Ruble" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="10"></circle>
+            <path d="M19.3780078,13.4782422 C19.78,12.3949219 20,11.2232031 20,10 C20,8.77679687 19.78,7.60507813 19.3780078,6.52175781 L0.621992187,6.52175781 C0.220039062,7.60507813 0,8.77679688 0,10 C0,11.2232031 0.220039062,12.3949219 0.621992187,13.4782422 L10,14.3478125 L19.3780078,13.4782422 Z" id="Path" fill="#0052B4"></path>
+            <path d="M10,20 C14.2996484,20 17.9650781,17.28625 19.3780078,13.4782422 L0.621992188,13.4782422 C2.03492188,17.28625 5.70035156,20 10,20 Z" id="Path" fill="#D80027"></path>
+        </g>
+    </g>
+</svg>

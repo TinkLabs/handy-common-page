@@ -71,6 +71,7 @@ export default {
       setup({ dispatch, history }) {
         history.listen(location => {
           if (location.pathname.includes('weather')) {
+            document.title='weather';
             dispatch({
               type: 'fetchWeather',
               payload:{

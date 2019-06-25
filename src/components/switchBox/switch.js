@@ -7,7 +7,7 @@ const SwitchBox = (props) => {
   return (
       <div className={styles.switchbox}>       
       {
-        props.temptype == 1 ?
+        props.temptype === 1 ?
           <div>
             <div className={styles.switchon + ' ' + styles.switchleft} onClick={()=>props.onChange(1)}>℃</div>
             <div className={styles.switchoff + ' ' + styles.switchright} onClick={()=>props.onChange(2)}>℉</div>

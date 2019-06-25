@@ -48,7 +48,27 @@ weathermap[45] = "45_Scattered Showers(night).svg";
 weathermap[46] = "46_Scattered Snow Showers(night).svg";
 weathermap[47] = "47_Scattered Thundershowers.svg";
 
+let currencymap = {};
+currencymap['AUD'] = 'AUD_Australia Dollar.svg'
+currencymap['CAD'] = 'CAD_Canada Dollar.svg'
+currencymap['CHF'] = 'CHF_Swiss Franc.svg'
+currencymap['CNY'] = 'CNY_China Yuan.svg'
+currencymap['EUR'] = 'EUR_Euro.svg'
+currencymap['USD'] = 'USD_US Dollar.svg'
+currencymap['GBP'] = 'GBP_British Pound.svg'
+currencymap['HKD'] = 'HKD_Hong Kong Dollar.svg'
+currencymap['IDR'] = 'IDR_Indonesian Rupiah.svg'
+currencymap['INR'] = 'INR_Indian Rupee.svg'
+currencymap['JPY'] = 'JPY_Japanese Yen.svg'
+currencymap['KRW'] = 'KRW_South Korean Won.svg'
+currencymap['MYR'] = 'MYR_Malaysian Ringgit.svg'
+currencymap['NZD'] = 'NZD_New Zealand Dollar.svg'
+currencymap['PHP'] = 'PHP_Philippine Peso.svg'
+currencymap['RUB'] = 'RUB_Russian Ruble.svg'
+currencymap['SGD'] = 'SGD_Singapore Dollar.svg'
+currencymap['THB'] = 'THB_Thai Baht.svg'
 
 export default {
-    weathermap
+    weathermap,
+    currencymap
 }

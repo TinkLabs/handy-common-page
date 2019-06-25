@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>CAD_Canada Dollar</title>
+    <desc>Created with Sketch.</desc>
+    <g id="CAD_Canada-Dollar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="10"></circle>
+            <g id="Group" transform="translate(0.000000, 0.976562)" fill="#D80027">
+                <path d="M20,9.0234375 C20,5.05882812 17.6927734,1.63320313 14.3478125,0.015703125 L14.3478125,18.0311328 C17.6927734,16.4136719 20,12.9880469 20,9.0234375 Z" id="Path"></path>
+                <path d="M0,9.0234375 C0,12.9880469 2.30722656,16.4136719 5.6521875,18.0311719 L5.6521875,0.015703125 C2.30722656,1.63320313 0,5.05882812 0,9.0234375 Z" id="Path"></path>
+                <polygon id="Path" points="11.7391406 10.3277734 13.4782422 9.45820313 12.6087109 9.0234375 12.6087109 8.15386719 10.8695703 9.0234375 11.7391406 7.28429688 10.8695703 7.28429688 10 5.97996094 9.13042969 7.28429688 8.26085938 7.28429688 9.13042969 9.0234375 7.39128906 8.15386719 7.39128906 9.0234375 6.52175781 9.45820313 8.26085938 10.3277734 7.82609375 11.1973437 9.56523438 11.1973437 9.56523438 12.5016797 10.4347656 12.5016797 10.4347656 11.1973437 12.1739062 11.1973437"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

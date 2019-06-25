@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>CHF_Swiss Franc</title>
+    <desc>Created with Sketch.</desc>
+    <g id="CHF_Swiss-Franc" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#D80027" cx="10" cy="10" r="10"></circle>
+            <polygon id="Path" fill="#F0F0F0" points="15.2173828 8.26089844 11.7391406 8.26089844 11.7391406 4.78261719 8.26085938 4.78261719 8.26085938 8.26089844 4.78261719 8.26089844 4.78261719 11.7391406 8.26085938 11.7391406 8.26085938 15.2173828 11.7391406 15.2173828 11.7391406 11.7391406 15.2173828 11.7391406"></polygon>
+        </g>
+    </g>
+</svg>

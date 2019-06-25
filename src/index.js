@@ -18,6 +18,8 @@ app.router(require('./router').default);
 
 app.model(require('./models/weather').default);
 
+app.model(require('./models/currency').default);
+
 app.model(require('./models/jr').default);
 
 // 5. Start

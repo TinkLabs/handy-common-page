@@ -6,12 +6,17 @@ import SwitchBox from '../components/switchBox/switch';
 import WeatherToDay from '../components/weatherToDay/weatherToDay';
 import WeatherForecast from '../components/weatherForecast/weatherForecast';
 import styles from './WeatherPage.css';
+import GPTPanel from '../components/GPTPanel';
 import { connect } from 'dva';
+import {trackOnLoadWeather} from '../utils/mixpanel';
+import {AdWeatherPath} from '../utils/env';
+
 
 
 const WeatherPage = (props) => {
   var onReturn = () => {
     console.log("back to some page");
+    props.history.goBack();
   }
 
   var onSwitch = (data) => {
@@ -19,11 +24,12 @@ const WeatherPage = (props) => {
       type:"weather/changeTempType",
       payload:{temptype:data}
     })
+    trackOnLoadWeather(data == 1?"Celsius":"Fahrenheit");
   }
 
   return (
     <div>
-    <TopBar onReturn={onReturn} ></TopBar>
+    <TopBar onReturn={onReturn} title={"Weather Forecast"}></TopBar>
     <div className={styles.content}>
       <div className={styles.weatherinfobody}>
         <BasicInfo />
@@ -34,7 +40,8 @@ const WeatherPage = (props) => {
       <WeatherToDay />
       <WeatherForecast />
       <div className={styles.addiv}>
-        <div className={styles.adone}>
+        <div className={styles.adone} id="ad1">
+        <GPTPanel path={AdWeatherPath} size={[360, 210]} target={[300,175]} parent={"#ad1"} />
         </div>
       </div>
     </div>

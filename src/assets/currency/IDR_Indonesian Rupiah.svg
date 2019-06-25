@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>IDR_Indonesian Rupiah</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IDR_Indonesian-Rupiah" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <g transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#F0F0F0" cx="10" cy="10" r="10"></circle>
+            <path d="M0,10 C0,4.4771875 4.4771875,0 10,0 C15.5228125,0 20,4.4771875 20,10" id="Path" fill="#A2001D"></path>
+        </g>
+    </g>
+</svg>

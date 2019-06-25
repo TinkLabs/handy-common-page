@@ -25,9 +25,9 @@ class WeatherForecast extends React.Component {
         return constants.weathermap[code].trim().split("_")[1].split('.')[0];
     }
 
-    isC = () => (this.props.temptype == 1)
+    isC = () => (this.props.temptype === 1)
 
-    icon = () => (this.props.temptype == 1?'℃':'℉')
+    icon = () => (this.props.temptype === 1?'℃':'℉')
     
     render() {
       var tablehead = [];
