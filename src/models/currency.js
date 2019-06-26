@@ -83,7 +83,7 @@ export default {
             let quoteval = "";
             if (rates[state.base] && state.baseval !== ""){
                 let rq = rates[state.base][state.quote];
-                quoteval = rq * state.baseval;
+                quoteval = (rq * state.baseval).toFixed(4);
             }
             
             // // basevalue
