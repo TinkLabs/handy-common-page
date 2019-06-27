@@ -44,4 +44,13 @@ switch (process.env.APP_ENV) {
         backurl = `https://homepage-staging.handytravel.tech/index.html#/home`;
 }
 
-export { B2CHost, hotelIdHost, CMSHost, adsHost, AdCurrencyPath, AdWeatherPath, backurl};
+function backtohp(){
+    const isAndroid = typeof window.Android !== 'undefined'
+    if (isAndroid) {
+      window.location.href = `homewebview:${backurl}`
+    } else {
+      window.location.href = `${backurl}`
+    }
+}
+
+export { backtohp,B2CHost, hotelIdHost, CMSHost, adsHost, AdCurrencyPath, AdWeatherPath, backurl};

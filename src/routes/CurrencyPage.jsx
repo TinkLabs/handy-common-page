@@ -7,12 +7,13 @@ import { connect } from 'dva';
 import {formatCurrencyDate} from '../utils/common';
 import DebugIt from '../components/mydebug/DebugIt';
 import GPTPanel from '../components/GPTPanel/index';
-import {AdCurrencyPath} from '../utils/env';
+import {AdCurrencyPath,backtohp} from '../utils/env';
 
 const CurrencyPage = (props) => {
   var onReturn = () => {
-    console.log("back to some page",props.history);
-    props.history.goBack();
+    console.log("back to some page");
+    // props.history.goBack();
+    backtohp();
   }
 
   return (
