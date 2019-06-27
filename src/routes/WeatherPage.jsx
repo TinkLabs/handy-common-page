@@ -9,15 +9,17 @@ import styles from './WeatherPage.css';
 import GPTPanel from '../components/GPTPanel';
 import { connect } from 'dva';
 import {trackOnLoadWeather} from '../utils/mixpanel';
-import {AdWeatherPath} from '../utils/env';
+import {AdWeatherPath,backtohp} from '../utils/env';
 
 
 
 const WeatherPage = (props) => {
   var onReturn = () => {
     console.log("back to some page");
-    props.history.goBack();
+    // props.history.goBack();
+    backtohp();
   }
+
 
   var onSwitch = (data) => {
     props.dispatch({
