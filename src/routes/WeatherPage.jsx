@@ -31,7 +31,7 @@ const WeatherPage = (props) => {
 
   return (
     <div>
-    <TopBar onReturn={onReturn} title={"Weather Forecast"}></TopBar>
+    {/* <TopBar onReturn={onReturn} title={"Weather Forecast"}></TopBar> */}
     <div className={styles.content}>
       <div className={styles.weatherinfobody}>
         <BasicInfo />

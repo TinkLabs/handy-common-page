@@ -18,7 +18,7 @@ const CurrencyPage = (props) => {
 
   return (
     <div>
-    <TopBar onReturn={onReturn} title={"Currency Converter"}></TopBar>
+    {/* <TopBar onReturn={onReturn} title={"Currency Converter"}></TopBar> */}
     <div className={styles.content}>
       <p className={styles.lastupdate}>Last update {formatCurrencyDate(props.lastupdate)}</p>
       <CurrencyPanel />
