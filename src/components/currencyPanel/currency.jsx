@@ -178,7 +178,7 @@ class CurrencyPanel extends React.Component {
       <div className={styles.currencybaseinput}>
         <InputItem
           className={styles.moneyinput}
-          value={this.props.baseval}
+          value={this.props.baseval == "0.0000" ? "":this.props.baseval}
           type="money"
           placeholder="0.00"
           clear
@@ -210,7 +210,7 @@ class CurrencyPanel extends React.Component {
       <div className={styles.currencyquoteinput}>
         <InputItem
           className={styles.moneyinput}
-          value={this.props.quoteval}
+          value={this.props.quoteval == "0.0000" ? "":this.props.quoteval}
           type="money"
           placeholder="0.00"
           clear
