@@ -53,4 +53,44 @@ function backtohp(){
     }
 }
 
-export { backtohp,B2CHost, hotelIdHost, CMSHost, adsHost, AdCurrencyPath, AdWeatherPath, backurl};
+let adKeyValue = void 0;
+let barcode = 0;
+// get ad key value
+async function getAdKeyValueFn() {
+    return {
+      hotel_id: '6312',
+      campaign_id: '0',
+      country: 100,
+      lang: 'zh_cn',
+    };
+    // if (!adKeyValue) {
+    //   const urlPar = {
+    //     _barcode: barcode,
+    //   };
+    //   try {
+    //     const result = await request.getCMSAdKeyValueFn(urlPar);
+    //     // only call this api once
+    //     adKeyValue = result.data.key_value;
+    //     if (isAndroid) {
+    //       adKeyValue.campaign_id = window.Android.getCampaignId();
+    //     }
+    //     if (!adKeyValue.campaign_id) {
+    //       adKeyValue.campaign_id = '0';
+    //     }
+    //     return adKeyValue;
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // } else {
+    //   // campaign id reload
+    //   if (isAndroid) {
+    //     adKeyValue.campaign_id = window.Android.getCampaignId();
+    //   }
+    //   if (!adKeyValue.campaign_id) {
+    //     adKeyValue.campaign_id = '0';
+    //   }
+    //   return adKeyValue;
+    // }
+  }
+
+export { getAdKeyValueFn, backtohp,B2CHost, hotelIdHost, CMSHost, adsHost, AdCurrencyPath, AdWeatherPath, backurl};

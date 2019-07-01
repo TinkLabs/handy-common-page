@@ -10,6 +10,7 @@ import GPTPanel from '../components/GPTPanel';
 import { connect } from 'dva';
 import {trackOnLoadWeather} from '../utils/mixpanel';
 import {AdWeatherPath,backtohp} from '../utils/env';
+import AdUnit from '../components/AmpAD';
 
 
 
@@ -43,7 +44,9 @@ const WeatherPage = (props) => {
       <WeatherForecast />
       <div className={styles.addiv}>
         <div className={styles.adone} id="ad1">
-        <GPTPanel path={AdWeatherPath} size={[360, 210]} target={[300,175]} parent={"#ad1"} />
+        {/* <GPTPanel path={AdWeatherPath} size={[360, 210]} target={[300,175]} parent={"#ad1"} /> */}
+        {/* <AdUnit ADUnit=" AD-Unit1" /> */}
+        <AdUnit ADUnit="Carousel-Companion" />
         </div>
       </div>
     </div>

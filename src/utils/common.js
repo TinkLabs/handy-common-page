@@ -59,3 +59,56 @@ export function getDeviceUserID(){
 export function getGlobalProperties(){
     return globalProperties;
 }
+
+export const getElementTop = elt => {
+    if (elt) {
+      let actualTop = elt.offsetTop;
+      let currentElt = elt.offsetParent;
+  
+      while (currentElt !== null) {
+        actualTop += currentElt.offsetTop;
+        currentElt = currentElt.offsetParent;
+      }
+  
+      console.log("elt",elt)
+      return actualTop;
+    }
+  };
+
+  // get ad key value
+export async function getAdKeyValueFn() {
+    // return {
+    //   hotel_id: '6312',
+    //   campaign_id: '0',
+    //   country: 100,
+    //   lang: 'zh_cn',
+    // };
+    if (!adKeyValue) {
+      const urlPar = {
+        _barcode: barcode,
+      };
+      try {
+        const result = await request.getCMSAdKeyValueFn(urlPar);
+        // only call this api once
+        adKeyValue = result.data.key_value;
+        if (isAndroid) {
+          adKeyValue.campaign_id = window.Android.getCampaignId();
+        }
+        if (!adKeyValue.campaign_id) {
+          adKeyValue.campaign_id = '0';
+        }
+        return adKeyValue;
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      // campaign id reload
+      if (isAndroid) {
+        adKeyValue.campaign_id = window.Android.getCampaignId();
+      }
+      if (!adKeyValue.campaign_id) {
+        adKeyValue.campaign_id = '0';
+      }
+      return adKeyValue;
+    }
+  }
