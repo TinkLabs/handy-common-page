@@ -2,7 +2,7 @@ import React from 'react';
 import dva, { connect } from 'dva';
 import styles from './weathertoday.css';
 import constants from '../../utils/constants';
-import {trackOnLoadWeather} from '../../utils/mixpanel';
+// import {trackOnLoadWeather} from '../../utils/mixpanel';
 
 class WeatherToDay extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class WeatherToDay extends React.Component {
     }
 
     componentDidMount() {
-        trackOnLoadWeather(this.isC()?"Celsius":"Fahrenheit");
+        // trackOnLoadWeather(this.isC()?"Celsius":"Fahrenheit");
     }
 
     parseImgSrc = (code) => {

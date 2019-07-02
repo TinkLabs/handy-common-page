@@ -1,5 +1,5 @@
 import * as srv from '../services/services';
-import {getBarcode,getDeviceUserID} from '../utils/common';
+import {getBarcode,getDeviceUserID} from '../utils/env';
 
 
 export default {

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Picker } from 'antd-mobile';
-import { List, InputItem } from 'antd-mobile';
+import { InputItem } from 'antd-mobile';
 import dva, { connect } from 'dva';
 import styles from './currency.less';
 import constants from '../../utils/constants';
-import {trackOnLoadCurrency,trackOnLoadCurrencySelect} from '../../utils/mixpanel';
 
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
 let moneyKeyboardWrapProps;
@@ -28,7 +27,15 @@ class CurrencyPanel extends React.Component {
     //console.log("CurrencyPanel didcatch",e.message);
   }
   componentDidMount() {
-    trackOnLoadCurrency(this.props.base,this.props.quote);
+    // trackOnLoadCurrency(this.props.base,this.props.quote);
+    if (window.mixpanel) {
+      window.mixpanel.track('Screen View', {
+        screen_name: 'handy|Launcher|CurrencyConverter',
+        swap_currency: this.props.base + ":" + this.props.quote,
+        url: window.location.href,
+        subcategory: 'currency-converter',
+      });
+    }
   }
 
   parseImgSrc = (code) => {
@@ -67,11 +74,25 @@ class CurrencyPanel extends React.Component {
       payload: { currency: val }
     })
 
-    trackOnLoadCurrency(val,this.props.quote);
+    if (window.mixpanel) {
+      window.mixpanel.track('Screen View', {
+        screen_name: 'handy|Launcher|CurrencyConverter',
+        swap_currency: val + ":" + this.props.quote,
+        url: window.location.href,
+        subcategory: 'currency-converter',
+      });
+    }
   };
 
   onBaseVisibleChange = () => {
-    trackOnLoadCurrencySelect()
+    if (window.mixpanel) {
+      window.mixpanel.track('Screen View', {
+        screen_name: 'handy|Launcher|CurrencyConverterSelect',
+        url: window.location.href,
+        subcategory: 'currency-converter',
+      });
+    }
+
     this.setState({ basevisible: !this.state.basevisible })
   }
 
@@ -89,11 +110,24 @@ class CurrencyPanel extends React.Component {
       payload: { currency: val }
     })
 
-    trackOnLoadCurrency(this.props.base,val);
+    if (window.mixpanel) {
+      window.mixpanel.track('Screen View', {
+        screen_name: 'handy|Launcher|CurrencyConverter',
+        swap_currency: this.props.base + ":" + val,
+        url: window.location.href,
+        subcategory: 'currency-converter',
+      });
+    }
   };
 
   onQuoteVisibleChange = () => {
-    trackOnLoadCurrencySelect()
+    if (window.mixpanel) {
+      window.mixpanel.track('Screen View', {
+        screen_name: 'handy|Launcher|CurrencyConverterSelect',
+        url: window.location.href,
+        subcategory: 'currency-converter',
+      });
+    }
     this.setState({ quotevisible: !this.state.quotevisible })
   }
 
@@ -138,11 +172,11 @@ class CurrencyPanel extends React.Component {
         label:
           <div className={styles.selectitem} onClick={f.bind(this, key)}>
             <div className={styles.selectitemcontent}>
-              <img key={key+"i"}  alt={key} className={styles.selectflag} src={this.parseImgSrc(key)} />
+              <img key={key + "i"} alt={key} className={styles.selectflag} src={this.parseImgSrc(key)} />
               <span className={styles.selcttext}>{key}</span>
               {
                 select === key ?
-                  <img key={key+"o"} alt={key} className={styles.selectok} src={this.iconOk()} /> :
+                  <img key={key + "o"} alt={key} className={styles.selectok} src={this.iconOk()} /> :
                   <span></span>
               }
             </div>
@@ -178,7 +212,7 @@ class CurrencyPanel extends React.Component {
       <div className={styles.currencybaseinput}>
         <InputItem
           className={styles.moneyinput}
-          value={this.props.baseval == "0.0000" ? "":this.props.baseval}
+          value={this.props.baseval == "0.0000" ? "" : this.props.baseval}
           type="money"
           placeholder="0.00"
           clear
@@ -210,7 +244,7 @@ class CurrencyPanel extends React.Component {
       <div className={styles.currencyquoteinput}>
         <InputItem
           className={styles.moneyinput}
-          value={this.props.quoteval == "0.0000" ? "":this.props.quoteval}
+          value={this.props.quoteval == "0.0000" ? "" : this.props.quoteval}
           type="money"
           placeholder="0.00"
           clear
