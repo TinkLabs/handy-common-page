@@ -68,6 +68,7 @@ currencymap['RUB'] = 'RUB_Russian Ruble.svg'
 currencymap['SGD'] = 'SGD_Singapore Dollar.svg'
 currencymap['THB'] = 'THB_Thai Baht.svg'
 
+
 export default {
     weathermap,
     currencymap

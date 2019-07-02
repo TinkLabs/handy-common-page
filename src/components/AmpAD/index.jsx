@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { connect } from 'dva';
 import PropTypes from 'prop-types';
 // import mixpanel from '../../services/third-party/mixpanel';
+import mixpanel from '../../utils/mixpanel';
 import { getElementTop} from '../../utils/common';
-import { getAdKeyValueFn } from '../../utils/env';
+import { getAdKeyValueFn } from '../../services/api';
 import styles from './index.less';
 
 
@@ -41,7 +41,6 @@ class AmpAD extends React.Component {
 
     // Feel free to get really paranoid here and check for Array-ness, too.
     googletag.cmd.push(() => this.setState({ GPTHasLoaded: true }));
-    console.log(this.props.ADUnit, 299999);
     googletag.cmd.push(() => googletag.display(this.props.ADUnit));
     googletag.cmd.push(() =>
       googletag.pubads().addEventListener('slotRenderEnded', () => {
@@ -101,6 +100,7 @@ class AmpAD extends React.Component {
 
   // reset ad size as soon as possible
   ADslotRenderEnded() {
+    // console.log("xxxxxxxxxxxxxxx",this.adContainerRef.current)
     const iframe = this.adContainerRef.current.querySelector('iframe');
 
     if (iframe) {
@@ -149,7 +149,7 @@ class AmpAD extends React.Component {
 
   render() {
     const { ADUnit } = this.props;
-    console.log("this.pro",this.props)
+    // console.log("this.pro",this.props)
 
     return (
       <section id="AmpAD" className={styles.adContainer} ref={this.adContainerRef}>
@@ -159,12 +159,5 @@ class AmpAD extends React.Component {
     );
   }
 }
-
-
-// function mapStateToProps(state) {
-//   return {};
-// }
-
-// const AmpAD = connect(mapStateToProps)(PureAmpAD);
 
 export default AmpAD;

@@ -94,7 +94,7 @@ export default {
             // }
 
             let lastupdate = action.payload.lastupdate;
-            console.log(".......",lastupdate)
+            // console.log(".......",lastupdate)
             return {...state,rates,quoteval,lastupdate};
         },
 

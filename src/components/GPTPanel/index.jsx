@@ -45,7 +45,7 @@ class GPTPanel extends React.Component {
     }
 
     render() {
-        console.log(this.props.parent)
+        // console.log(this.props.parent)
         return (
             <div>
                 <GPT

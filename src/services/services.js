@@ -1,23 +1,16 @@
-import request from '../utils/request';
 import axios from 'axios';
 import { CMSHost } from '../utils/env';
 
-export function fetchWeather2(barcode){
-    let param = {_barcode:barcode}
-    return axios.get(`${CMSHost}/apis/get_weather_info`, { params: param })
-}
-
-export function fetchWeather(barcode) {
+let fetchWeather = (barcode) => {
     let param = {_barcode:barcode}
     return axios.get(`https://hk.handy.travel/apis/get_weather_info`, { params: param })
 }
 
-export function fetchCurrency(currency) {
+let fetchCurrency = (currency) => {
     return axios.get(`https://currency.handy.travel/currencies/${currency}/rates`)
 }
 
-
-export function suicaLog(barcode, suica, deviceuserid) {
+let suicaLog = (barcode, suica, deviceuserid) => {
     let timestamp = new Date().getTime();
     let param = {
         _barcode:barcode,
@@ -27,3 +20,10 @@ export function suicaLog(barcode, suica, deviceuserid) {
     }
     return axios.get(`https://staging.handy.travel/apis/suica_campaign_log`, { params: param })
 }
+
+let getCMSAdKeyValueFn = (urlPar = {}) => {
+    // console.log(".....",urlPar)
+    return axios.get(`${CMSHost}/apis/key_value`, {params:urlPar})
+}
+
+export {fetchWeather,fetchCurrency,suicaLog,getCMSAdKeyValueFn}
