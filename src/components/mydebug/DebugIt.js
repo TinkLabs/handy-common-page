@@ -13,7 +13,7 @@ class DebugIt extends React.Component {
   }
 
   countit = () => {
-    if (!this.state.show && this.state.count>10){
+    if (!this.state.show && this.state.count>50){
       var vConsole = new VConsole();
       this.setState({show:true})
     }

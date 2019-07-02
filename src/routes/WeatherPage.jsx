@@ -7,8 +7,7 @@ import styles from './WeatherPage.css';
 import { connect } from 'dva';
 import { backtohp } from '../utils/env';
 import AdUnit from '../components/AmpAD';
-
-
+import DebugIt from '../components/mydebug/DebugIt';
 
 const WeatherPage = (props) => {
   var onReturn = () => {
@@ -54,6 +53,7 @@ const WeatherPage = (props) => {
           </div>
         </div>
       </div>
+      <DebugIt />
     </div>
   );
 };
