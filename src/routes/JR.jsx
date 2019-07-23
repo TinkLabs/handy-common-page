@@ -9,31 +9,63 @@ const JR = props => {
     window.location.href = "https://www.hiinc.com/ja/";
   };
 
-  var onValueChange = data => {
+  const checkChar = value => {
+    const reg = /^[A-Za-z]{0,3}$/;
+    return reg.test(value);
+  }
+
+  const validate = (data, index) => {
     // console.log("get ",props.suica)
     if (data.target.value === "") {
       props.dispatch({
         type: "jr/save",
-        payload: { suica: data.target.value }
+        payload: { [`suica${index}`]: data.target.value }
       });
     }
-    if (!Number(data.target.value)) {
-      return;
+    if (index < 2) {
+      if (!Number(data.target.value) || Number(data.target.value) > 999) {
+        return;
+      }
+    } else {
+      console.log()
+      if (!checkChar(data.target.value)) {
+        return
+      } else {
+        data.target.value = data.target.value.toUpperCase()
+      }
     }
 
-    if (Number(data.target.value) > 999999999999) {
-      return;
+    if (props.wrong) {
+      props.dispatch({
+        type: "jr/save",
+        payload: { wrong: false, num: 0 }
+      });
     }
 
     props.dispatch({
       type: "jr/save",
-      payload: { wrong: false, num: 0 }
+      payload: { [`suica${index}`]: data.target.value }
     });
+  };
 
-    props.dispatch({
-      type: "jr/save",
-      payload: { suica: data.target.value }
-    });
+  var onValueChange = data => {
+    console.log(data.target, 29999);
+    switch (data.target.name) {
+      case "name0":
+        validate(data, 0);
+        break;
+      case "name1":
+        validate(data, 1);
+        break;
+      case "name2":
+        validate(data, 2);
+        break;
+      case "name3":
+        validate(data, 3);
+        break;
+      default:
+        break;
+    }
   };
 
   var onSubmit = () => {
@@ -75,7 +107,7 @@ const JR = props => {
         <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
         {props.wrong ? (
           <span className={styles.failedstatus}>
-            Please input 12 digits Suica number
+            Please Check Your Suica Number
           </span>
         ) : props.num === 0 ? (
           <span />
@@ -86,17 +118,40 @@ const JR = props => {
         )}
 
         <div>
-          <input
-            value={props.suica}
-            onChange={onValueChange}
-            className={styles.number}
-            type="text"
-            name="name"
-          />
+          <div className={styles.suicaContainer}>
+            <input
+              value={props.suica0}
+              onChange={onValueChange}
+              className={styles.number}
+              type="text"
+              name="name0"
+            />
+            <input
+              value={props.suica1}
+              onChange={onValueChange}
+              className={styles.number}
+              type="text"
+              name="name1"
+            />
+            <input
+              value={props.suica2}
+              onChange={onValueChange}
+              className={styles.number}
+              type="text"
+              name="name2"
+            />
+            <input
+              value={props.suica3}
+              onChange={onValueChange}
+              className={styles.number}
+              type="text"
+              name="name3"
+            />
+          </div>
 
           <input
             onClick={onSubmit}
-            className={props.btntext == "OK" ? styles.btn : styles.waitbtn}
+            className={props.btntext === "OK" ? styles.btn : styles.waitbtn}
             type="submit"
             value={props.btntext}
           />

@@ -2,12 +2,17 @@ import * as srv from "../services/services";
 import { getBarcode, getDeviceUserID } from "../utils/env";
 
 export default {
+  // this namespce is used for displatch
   namespace: "jr",
   state: {
     num: 0,
     barcode: 0,
     success: true,
     suica: "",
+    suica0: "",
+    suica1: "",
+    suica2: "",
+    suica3: "",
     wrong: false,
     btntext: "OK"
   },
@@ -24,24 +29,25 @@ export default {
       const response = yield call(srv.suicaLog, barcode, suica, deviceuserid);
       if (response.error) {
         console.log("err", response.error);
-      }
-      let result = response.data;
-      let success = false;
-      let nextsuica = suica;
-      if (result && result.success) {
-        success = true;
-        nextsuica = "";
-      }
-      yield put({
-        type: "save",
-        payload: {
-          success,
-          num: 1,
-          nextsuica,
-          wrong: false,
-          btntext: "OK"
+      } else {
+        let result = response.data;
+        let success = false;
+        let nextsuica = suica;
+        if (result && result.success) {
+          success = true;
+          nextsuica = "";
         }
-      });
+        yield put({
+          type: "save",
+          payload: {
+            success,
+            num: 1,
+            nextsuica,
+            wrong: false,
+            btntext: "OK"
+          }
+        });
+      }
     }
   },
   reducers: {

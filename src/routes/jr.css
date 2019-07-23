@@ -1,126 +1,133 @@
-body{
-    font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 }
-.jrbackground{
-    background: url('../assets/jr/top_bg_sp.jpg') no-repeat center;
-    background-size: cover;
-    padding: 100px 0px;
-    position: relative;
-    height: 440px;
-    /* max-width: 464px; */
-    text-align: center;
-}
-
-.jrinner{
-    /* background: url('https://www.handy-japan.com/cp/jr/img/top_text.svg'); */
-    max-width: 464px;
-    /* height: ; */
+.jrbackground {
+  background: url("../assets/jr/top_bg_sp.jpg") no-repeat center;
+  background-size: cover;
+  padding: 100px 0px;
+  position: relative;
+  height: 440px;
+  /* max-width: 464px; */
+  text-align: center;
 }
 
-.jrtext{
-    max-width: 375px;
+.jrinner {
+  /* background: url('https://www.handy-japan.com/cp/jr/img/top_text.svg'); */
+  max-width: 464px;
+  /* height: ; */
 }
 
-.jrform{
-    text-align: center;
-    margin-bottom: 80px;
+.jrtext {
+  max-width: 375px;
 }
 
-.jrsubtitle{
-    font-size: 20px;
-    line-height: 2.8;
-    letter-spacing: -0.5px;
-    color: #C19A53;
-    text-align: center;
-    
+.jrform {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-.number{
-    font-size: 16px;
-    transform: scale(0.8);
-    margin: 0;
-    padding: 10px;
-    box-sizing: border-box;
-    line-height: 1;
-    border: 1px solid #ccc;
-    border: 0;
-    padding: 10px;
-    font-size: 1.3em;
-    color: #002855;
-    border: solid 1px #C19A53;
-    margin: 0 0 20px;
-    width: 325px;
-    height: 56px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+.jrsubtitle {
+  font-size: 20px;
+  line-height: 2.8;
+  letter-spacing: -0.5px;
+  color: #c19a53;
+  text-align: center;
 }
 
-.btn{
-    outline: none;
-    color: #fff;
-    background: #C19A53;
-    width: 100%;
-    max-width: 325px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 1em;
-    border: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-radius: 0;
-    -webkit-appearance: none;
+.suicaContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
 }
 
-.waitbtn{
-    outline: none;
-    color: #fff;
-    background: gray;
-    width: 100%;
-    max-width: 325px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 1em;
-    border: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-radius: 0;
-    -webkit-appearance: none;
+.number {
+  font-size: 16px;
+  transform: scale(0.8);
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1;
+  border: 1px solid #ccc;
+  border: 0;
+  padding: 10px;
+  font-size: 1.3em;
+  color: #002855;
+  border: solid 1px #c19a53;
+  margin: 0 0 20px;
+  width: 75px;
+  height: 56px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
 }
 
-.footer{
-    text-align: center;
-    padding: 30px 20px 20px;
-    background: #002855;
-    color: #fff;
-    margin: 0 auto;
-    box-sizing: border-box;
+.btn {
+  outline: none;
+  color: #fff;
+  background: #c19a53;
+  width: 100%;
+  max-width: 325px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1em;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
-.logo{
-    max-width: 39px;
-    /* background: url('https://s3-ap-southeast-1.amazonaws.com/b2c.static.staging/content/posts/imgs/hi_logo.svg'); */
+.waitbtn {
+  outline: none;
+  color: #fff;
+  background: gray;
+  width: 100%;
+  max-width: 325px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1em;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
-.maila{
-    color: #fff;
-    font-size: 90%;
-    line-height: 1.2;
-}
-.downp{
-    font-size: 75%;
-    /* margin-top: -2%; */
-}
-.okstatus{
-    color: green;
+.footer {
+  text-align: center;
+  padding: 30px 20px 20px;
+  background: #002855;
+  color: #fff;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.failedstatus{
-    color: red;
+.logo {
+  max-width: 39px;
+  /* background: url('https://s3-ap-southeast-1.amazonaws.com/b2c.static.staging/content/posts/imgs/hi_logo.svg'); */
+}
+
+.maila {
+  color: #fff;
+  font-size: 90%;
+  line-height: 1.2;
+}
+.downp {
+  font-size: 75%;
+  /* margin-top: -2%; */
+}
+.okstatus {
+  color: green;
+}
+
+.failedstatus {
+  color: red;
 }
