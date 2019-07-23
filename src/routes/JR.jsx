@@ -64,6 +64,7 @@ const JR = props => {
   return (
     <div>
       <div className={styles.jrbackground}>
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <img
           className={styles.jrtext}
           src={require("../assets/jr/top_text.svg")}
@@ -104,6 +105,7 @@ const JR = props => {
 
       <div className={styles.footer}>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <img
             onClick={onReturn}
             className={styles.logo}
