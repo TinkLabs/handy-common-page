@@ -12,6 +12,16 @@ body {
   text-align: center;
 }
 
+.jrThxBackground {
+  background: url("../assets/jr/top_bg_sp.jpg") no-repeat center;
+  background-size: cover;
+  padding: 100px 0px;
+  position: relative;
+  height: 146px;
+  /* max-width: 464px; */
+  text-align: center;
+}
+
 .jrinner {
   /* background: url('https://www.handy-japan.com/cp/jr/img/top_text.svg'); */
   max-width: 464px;
@@ -33,6 +43,16 @@ body {
   letter-spacing: -0.5px;
   color: #c19a53;
   text-align: center;
+}
+
+.jrThxSubtitle {
+  font-size: 20px;
+  line-height: 2.8;
+  letter-spacing: -0.5px;
+  color: #fff;
+  background-color: #c19a53;
+  text-align: center;
+  margin: 0;
 }
 
 .suicaContainer {
@@ -130,4 +150,8 @@ body {
 
 .failedstatus {
   color: red;
+}
+.iframeContainer {
+  padding: 50px 20px;
+  height: 500px;
 }
