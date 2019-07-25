@@ -47,6 +47,7 @@ export default {
             btntext: "OK"
           }
         });
+        document.documentElement.scrollTop = 0;
       }
     }
   },
