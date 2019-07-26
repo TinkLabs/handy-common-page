@@ -173,7 +173,7 @@ const JR = props => {
               ) : props.success ? (
                 <span className={styles.okstatus}>Success!</span>
               ) : (
-                <span className={styles.failedstatus}>Failed!</span>
+                <span className={styles.failedstatus}>Something went wrong! Please try again</span>
               )}
             </div>
 

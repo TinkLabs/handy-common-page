@@ -14,7 +14,9 @@ export default {
     suica2: "",
     suica3: "",
     wrong: false,
-    btntext: "OK"
+    btntext: "OK",
+    numberWrong: false,
+    letterWrong: false
   },
   effects: {
     *validcode(
@@ -26,10 +28,8 @@ export default {
       // eslint-disable-line
       let barcode = getBarcode();
       let deviceuserid = getDeviceUserID();
-      const response = yield call(srv.suicaLog, barcode, suica, deviceuserid);
-      if (response.error) {
-        console.log("err", response.error);
-      } else {
+      try {
+        const response = yield call(srv.suicaLog, barcode, suica, deviceuserid);
         let result = response.data;
         let success = false;
         let nextsuica = suica;
@@ -48,7 +48,22 @@ export default {
           }
         });
         document.documentElement.scrollTop = 0;
+      } catch(e) {
+        let success = false;
+        yield put({
+          type: "save",
+          payload: {
+            success,
+            num: 1,
+            wrong: false,
+            btntext: "OK"
+          }
+        });
       }
+      // if (response.error) {
+      //   console.log("err", response.error);
+      // } else {
+      // }
     }
   },
   reducers: {
