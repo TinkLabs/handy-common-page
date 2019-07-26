@@ -17,8 +17,13 @@ const JR = props => {
     const reg = /^[A-Za-z]{0,3}$/;
     return reg.test(value);
   };
+  const checkNumb = value => {
+    const reg = /^[0-9]{0,3}$/;
+    return reg.test(value);
+  };
 
   const validate = (data, index) => {
+    console.log(data.target.value, index)
     // console.log("get ",props.suica)
     if (data.target.value === "") {
       props.dispatch({
@@ -26,18 +31,43 @@ const JR = props => {
         payload: { [`suica${index}`]: data.target.value }
       });
     }
-    if (index < 2) {
-      if (!Number(data.target.value) || Number(data.target.value) > 999) {
-        return;
-      }
+    if (data.target.value.length > 3) {
+      return 
     } else {
-      if (!checkChar(data.target.value)) {
-        return;
+      if (index < 2) {
+        if (!checkNumb(data.target.value)) {
+          props.dispatch({
+            type: "jr/save",
+            payload: { numberWrong: true }
+          });
+          return;
+        }
       } else {
-        data.target.value = data.target.value.toUpperCase();
+        if (!checkChar(data.target.value)) {
+          props.dispatch({
+            type: "jr/save",
+            payload: { letterWrong: true }
+          });
+          return;
+        } else {
+          data.target.value = data.target.value.toUpperCase();
+        }
       }
     }
 
+    if (props.numberWrong) {
+      props.dispatch({
+        type: "jr/save",
+        payload: { numberWrong: false }
+      });
+    }
+
+    if (props.letterWrong) {
+      props.dispatch({
+        type: "jr/save",
+        payload: { letterWrong: false }
+      });
+    }
     if (props.wrong) {
       props.dispatch({
         type: "jr/save",
@@ -55,19 +85,19 @@ const JR = props => {
     switch (data.target.name) {
       case "name0":
         validate(data, 0);
-        if (data.target.value.length === 3) {
+        if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput1.current.focus();
         }
         break;
       case "name1":
         validate(data, 1);
-        if (data.target.value.length === 3) {
+        if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput2.current.focus();
         }
         break;
       case "name2":
         validate(data, 2);
-        if (data.target.value.length === 3) {
+        if (checkChar(data.target.value) && data.target.value.length === 3) {
           textInput3.current.focus();
         }
         break;
@@ -123,17 +153,29 @@ const JR = props => {
 
           <div className={styles.jrform}>
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
-            {props.wrong ? (
-              <span className={styles.failedstatus}>
-                Please Check Your Suica Number
-              </span>
-            ) : props.num === 0 ? (
-              <span />
-            ) : props.success ? (
-              <span className={styles.okstatus}>Success!</span>
-            ) : (
-              <span className={styles.failedstatus}>Failed!</span>
-            )}
+            <div className={styles.noticeTextContainer}>
+              {props.numberWrong && (
+                <span className={styles.failedstatus}>
+                  Please Input Numbers
+                </span>
+              )}
+              {props.letterWrong && (
+                <span className={styles.failedstatus}>
+                  Please Input Letters
+                </span>
+              )}
+              {props.wrong ? (
+                <span className={styles.failedstatus}>
+                  Please Check Your Suica Number
+                </span>
+              ) : props.num === 0 ? (
+                <span />
+              ) : props.success ? (
+                <span className={styles.okstatus}>Success!</span>
+              ) : (
+                <span className={styles.failedstatus}>Failed!</span>
+              )}
+            </div>
 
             <div>
               <div className={styles.suicaContainer}>
