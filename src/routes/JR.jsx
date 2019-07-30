@@ -38,7 +38,7 @@ const JR = props => {
         if (!checkNumb(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { numberWrong: true }
+            payload: { numberWrong: true, wrong: false }
           });
           return;
         }
@@ -46,7 +46,7 @@ const JR = props => {
         if (!checkChar(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { letterWrong: true }
+            payload: { letterWrong: true, wrong: false }
           });
           return;
         } else {
@@ -118,7 +118,7 @@ const JR = props => {
     if (temp.length !== 12) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: true }
+        payload: { wrong: true, numberWrong: false, letterWrong: false  }
       });
       return;
     }
