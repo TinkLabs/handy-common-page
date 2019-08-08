@@ -183,14 +183,14 @@ const JR = props => {
                   value={props.suica0}
                   onChange={onValueChange}
                   className={styles.number}
-                  type="text"
+                  type="number"
                   name="name0"
                 />
                 <input
                   value={props.suica1}
                   onChange={onValueChange}
                   className={styles.number}
-                  type="text"
+                  type="number"
                   name="name1"
                   ref={textInput1}
                 />
