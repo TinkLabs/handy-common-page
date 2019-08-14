@@ -1,8 +1,10 @@
-import dva from 'dva';
-import './index.css';
-import { createBrowserHistory } from 'history';
-import { browserHistory } from 'react-router'
-import { createBrowserHistory as createHistory } from 'history';
+import dva from "dva";
+import "./index.css";
+import { createBrowserHistory } from "history";
+import { browserHistory } from "react-router";
+import { createBrowserHistory as createHistory } from "history";
+
+import "./utils/locales/i18n";
 
 // 1. Initialize
 const app = dva();
@@ -14,13 +16,13 @@ const app = dva();
 // app.model(require('./models/example').default);
 
 // 4. Router
-app.router(require('./router').default);
+app.router(require("./router").default);
 
-app.model(require('./models/weather').default);
+app.model(require("./models/weather").default);
 
-app.model(require('./models/currency').default);
+app.model(require("./models/currency").default);
 
-app.model(require('./models/jr').default);
+app.model(require("./models/jr").default);
 
 // 5. Start
-app.start('#root');
+app.start("#root");

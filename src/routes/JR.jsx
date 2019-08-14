@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import styles from "./jr.css";
 import { connect } from "dva";
 import DebugIt from "../components/mydebug/DebugIt";
+import { withTranslation } from "react-i18next";
 
 const JR = props => {
+  console.log(props, 299999);
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
@@ -23,7 +25,7 @@ const JR = props => {
   };
 
   const validate = (data, index) => {
-    console.log(data.target.value, index)
+    console.log(data.target.value, index);
     // console.log("get ",props.suica)
     if (data.target.value === "") {
       props.dispatch({
@@ -32,7 +34,7 @@ const JR = props => {
       });
     }
     if (data.target.value.length > 3) {
-      return 
+      return;
     } else {
       if (index < 2) {
         if (!checkNumb(data.target.value)) {
@@ -118,7 +120,7 @@ const JR = props => {
     if (temp.length !== 12) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: true, numberWrong: false, letterWrong: false  }
+        payload: { wrong: true, numberWrong: false, letterWrong: false }
       });
       return;
     }
@@ -173,7 +175,9 @@ const JR = props => {
               ) : props.success ? (
                 <span className={styles.okstatus}>Success!</span>
               ) : (
-                <span className={styles.failedstatus}>Something went wrong! Please try again</span>
+                <span className={styles.failedstatus}>
+                  Something went wrong! Please try again
+                </span>
               )}
             </div>
 
@@ -218,6 +222,11 @@ const JR = props => {
                 type="submit"
                 value={props.btntext}
               />
+              <p>
+                {props.t(
+                  "Thank you for joining hi"
+                )}
+              </p>
             </div>
           </div>
         </div>
@@ -277,4 +286,4 @@ function mapStateToProps(state) {
   return state.jr;
 }
 
-export default connect(mapStateToProps)(JR);
+export default withTranslation()(connect(mapStateToProps)(JR));
