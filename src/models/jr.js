@@ -16,7 +16,8 @@ export default {
     wrong: false,
     btntext: "OK",
     numberWrong: false,
-    letterWrong: false
+    letterWrong: false,
+    showLangList: false
   },
   effects: {
     *validcode(
@@ -48,7 +49,7 @@ export default {
           }
         });
         document.documentElement.scrollTop = 0;
-      } catch(e) {
+      } catch (e) {
         let success = false;
         yield put({
           type: "save",
@@ -69,6 +70,9 @@ export default {
   reducers: {
     save(state, action) {
       return { ...state, ...action.payload };
+    },
+    controlLangList(state, action) {
+      return { ...state, ...{ showLangList: action.showLangList } };
     }
   },
 

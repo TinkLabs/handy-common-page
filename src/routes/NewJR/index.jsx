@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./index.css";
+import styles from "./newJR.scss";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { withTranslation } from "react-i18next";
@@ -8,6 +8,20 @@ const JR = props => {
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
+
+  document.addEventListener("click", event => {
+    if (
+      event.target &&
+      (event.target.matches(`span.${styles.language}`) ||
+        event.target.matches(`li`))
+    ) {
+      return;
+    }
+    props.dispatch({
+      type: "jr/controlLangList",
+      showLangList: false
+    });
+  });
 
   var onReturn = () => {
     window.location.href = "https://www.hiinc.com/ja/";
@@ -138,19 +152,54 @@ const JR = props => {
     });
   };
 
+  const showLangList = () => {
+    props.dispatch({
+      type: "jr/controlLangList",
+      showLangList: true
+    });
+  };
+
+  const changeLang = lang => {
+    props.i18n.changeLanguage(lang);
+    props.dispatch({
+      type: "jr/controlLangList",
+      showLangList: false
+    });
+  };
+
   return (
-    <div>
+    <div className={styles.root}>
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
-        <div className="suica-input">
-          <div className={styles.jrbackground}>
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <img
-              className={styles.jrtext}
-              src={require("../../assets/jr/top_text.svg")}
-            />
-          </div>
-
+        <div className={styles.firstPage}>
+          <div className={styles.bgImg} />
+          <header className={styles.header}>
+            <section className={styles.chooseLang}>
+              <img src={require("../../assets/jr/new/lang.svg")} alt="" />
+              <span className={styles.language} onClick={showLangList}>
+                Language
+              </span>
+              {props.showLangList && (
+                <ul className={styles.langList}>
+                  <li onClick={changeLang.bind(null, "ja_JP")}>日本語</li>
+                  <li onClick={changeLang.bind(null, "en_US")}>English</li>
+                  <li onClick={changeLang.bind(null, "zh_CN")}>中国语（简）</li>
+                  <li onClick={changeLang.bind(null, "zh_HK")}>
+                    中国語（繁体）
+                  </li>
+                </ul>
+              )}
+            </section>
+            <section className={styles.module1}>
+              <header>
+                <img
+                  src={require("../../assets/jr/new/section1_header_company_logo.png")}
+                  alt=""
+                />
+                <span>Lang</span>
+              </header>
+            </section>
+          </header>
           {/* this is form start, do not change it logic */}
           <div className={styles.jrform}>
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>

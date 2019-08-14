@@ -1,0 +1,82 @@
+@import "../../assets/common/index.scss";
+
+.root {
+  margin: 0;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  font-family: Montserrat,
+    'Noto Sans JP',
+    sans-serif;
+
+  .bgImg {
+    position: fixed;
+    top: -200px;
+    right: -170px;
+    width: 360px;
+    height: 700px;
+    background: url('../../assets/jr/new/top_bg_art.svg') center/140% no-repeat;
+    z-index: -9999;
+  }
+
+  .firstPage {
+    .header {
+      color: $mainColor;
+
+      .chooseLang {
+        img {
+          width: 10px;
+          margin-right: 5px;
+        }
+      }
+
+      .language {
+        position: relative;
+        display: inline-block;
+        width: 75px;
+        line-height: 32px;
+        height: 32px;
+        cursor: pointer;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 15px;
+          right: 0;
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
+          border-top-color: $mainColor;
+        }
+      }
+
+      .langList {
+        position: absolute;
+        left: 13px;
+        width: 162px;
+        padding: 4px 0;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: .25rem;
+        background-color: $white; 
+        z-index: 9999;
+        li {
+          height: 32px;
+          line-height: 32px;
+          margin-left: 20px;
+          font-size: $font16;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .suicaInput {}
+
+  .number {
+    font-size: 16px;
+    border: 1px solid#c19a53;
+    width: 72px;
+    height: 44px;
+    border-radius: 3px;
+    text-align: center;
+  }
+}
