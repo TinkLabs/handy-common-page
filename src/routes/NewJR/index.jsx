@@ -174,6 +174,7 @@ const JR = props => {
     <div className={styles.root}>
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
+      // {false && (
         <div className={styles.firstPage}>
           <div
             className={styles.findForm}
@@ -761,25 +762,41 @@ const JR = props => {
 
       {/* thanks page */}
       {!props.wrong && props.num !== 0 && props.success && (
-        <div className="suica-thx">
-          <div className={styles.jrThxBackground}>
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <img
-              className={styles.jrtext}
-              src={require("../../assets/jr/thankyou_text.svg")}
-            />
+      // {true && (
+        <div className={styles.suicaThx}>
+          <div className={styles.headerThx}>
+            <div className={styles.thxBg}>
+              <img
+                src={require("../../assets/jr/new/section2_concept_bg_w375_sp.png")}
+                alt=""
+              />
+            </div>
+            <div className={styles.thxHeaderText}>
+              <p className={styles.thxTextHeader}>{props.t("Thank you!")}</p>
+              <img src={require("../../assets/jr/new/star.svg")} alt="" />
+              <p>
+                {props.t(
+                  "Please show this screen to the hotel front to receive premium goods."
+                )}
+              </p>
+            </div>
           </div>
 
-          <div className={styles.jrform}>
-            <p className={styles.jrThxSubtitle}>Consumer Feedback Survey</p>
+          <div className={styles.jrThxForm}>
+            <p className={styles.jrThxSurveySubtitle}>
+              {props.t("Consumer Feedback Survey")}
+            </p>
+            <p className={styles.jrThxSurveyTex}>
+              {props.t("Let us hear your voice. (Only 2 min)")}
+            </p>
             <div className={styles.iframeContainer}>
               <iframe
                 title="survey"
-                width="100%"
-                height="100%"
+                width="310"
+                height="265"
                 frameBorder="0"
                 allowtransparency="true"
-                src="https://www.surveymonkey.com/r/T5WQ6DX"
+                src="https://www.surveymonkey.com/r/XHXXGPH?embedded=1"
               />
             </div>
           </div>
