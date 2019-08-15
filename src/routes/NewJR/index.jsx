@@ -126,7 +126,7 @@ const JR = props => {
   };
 
   var onSubmit = () => {
-    if (props.btntext !== "OK") {
+    if (props.btntext !== "Submit") {
       return;
     }
     const temp = props.suica0 + props.suica1 + props.suica2 + props.suica3;
@@ -199,7 +199,7 @@ const JR = props => {
             <section className={styles.module1}>
               <header>
                 <img
-                  src={require("../../assets/jr/new/section1_header_company_logo.png")}
+                  src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
                   alt=""
                 />
               </header>
@@ -256,7 +256,7 @@ const JR = props => {
             <section className={styles.module2}>
               <div className={styles.bgImg2}>
                 <img
-                  src={require("../../assets/jr/new/back-city.svg")}
+                  src={require("../../assets/jr/new/section2_concept_bg_w375_sp.png")}
                   alt=""
                 />
               </div>
@@ -302,79 +302,358 @@ const JR = props => {
               </div>
             </section>
           </section>
-          {/* this is form start, do not change it logic */}
-          <div className={styles.jrform}>
-            <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
-            <div className={styles.noticeTextContainer}>
-              {props.numberWrong && (
-                <span className={styles.failedstatus}>
-                  Please Input Numbers
-                </span>
+
+          {/* module3 */}
+          <section className={styles.module3}>
+            <header>
+              <p>{props.t("Join the campaign")}</p>
+            </header>
+            <div className={styles.top1}>
+              <section>
+                <div className={styles.top}>
+                  <span className={styles.circle}>01</span>
+                  <p>
+                    <Trans i18nKey="Purchase the Welcome Suica">
+                      Purchase the Welcome Suica
+                      <br />
+                      at designated locations
+                    </Trans>
+                    <img
+                      src={require("../../assets/jr/new/section3_no1_shoplist_icon.svg")}
+                      alt=""
+                    />
+                  </p>
+                </div>
+                <div className={styles.bottom}>
+                  <img
+                    src={require("../../assets/jr/new/section3_campaign_howto1_illust_pc.png")}
+                    alt=""
+                  />
+                </div>
+              </section>
+              <section>
+                <div className={styles.top}>
+                  <span className={styles.circle}>02</span>
+                  <p>
+                    <Trans i18nKey="Enter Welcome Suica">
+                      Enter Welcome Suica
+                      <br />
+                      number below
+                    </Trans>
+                  </p>
+                </div>
+                <div className={styles.bottom}>
+                  <img
+                    src={require("../../assets/jr/new/section3_campaign_howto2_illust_pc.png")}
+                    alt=""
+                  />
+                </div>
+              </section>
+              <section>
+                <div className={styles.top}>
+                  <span className={styles.circle}>01</span>
+                  <p>
+                    <Trans i18nKey="Show the screen at the hotel front desk">
+                      Show the screen at the hotel front desk
+                      <br />
+                      and get a gift!
+                    </Trans>
+                  </p>
+                </div>
+                <div className={styles.bottom}>
+                  <img
+                    src={require("../../assets/jr/new/section3_campaign_howto3_illust_pc.png")}
+                    alt=""
+                  />
+                </div>
+              </section>
+            </div>
+            <div className={styles.pic}>
+              {props.i18n.language === "en_US" && (
+                <img
+                  src={require("../../assets/jr/new/premium_goods_sp_en.png")}
+                  alt=""
+                />
               )}
-              {props.letterWrong && (
-                <span className={styles.failedstatus}>
-                  Please Input Letters
-                </span>
+              {props.i18n.language === "ja_JP" && (
+                <img
+                  src={require("../../assets/jr/new/premium_goods_sp_jp.png")}
+                  alt=""
+                />
               )}
-              {props.wrong ? (
-                <span className={styles.failedstatus}>
-                  Please Check Your Suica Number
-                </span>
-              ) : props.num === 0 ? (
-                <span />
-              ) : props.success ? (
-                <span className={styles.okstatus}>Success!</span>
-              ) : (
-                <span className={styles.failedstatus}>
-                  Something went wrong! Please try again
-                </span>
+              {props.i18n.language === "zh_CN" && (
+                <img
+                  src={require("../../assets/jr/new/premium_goods_sp_cn.png")}
+                  alt=""
+                />
+              )}
+              {props.i18n.language === "zh_HK" && (
+                <img
+                  src={require("../../assets/jr/new/premium_goods_sp_tw.png")}
+                  alt=""
+                />
               )}
             </div>
-
-            <div>
-              <div className={styles.suicaContainer}>
-                <input
-                  value={props.suica0}
-                  onChange={onValueChange}
-                  className={styles.number}
-                  // type="number"
-                  name="name0"
-                />
-                <input
-                  value={props.suica1}
-                  onChange={onValueChange}
-                  className={styles.number}
-                  // type="number"
-                  name="name1"
-                  ref={textInput1}
-                />
-                <input
-                  value={props.suica2}
-                  onChange={onValueChange}
-                  className={styles.number}
-                  type="text"
-                  name="name2"
-                  ref={textInput2}
-                />
-                <input
-                  value={props.suica3}
-                  onChange={onValueChange}
-                  className={styles.number}
-                  type="text"
-                  name="name3"
-                  ref={textInput3}
-                />
+            <div className={styles.inputForm}>
+              <div className={styles.text}>
+                <p className={styles.header}>
+                  <Trans i18nKey="Please fill in your">
+                    Please fill in your
+                    <br />
+                    Welcome Suica number
+                  </Trans>
+                </p>
+                <div className={styles.content}>
+                  <p>
+                    <Trans i18nKey="Please enter the number on the first line">
+                      Please enter the number on
+                      <br />
+                      the first line of the back of your Welcome Suica (refer to
+                      the image)
+                    </Trans>
+                  </p>
+                </div>
               </div>
+              {/* this is form start, do not change it logic */}
+              <div className={styles.jrform}>
+                {/* <p className={styles.jrsubtitle}>
+                  Enter Welcome Suica Number here
+                </p> */}
+                <div className={styles.noticeTextContainer}>
+                  {props.numberWrong && (
+                    <span className={styles.failedstatus}>
+                      <p>{props.t("You can only enter numbers")}</p>
+                    </span>
+                  )}
+                  {props.letterWrong && (
+                    <span className={styles.failedstatus}>
+                      <p>{props.t("You can only enter letters")}</p>
+                    </span>
+                  )}
+                  {props.wrong ? (
+                    <span className={styles.failedstatus}>
+                      <p>{props.t("Please Check Your Suica Number")}</p>
+                    </span>
+                  ) : props.num === 0 ? (
+                    <span />
+                  ) : props.success ? (
+                    <span className={styles.okstatus}>
+                      <p>{props.t("Success!")}</p>
+                    </span>
+                  ) : (
+                    <span className={styles.failedstatus}>
+                      <p>{props.t("Something went wrong! Please try again")}</p>
+                    </span>
+                  )}
+                </div>
 
-              <input
-                onClick={onSubmit}
-                className={props.btntext === "OK" ? styles.btn : styles.waitbtn}
-                type="submit"
-                value={props.btntext}
+                <div className={styles.suicaContainer}>
+                  <input
+                    value={props.suica0}
+                    onChange={onValueChange}
+                    className={styles.number}
+                    placeholder={props.t("ex") + ":123"}
+                    // type="number"
+                    name="name0"
+                  />
+                  <input
+                    value={props.suica1}
+                    onChange={onValueChange}
+                    className={styles.number}
+                    placeholder={props.t("ex") + ":456"}
+                    // type="number"
+                    name="name1"
+                    ref={textInput1}
+                  />
+                  <input
+                    value={props.suica2}
+                    onChange={onValueChange}
+                    className={styles.number}
+                    placeholder={props.t("ex") + ":ABC"}
+                    type="text"
+                    name="name2"
+                    ref={textInput2}
+                  />
+                  <input
+                    value={props.suica3}
+                    onChange={onValueChange}
+                    className={styles.number}
+                    placeholder={props.t("ex") + ":DEF"}
+                    type="text"
+                    name="name3"
+                    ref={textInput3}
+                  />
+                </div>
+
+                <input
+                  onClick={onSubmit}
+                  className={
+                    props.btntext === "Submit" ? styles.btn : styles.waitbtn
+                  }
+                  type="submit"
+                  value={props.t("Submit")}
+                />
+                <div className={styles.bottomPic}>
+                  {props.i18n.language === "en_US" && (
+                    <img
+                      src={require("../../assets/jr/new/section3_campaignhowto_infoillust_en.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "ja_JP" && (
+                    <img
+                      src={require("../../assets/jr/new/section3_campaignhowto_infoillust_jp.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "zh_CN" && (
+                    <img
+                      src={require("../../assets/jr/new/section3_campaignhowto_infoillust_cn.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "zh_HK" && (
+                    <img
+                      src={require("../../assets/jr/new/section3_campaignhowto_infoillust_tw.svg")}
+                      alt=""
+                    />
+                  )}
+                </div>
+              </div>
+              {/* this is form end */}
+            </div>
+            <div className={styles.moviePic}>
+              <p>Special Movie</p>
+              <img src={require("../../assets/jr/new/tv_icon.svg")} alt="" />
+            </div>
+          </section>
+
+          {/* module4 */}
+          <section className={styles.module4}>
+            <div className={styles.header4}>
+              <p>{props.t("What’s Welcome Suica?")}</p>
+              <p>
+                {props.t("An IC card for sightseeing visitors from abroad")}
+              </p>
+            </div>
+            <div className={styles.top2Img}>
+              <img
+                src={require("../../assets/jr/new/section4_welcomesuica_image_pc.jpg")}
+                alt=""
               />
             </div>
-          </div>
-          {/* this is form end */}
+            <div className={styles.text4}>
+              <section>
+                <div className={styles.subHeader4}>
+                  <span className={styles.subNumber}>1.</span>
+                  <span className={styles.subHeaderText}>
+                    <Trans i18nKey="Easy train and bus rides:">
+                      Easy train and bus rides:
+                      <br />
+                      Walking through the gate
+                      <br />
+                      with a "peep" single touch
+                    </Trans>
+                  </span>
+                </div>
+                <div className={styles.subContent}>
+                  <p>
+                    <Trans i18nKey="Just go through the gate by placing Welcome Suica">
+                      Just go through the gate by placing Welcome Suica
+                      <br />
+                      over the card reader. It will be automatically charged.
+                    </Trans>
+                  </p>
+                </div>
+              </section>
+              <section>
+                <div className={styles.subHeader4}>
+                  <span className={styles.subNumber}>2.</span>
+                  <span className={styles.subHeaderText}>
+                    <Trans i18nKey="Easy shopping:">
+                      Easy shopping:
+                      <br />
+                      Making payments with a single touch
+                    </Trans>
+                  </span>
+                </div>
+                <div className={styles.subContent}>
+                  <p>
+                    <Trans i18nKey="Suica can also be used for shopping">
+                      Suica can also be used for shopping
+                      <br />
+                      at the stores with Suica mark.
+                    </Trans>
+                  </p>
+                </div>
+              </section>
+              <section>
+                <div className={styles.subHeader4}>
+                  <span className={styles.subNumber}>3.</span>
+                  <span className={styles.subHeaderText}>
+                    <Trans i18nKey="Others:">Others:</Trans>
+                  </span>
+                </div>
+                <div className={styles.subContent}>
+                  <p>
+                    <Trans i18nKey="・Reusable (rechargeable) function">
+                      ・Reusable (rechargeable) function
+                      <br />⇒ when the balance is not enough
+                      <br />
+                      You can charge on the ticket vending machines with Suica
+                      mark.
+                      <br />
+                      ・No deposit needed
+                      <br />
+                      ・A card is valid for 28 days from the day you start using
+                      it (the day you buy the card), and it is not reissuable
+                      <br />
+                      *The amount charged is not refundable
+                    </Trans>
+                  </p>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section className={styles.module5}>
+            <p className={styles.header5}>{props.t("Where to Buy")}</p>
+            <p className={styles.text5}>
+              {props.t("JR EAST Travel Service Center")}
+            </p>
+            <div className={styles.item5}>
+              {props.t("Narita Airport Terminal 1")}
+            </div>
+            <div className={styles.item5}>
+              {props.t("Narita Airport Terminal 2·3")}
+            </div>
+            <div className={styles.item5}>
+              {props.t(
+                "Haneda Airport International Terminal (Tokyo Monorail)"
+              )}
+            </div>
+            <div className={styles.item5}>{props.t("Tokyo Station")}</div>
+            <div className={styles.item5}>
+              {props.t("Shinjuku Station New South Gate")}
+            </div>
+            <div className={styles.item5}>
+              {props.t("Shinjuku Station East Exit")}
+            </div>
+            <div className={styles.item5}>{props.t("Shibuya Station")}</div>
+            <div className={styles.item5}>{props.t("Ikebukuro Station")}</div>
+            <div className={styles.item5}>{props.t("Ueno Station")}</div>
+            <div className={styles.item5}>
+              {props.t("Hamamatsucho Station")}
+            </div>
+            <p className={styles.text5}>
+              {props.t("Welcome Suica ticket vending machine")}
+            </p>
+            <div className={styles.item5}>
+              {props.t("Narita Airport Station")}
+            </div>
+            <div className={styles.item5}>
+              {props.t("Haneda Airport International Terminal")}
+            </div>
+          </section>
         </div>
       )}
 
