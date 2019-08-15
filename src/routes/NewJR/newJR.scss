@@ -449,6 +449,7 @@
 
       img {
         width: 296px;
+        height: 305px;
       }
     }
 
@@ -511,8 +512,8 @@
       &::before {
         position: absolute;
         left: -20px;
-        top: -14px;
-        font-size: 36px;
+        top: -7px;
+        font-size: 24px;
         content: "■ ";
       }
     }
