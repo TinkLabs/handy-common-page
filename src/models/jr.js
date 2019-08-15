@@ -14,14 +14,15 @@ export default {
     suica2: "",
     suica3: "",
     wrong: false,
-    btntext: "OK",
+    btntext: "Submit",
     numberWrong: false,
-    letterWrong: false
+    letterWrong: false,
+    showLangList: false,
   },
   effects: {
     *validcode(
       {
-        payload: { suica }
+        payload: { suica },
       },
       { call, put }
     ) {
@@ -44,11 +45,11 @@ export default {
             num: 1,
             nextsuica,
             wrong: false,
-            btntext: "OK"
-          }
+            btntext: "OK",
+          },
         });
         document.documentElement.scrollTop = 0;
-      } catch(e) {
+      } catch (e) {
         let success = false;
         yield put({
           type: "save",
@@ -56,20 +57,23 @@ export default {
             success,
             num: 1,
             wrong: false,
-            btntext: "OK"
-          }
+            btntext: "OK",
+          },
         });
       }
       // if (response.error) {
       //   console.log("err", response.error);
       // } else {
       // }
-    }
+    },
   },
   reducers: {
     save(state, action) {
       return { ...state, ...action.payload };
-    }
+    },
+    controlLangList(state, action) {
+      return { ...state, ...{ showLangList: action.showLangList } };
+    },
   },
 
   subscriptions: {
@@ -81,6 +85,6 @@ export default {
           document.title = "Buy Welcome Suica Get Premium Goods";
         }
       });
-    }
-  }
+    },
+  },
 };

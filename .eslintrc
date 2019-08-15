@@ -1,8 +1,9 @@
 {
   "extends": "umi",
   "rules": {
-      // "no-undef": "off",
-      // "no-restricted-globals": "off",
-      // "no-unused-vars": "off"
+    "comma-dangle": ["error", "always-multiline"]
+    // "no-undef": "off",
+    // "no-restricted-globals": "off",
+    // "no-unused-vars": "off"
   }
 }

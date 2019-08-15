@@ -2,7 +2,7 @@ export default {
   // load: "currentOnly",
   // lng: navigator.language || navigator.userLanguage,
   // preset
-  lng: "ja_JP",
+  lng: "en_US",
   fallbackLng: "ja_JP",
   // lngs: [
   //   'en_US',

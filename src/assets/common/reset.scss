@@ -1,0 +1,13 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul,section {margin:0;padding:0;box-sizing:border-box}
+h1,h2,h3,h4,h5,h6 {font-size:100%}
+address,cite,dfn,em,var {font-style:normal}
+ol,ul {list-style:none}
+a,a:hover,a:visited,a:active{text-decoration:none;color:#000}
+sup {vertical-align:text-top}
+sub {vertical-align:text-bottom}
+legend {color:#000}
+fieldset,img {border:0}
+button,input,select,textarea {font-size:100%;outline:none;border:none;background-color:#fff;}
+table {border-collapse:collapse;border-spacing:0}
+/* remove click background color */
+a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(255,255,255,0);}
