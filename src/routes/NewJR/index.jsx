@@ -39,6 +39,7 @@ const JR = props => {
   };
 
   const validate = (data, index) => {
+    console.log(data.target.value);
     // console.log("get ",props.suica)
     if (data.target.value === "") {
       props.dispatch({
@@ -250,6 +251,56 @@ const JR = props => {
                 </a>
               </div>
             </section>
+
+            {/* module2 */}
+            <section className={styles.module2}>
+              <div className={styles.bgImg2}>
+                <img
+                  src={require("../../assets/jr/new/back-city.svg")}
+                  alt=""
+                />
+              </div>
+              <header>
+                <img
+                  src={require("../../assets/jr/new/section2_concept_companylogo_pc.png")}
+                  alt=""
+                />
+                <p>
+                  <Trans i18nKey="Our desire is">
+                    Our desire is to provide a safe and comfortable travel and
+                    shopping experience for everyone who visits Japan.And as
+                    part of fulfilling our goal,East Japan Railway Company and
+                    hi Japan Co.,Ltd.are collaborating with selected hotels to
+                    offer “Welcome Suica Campaign” with handy smartphones in the
+                    hotel rooms.
+                    <br />
+                    Participating hotels: JR-East Hotel Mets Shibuya, The Tokyo
+                    Station Hotel, and The Hotel Metropolitan.
+                  </Trans>
+                </p>
+              </header>
+              <div className={styles.middle}>
+                <img
+                  src={require("../../assets/jr/new/logo_jre_hotel.svg")}
+                  alt=""
+                />
+                <img
+                  src={require("../../assets/jr/new/logo_tokyo_st_hotel.svg")}
+                  alt=""
+                />
+                <img
+                  src={require("../../assets/jr/new/logo_hotel_met.svg")}
+                  alt=""
+                />
+                <p>
+                  <Trans i18nKey="We hope you enjoy">
+                    We hope you enjoy your stay in Japan
+                    <br />
+                    with handy and Welcome Suica!
+                  </Trans>
+                </p>
+              </div>
+            </section>
           </section>
           {/* this is form start, do not change it logic */}
           <div className={styles.jrform}>
@@ -286,14 +337,14 @@ const JR = props => {
                   value={props.suica0}
                   onChange={onValueChange}
                   className={styles.number}
-                  type="number"
+                  // type="number"
                   name="name0"
                 />
                 <input
                   value={props.suica1}
                   onChange={onValueChange}
                   className={styles.number}
-                  type="number"
+                  // type="number"
                   name="name1"
                   ref={textInput1}
                 />

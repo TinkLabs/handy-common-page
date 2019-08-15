@@ -2,7 +2,7 @@
 
 .root {
   margin: 0;
-  padding: 20px 20px;
+  padding: 20px 16px;
   box-sizing: border-box;
   font-family: Montserrat,
     'Noto Sans JP',
@@ -70,7 +70,6 @@
     }
 
     .module1 {
-      width: 300px;
       margin: 10px auto 0;
       padding: 16px;
       box-shadow: -4px 10px 45px -8px rgba(99, 99, 99, .5);
@@ -107,6 +106,7 @@
           background-color: $green;
           font-size: $font16;
           color: $white;
+          z-index: -9999;
 
           .englishVersion {
             font-size: $font22;
@@ -146,6 +146,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         button {
           min-width: 165px;
           min-height: 55px;
@@ -156,6 +157,56 @@
           padding: 10px 18px;
           margin: 20px 0 30px;
           cursor: pointer;
+        }
+      }
+    }
+
+    .module2 {
+      position: relative;
+      margin-top: 50px;
+      box-shadow: -4px 10px 45px -8px rgba(99, 99, 99, .5);
+      padding: 16px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+
+      .bgImg2 {
+        position: absolute;
+        top: 150px;
+        left: -220px;
+        z-index: -9999;
+
+        img {
+          width: 900px;
+          // height: 300px;
+        }
+
+      }
+
+      p {
+        margin: 20px 0;
+        line-height: 2;
+        font-size: $font12;
+        color: $hex19;
+        font-weight: 300;
+      }
+
+      header {
+        padding: 16px;
+
+        img {
+          width: 260px;
+          height: 43px;
+        }
+      }
+
+      .middle {
+        img {
+          width: 146px;
+          padding: 16px 0;
+        }
+        p {
+          margin: 20px 0 30px 0;
+          line-height: 1.5;
         }
       }
     }
