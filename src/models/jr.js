@@ -45,7 +45,7 @@ export default {
             num: 1,
             nextsuica,
             wrong: false,
-            btntext: "OK",
+            btntext: "Submit",
           },
         });
         document.documentElement.scrollTop = 0;
@@ -57,7 +57,7 @@ export default {
             success,
             num: 1,
             wrong: false,
-            btntext: "OK",
+            btntext: "Submit",
           },
         });
       }

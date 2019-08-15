@@ -112,7 +112,7 @@ const JR = props => {
   };
 
   var onSubmit = () => {
-    if (props.btntext !== "OK") {
+    if (props.btntext !== "Submit") {
       return;
     }
     const temp = props.suica0 + props.suica1 + props.suica2 + props.suica3;
