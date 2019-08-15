@@ -30,7 +30,7 @@ const JR = props => {
     if (data.target.value === "") {
       props.dispatch({
         type: "jr/save",
-        payload: { [`suica${index}`]: data.target.value }
+        payload: { [`suica${index}`]: data.target.value },
       });
     }
     if (data.target.value.length > 3) {
@@ -40,7 +40,7 @@ const JR = props => {
         if (!checkNumb(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { numberWrong: true, wrong: false }
+            payload: { numberWrong: true, wrong: false },
           });
           return;
         }
@@ -48,7 +48,7 @@ const JR = props => {
         if (!checkChar(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { letterWrong: true, wrong: false }
+            payload: { letterWrong: true, wrong: false },
           });
           return;
         } else {
@@ -60,26 +60,26 @@ const JR = props => {
     if (props.numberWrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { numberWrong: false }
+        payload: { numberWrong: false },
       });
     }
 
     if (props.letterWrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { letterWrong: false }
+        payload: { letterWrong: false },
       });
     }
     if (props.wrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: false, num: 0 }
+        payload: { wrong: false, num: 0 },
       });
     }
 
     props.dispatch({
       type: "jr/save",
-      payload: { [`suica${index}`]: data.target.value }
+      payload: { [`suica${index}`]: data.target.value },
     });
   };
 
@@ -120,24 +120,24 @@ const JR = props => {
     if (temp.length !== 12) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: true, numberWrong: false, letterWrong: false }
+        payload: { wrong: true, numberWrong: false, letterWrong: false },
       });
       return;
     }
 
     props.dispatch({
       type: "jr/save",
-      payload: { suica: temp }
+      payload: { suica: temp },
     });
 
     props.dispatch({
       type: "jr/save",
-      payload: { btntext: "waiting..." }
+      payload: { btntext: "waiting..." },
     });
 
     props.dispatch({
       type: "jr/validcode",
-      payload: { suica: temp }
+      payload: { suica: temp },
     });
   };
 
@@ -222,11 +222,7 @@ const JR = props => {
                 type="submit"
                 value={props.btntext}
               />
-              <p>
-                {props.t(
-                  "Thank you for joining hi"
-                )}
-              </p>
+              <p>{props.t("Thank you for joining hi")}</p>
             </div>
           </div>
         </div>

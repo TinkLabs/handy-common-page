@@ -4,7 +4,7 @@ import { CMSHost } from "../utils/env";
 let fetchWeather = barcode => {
   let param = { _barcode: barcode };
   return axios.get(`https://hk.handy.travel/apis/get_weather_info`, {
-    params: param
+    params: param,
   });
 };
 
@@ -20,11 +20,11 @@ let suicaLog = (barcode, suica, deviceuserid) => {
     _barcode: barcode,
     _suica: suica,
     _send_time: timestamp,
-    _device_user_id: deviceuserid
+    _device_user_id: deviceuserid,
   };
   return axios.get(`https://staging.handy.travel/apis/suica_campaign_log`, {
     params: param,
-    timeout: 3000
+    timeout: 3000,
   });
 };
 

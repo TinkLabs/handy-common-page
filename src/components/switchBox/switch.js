@@ -1,23 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './switchbox.css';
-import { connect } from 'dva';
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./switchbox.css";
+import { connect } from "dva";
 
-const SwitchBox = (props) => {
+const SwitchBox = props => {
   return (
-      <div className={styles.switchbox}>       
-      {
-        props.temptype === 1 ?
-          <div>
-            <div className={styles.switchon + ' ' + styles.switchleft} onClick={()=>props.onChange(1)}>℃</div>
-            <div className={styles.switchoff + ' ' + styles.switchright} onClick={()=>props.onChange(2)}>℉</div>
+    <div className={styles.switchbox}>
+      {props.temptype === 1 ? (
+        <div>
+          <div
+            className={styles.switchon + " " + styles.switchleft}
+            onClick={() => props.onChange(1)}
+          >
+            ℃
           </div>
-          :<div>
-            <div className={styles.switchoff + ' ' + styles.switchleft} onClick={()=>props.onChange(1)}>℃</div>
-            <div className={styles.switchon + ' ' + styles.switchright} onClick={()=>props.onChange(2)}>℉</div>
+          <div
+            className={styles.switchoff + " " + styles.switchright}
+            onClick={() => props.onChange(2)}
+          >
+            ℉
           </div>
-      }      
-      </div>
+        </div>
+      ) : (
+        <div>
+          <div
+            className={styles.switchoff + " " + styles.switchleft}
+            onClick={() => props.onChange(1)}
+          >
+            ℃
+          </div>
+          <div
+            className={styles.switchon + " " + styles.switchright}
+            onClick={() => props.onChange(2)}
+          >
+            ℉
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -26,7 +46,7 @@ SwitchBox.propTypes = {
 };
 
 function mapStateToProps(state) {
-    return state.weather;
+  return state.weather;
 }
 
 export default connect(mapStateToProps)(SwitchBox);

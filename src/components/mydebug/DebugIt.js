@@ -1,24 +1,24 @@
-import React from 'react';
-import { connect } from 'dva';
-import VConsole from 'vconsole'
+import React from "react";
+import { connect } from "dva";
+import VConsole from "vconsole";
 
 class DebugIt extends React.Component {
   constructor(props) {
-      super(props)
-      this.state = {
-        foo:"bar",
-        count:0,
-        show:false,
-      }
+    super(props);
+    this.state = {
+      foo: "bar",
+      count: 0,
+      show: false,
+    };
   }
 
   countit = () => {
-    if (!this.state.show && this.state.count>50){
+    if (!this.state.show && this.state.count > 50) {
       var vConsole = new VConsole();
-      this.setState({show:true})
+      this.setState({ show: true });
     }
-    this.setState({count:this.state.count+1})
-  }
+    this.setState({ count: this.state.count + 1 });
+  };
 
   componentDidCatch(e) {
     //console.log("WeatherForecast didcatch",e.message);
@@ -26,10 +26,12 @@ class DebugIt extends React.Component {
   componentDidMount() {
     //console.log("WeatherForecast props",this.props);
   }
-  
+
   render() {
-    return <div onClick={this.countit} style={{width:'100%',height:'8px'}}></div>
+    return (
+      <div onClick={this.countit} style={{ width: "100%", height: "8px" }} />
+    );
   }
 }
 
-export default connect()(DebugIt)
+export default connect()(DebugIt);

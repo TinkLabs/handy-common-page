@@ -1,12 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as React from "react";
+import PropTypes from "prop-types";
 // import mixpanel from '../../services/third-party/mixpanel';
-import mixpanel from '../../utils/mixpanel';
-import { getElementTop} from '../../utils/common';
-import { getAdKeyValueFn } from '../../services/api';
-import styles from './index.less';
-
-
+import mixpanel from "../../utils/mixpanel";
+import { getElementTop } from "../../utils/common";
+import { getAdKeyValueFn } from "../../services/api";
+import styles from "./index.less";
 
 class AmpAD extends React.Component {
   constructor(props) {
@@ -28,9 +26,9 @@ class AmpAD extends React.Component {
   };
 
   static defaultProps = {
-    ADUnit: '',
-    ADScreenName: '',
-    ADModule: 'null',
+    ADUnit: "",
+    ADScreenName: "",
+    ADModule: "null",
   };
 
   // send ad request
@@ -43,12 +41,12 @@ class AmpAD extends React.Component {
     googletag.cmd.push(() => this.setState({ GPTHasLoaded: true }));
     googletag.cmd.push(() => googletag.display(this.props.ADUnit));
     googletag.cmd.push(() =>
-      googletag.pubads().addEventListener('slotRenderEnded', () => {
+      googletag.pubads().addEventListener("slotRenderEnded", () => {
         this.ADslotRenderEnded();
       })
     );
     googletag.cmd.push(() =>
-      googletag.pubads().addEventListener('slotOnload', () => {
+      googletag.pubads().addEventListener("slotOnload", () => {
         this.ADSlotOnload();
       })
     );
@@ -58,22 +56,22 @@ class AmpAD extends React.Component {
   async addGPTScript() {
     // init key value
     this.adKeyValue = await getAdKeyValueFn();
-    console.log("##############",this.adKeyValue)
+    console.log("##############", this.adKeyValue);
     window.streamampClientConfig = {
       targets: this.adKeyValue,
     };
 
     // if not load stream amp before
     if (!window.streamamp) {
-      this.gptScrpt = document.createElement('script');
-      this.gptScrpt.type = 'text/javascript';
-      this.gptScrpt.async = 'async';
+      this.gptScrpt = document.createElement("script");
+      this.gptScrpt.type = "text/javascript";
+      this.gptScrpt.async = "async";
       this.gptScrpt.src =
-        'https://static.amp.services/clients/handy-dfp/Handy.js';
+        "https://static.amp.services/clients/handy-dfp/Handy.js";
       document.body.appendChild(this.gptScrpt);
 
       // when gpt script read, send ad request
-      this.gptScrpt.addEventListener('load', this.beginGPTsetup);
+      this.gptScrpt.addEventListener("load", this.beginGPTsetup);
     } else {
       this.beginGPTsetup();
     }
@@ -89,7 +87,7 @@ class AmpAD extends React.Component {
     this.campaignId = this.adKeyValue.campaign_id;
 
     // mixpanel tracking
-    mixpanel().track('Ads Image downloaded', {
+    mixpanel().track("Ads Image downloaded", {
       campaignid: this.campaignId,
       screen_name: this.props.ADScreenName,
       module: this.props.ADModule,
@@ -101,18 +99,18 @@ class AmpAD extends React.Component {
   // reset ad size as soon as possible
   ADslotRenderEnded() {
     // console.log("xxxxxxxxxxxxxxx",this.adContainerRef.current)
-    const iframe = this.adContainerRef.current.querySelector('iframe');
+    const iframe = this.adContainerRef.current.querySelector("iframe");
 
     if (iframe) {
-      this.adContainerRef.current.style.marginBottom = '24px';
-      this.adContainerRef.current.style.height = 'auto';
+      this.adContainerRef.current.style.marginBottom = "24px";
+      this.adContainerRef.current.style.height = "auto";
       // add google ad click event
       iframe.contentWindow.document
-        .getElementsByTagName('html')[0]
+        .getElementsByTagName("html")[0]
         .addEventListener(
-          'click',
+          "click",
           () => {
-            mixpanel().track('Advertising Banner Click', {
+            mixpanel().track("Advertising Banner Click", {
               campaignid: this.campaignId,
               screen_name: this.props.ADScreenName,
               module: this.props.ADModule,
@@ -125,13 +123,13 @@ class AmpAD extends React.Component {
     }
 
     // if ad size is 360 just change it to 336
-    if (iframe && iframe.width === '360') {
-      let img = iframe.contentWindow.document.querySelector('amp-img');
+    if (iframe && iframe.width === "360") {
+      let img = iframe.contentWindow.document.querySelector("amp-img");
       if (img) {
         iframe.width = 336;
         iframe.height = 196;
-        img.style.width = '336px';
-        img.style.height = '196px';
+        img.style.width = "336px";
+        img.style.height = "196px";
       }
     }
   }
@@ -143,7 +141,7 @@ class AmpAD extends React.Component {
   componentWillUnmount() {
     // avoid memory leak
     if (!window.streamamp) {
-      this.gptScrpt.removeEventListener('load', this.beginGPTsetup);
+      this.gptScrpt.removeEventListener("load", this.beginGPTsetup);
     }
   }
 
@@ -152,7 +150,11 @@ class AmpAD extends React.Component {
     // console.log("this.pro",this.props)
 
     return (
-      <section id="AmpAD" className={styles.adContainer} ref={this.adContainerRef}>
+      <section
+        id="AmpAD"
+        className={styles.adContainer}
+        ref={this.adContainerRef}
+      >
         {/* reload ad if lockscreen */}
         {this.state.GPTHasLoaded && <div id={ADUnit} />}
       </section>

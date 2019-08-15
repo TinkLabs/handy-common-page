@@ -1,37 +1,36 @@
-import React from 'react';
-import BasicInfo from '../components/basicInfo/basicInfo';
-import SwitchBox from '../components/switchBox/switch';
-import WeatherToDay from '../components/weatherToDay/weatherToDay';
-import WeatherForecast from '../components/weatherForecast/weatherForecast';
-import styles from './WeatherPage.css';
-import { connect } from 'dva';
-import { backtohp } from '../utils/env';
-import AdUnit from '../components/AmpAD';
-import DebugIt from '../components/mydebug/DebugIt';
+import React from "react";
+import BasicInfo from "../components/basicInfo/basicInfo";
+import SwitchBox from "../components/switchBox/switch";
+import WeatherToDay from "../components/weatherToDay/weatherToDay";
+import WeatherForecast from "../components/weatherForecast/weatherForecast";
+import styles from "./WeatherPage.css";
+import { connect } from "dva";
+import { backtohp } from "../utils/env";
+import AdUnit from "../components/AmpAD";
+import DebugIt from "../components/mydebug/DebugIt";
 
-const WeatherPage = (props) => {
+const WeatherPage = props => {
   var onReturn = () => {
     console.log("back to some page");
     // props.history.goBack();
     backtohp();
-  }
+  };
 
-
-  var onSwitch = (data) => {
+  var onSwitch = data => {
     props.dispatch({
       type: "weather/changeTempType",
-      payload: { temptype: data }
-    })
+      payload: { temptype: data },
+    });
 
-    if (window.mixpanel){
-      window.mixpanel.track('Screen View', {
-        screen_name: 'handy|Launcher|Weather',
-        temperature_scale: data == 1?"Celsius":"Fahrenheit",
+    if (window.mixpanel) {
+      window.mixpanel.track("Screen View", {
+        screen_name: "handy|Launcher|Weather",
+        temperature_scale: data == 1 ? "Celsius" : "Fahrenheit",
         url: window.location.href,
-        subcategory: 'weather',
+        subcategory: "weather",
       });
     }
-  }
+  };
 
   return (
     <div>
@@ -58,9 +57,7 @@ const WeatherPage = (props) => {
   );
 };
 
-WeatherPage.propTypes = {
-
-};
+WeatherPage.propTypes = {};
 
 function mapStateToProps(state) {
   return state.weather;
