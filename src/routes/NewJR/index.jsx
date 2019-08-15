@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./newJR.scss";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
-import { withTranslation } from "react-i18next";
+import { Trans, withTranslation } from "react-i18next";
 
 const JR = props => {
+  console.log(props.i18n.language, 29999);
+
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
@@ -19,7 +21,7 @@ const JR = props => {
     }
     props.dispatch({
       type: "jr/controlLangList",
-      showLangList: false
+      showLangList: false,
     });
   });
 
@@ -41,7 +43,7 @@ const JR = props => {
     if (data.target.value === "") {
       props.dispatch({
         type: "jr/save",
-        payload: { [`suica${index}`]: data.target.value }
+        payload: { [`suica${index}`]: data.target.value },
       });
     }
     if (data.target.value.length > 3) {
@@ -51,7 +53,7 @@ const JR = props => {
         if (!checkNumb(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { numberWrong: true, wrong: false }
+            payload: { numberWrong: true, wrong: false },
           });
           return;
         }
@@ -59,7 +61,7 @@ const JR = props => {
         if (!checkChar(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { letterWrong: true, wrong: false }
+            payload: { letterWrong: true, wrong: false },
           });
           return;
         } else {
@@ -71,26 +73,26 @@ const JR = props => {
     if (props.numberWrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { numberWrong: false }
+        payload: { numberWrong: false },
       });
     }
 
     if (props.letterWrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { letterWrong: false }
+        payload: { letterWrong: false },
       });
     }
     if (props.wrong) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: false, num: 0 }
+        payload: { wrong: false, num: 0 },
       });
     }
 
     props.dispatch({
       type: "jr/save",
-      payload: { [`suica${index}`]: data.target.value }
+      payload: { [`suica${index}`]: data.target.value },
     });
   };
 
@@ -131,31 +133,31 @@ const JR = props => {
     if (temp.length !== 12) {
       props.dispatch({
         type: "jr/save",
-        payload: { wrong: true, numberWrong: false, letterWrong: false }
+        payload: { wrong: true, numberWrong: false, letterWrong: false },
       });
       return;
     }
 
     props.dispatch({
       type: "jr/save",
-      payload: { suica: temp }
+      payload: { suica: temp },
     });
 
     props.dispatch({
       type: "jr/save",
-      payload: { btntext: "waiting..." }
+      payload: { btntext: "waiting..." },
     });
 
     props.dispatch({
       type: "jr/validcode",
-      payload: { suica: temp }
+      payload: { suica: temp },
     });
   };
 
   const showLangList = () => {
     props.dispatch({
       type: "jr/controlLangList",
-      showLangList: true
+      showLangList: true,
     });
   };
 
@@ -163,7 +165,7 @@ const JR = props => {
     props.i18n.changeLanguage(lang);
     props.dispatch({
       type: "jr/controlLangList",
-      showLangList: false
+      showLangList: false,
     });
   };
 
@@ -173,7 +175,8 @@ const JR = props => {
       {!(!props.wrong && props.num !== 0 && props.success) && (
         <div className={styles.firstPage}>
           <div className={styles.bgImg} />
-          <header className={styles.header}>
+          {/* header and choose language */}
+          <section className={styles.header}>
             <section className={styles.chooseLang}>
               <img src={require("../../assets/jr/new/lang.svg")} alt="" />
               <span className={styles.language} onClick={showLangList}>
@@ -190,16 +193,64 @@ const JR = props => {
                 </ul>
               )}
             </section>
+
+            {/* module1 */}
             <section className={styles.module1}>
               <header>
                 <img
                   src={require("../../assets/jr/new/section1_header_company_logo.png")}
                   alt=""
                 />
-                <span>Lang</span>
               </header>
+              <div className={styles.welcome}>
+                <img
+                  src={require("../../assets/jr/new/header_welcomesuica_image.png")}
+                  alt=""
+                />
+                <p>
+                  <span
+                    className={
+                      props.i18n.language === "en_US"
+                        ? `${styles.englishVersion}`
+                        : ""
+                    }
+                  >
+                    <Trans i18nKey="For Tourist">
+                      For
+                      <br />
+                      Tourist
+                    </Trans>
+                  </span>
+                </p>
+              </div>
+              <div className={styles.text}>
+                <p className={styles.rightBig}>BUY</p>
+                <p>
+                  <span className={styles.rightBig}>&</span>
+                  <span className={styles.leftSmall}>
+                    Welcome
+                    <br />
+                    Suica
+                  </span>
+                </p>
+                <p>
+                  <span className={styles.rightBig}>GET!</span>
+                </p>
+                <p>
+                  <span className={styles.leftSmall}>
+                    Premium
+                    <br />
+                    Goods
+                  </span>
+                </p>
+              </div>
+              <div className={styles.knowMore}>
+                <a href="#module3">
+                  <button>{props.t("Know more")}</button>
+                </a>
+              </div>
             </section>
-          </header>
+          </section>
           {/* this is form start, do not change it logic */}
           <div className={styles.jrform}>
             <p className={styles.jrsubtitle}>Enter Welcome Suica Number here</p>
@@ -270,7 +321,6 @@ const JR = props => {
                 type="submit"
                 value={props.btntext}
               />
-              <p>{props.t("Thank you for joining hi")}</p>
             </div>
           </div>
           {/* this is form end */}
