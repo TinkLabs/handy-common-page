@@ -3,6 +3,8 @@ import styles from "./newJR.scss";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { Trans, withTranslation } from "react-i18next";
+import { Modal } from "antd-mobile";
+const alert = Modal.alert;
 
 const JR = props => {
   console.log(props.i18n.language, 29999);
@@ -174,7 +176,7 @@ const JR = props => {
     <div className={styles.root}>
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
-      // {false && (
+        // {false && (
         <div className={styles.firstPage}>
           <div
             className={styles.findForm}
@@ -636,37 +638,285 @@ const JR = props => {
             <p className={styles.text5}>
               {props.t("JR EAST Travel Service Center")}
             </p>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      href="https://www.jreast.co.jp/e/customer_support/service_center.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Narita Airport Terminal 1
+                    </a>
+                    <br />
+                    8:15 - 19:00, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Narita Airport Terminal 1")}
             </div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      href="https://www.jreast.co.jp/e/customer_support/service_center.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Narita Airport Terminal 2·3
+                    </a>
+                    <br />
+                    8:15 - 20:00, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Narita Airport Terminal 2·3")}
             </div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_haneda.html"
+                    >
+                      Haneda Airport International Terminal (Tokyo Monorail)
+                    </a>
+                    <br />
+                    6:45 - 20:00, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t(
                 "Haneda Airport International Terminal (Tokyo Monorail)"
               )}
             </div>
-            <div className={styles.item5}>{props.t("Tokyo Station")}</div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_tokyo.html?src=gnavi"
+                    >
+                      Tokyo Station
+                    </a>
+                    <br />
+                    7:30 - 20:30, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
+              {props.t("Tokyo Station")}
+            </div>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_shinjuku.html"
+                    >
+                      Shinjuku Station New South Gate
+                    </a>
+                    <br />
+                    8:00 – 19:00, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Shinjuku Station New South Gate")}
             </div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_shinjuku.html"
+                    >
+                      Shinjuku Station East Exit
+                    </a>
+                    <br />
+                    weekdays 9:00 - 18:00, weekends & holidays
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Shinjuku Station East Exit")}
             </div>
-            <div className={styles.item5}>{props.t("Shibuya Station")}</div>
-            <div className={styles.item5}>{props.t("Ikebukuro Station")}</div>
-            <div className={styles.item5}>{props.t("Ueno Station")}</div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_shibuya.html"
+                    >
+                      Shibuya Station
+                    </a>
+                    <br />
+                    10:00 – 18:30, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
+              {props.t("Shibuya Station")}
+            </div>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_ikebukuro.html"
+                    >
+                      Ikebukuro Station
+                    </a>
+                    <br />
+                    9:00 - 19:00, weekdays
+                    <br />
+                    9:00 - 17:00, weekends & holidays
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
+              {props.t("Ikebukuro Station")}
+            </div>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_ueno.html"
+                    >
+                      Ueno Station
+                    </a>
+                    <br />
+                    8:30 - 19:00, weekdays
+                    <br />
+                    8:30 - 18:00, weekends & holidays
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
+              {props.t("Ueno Station")}
+            </div>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="JR EAST Travel Service Center">
+                    + JR EAST Travel Service Center
+                    <br />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.jreast.co.jp/e/customer_support/service_center_hamamatsucho.html"
+                    >
+                      Hamamatsucho Station
+                    </a>
+                    <br />
+                    8:00 – 15:30, every day of the year
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Hamamatsucho Station")}
             </div>
             <p className={styles.text5}>
               {props.t("Welcome Suica ticket vending machine")}
             </p>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="Narita Airport Station">
+                    + Narita Airport Station
+                    <br />
+                    Depends on the train operation time
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Narita Airport Station")}
             </div>
-            <div className={styles.item5}>
+            <div
+              className={styles.item5}
+              onClick={() =>
+                alert(
+                  "",
+                  <Trans i18nKey="Haneda Airport International Terminal">
+                    + Haneda Airport International Terminal
+                    <br />
+                    Depends on the train operation time
+                  </Trans>,
+                  [{ text: "×", onPress: () => {} }]
+                )
+              }
+            >
               {props.t("Haneda Airport International Terminal")}
             </div>
           </section>
@@ -762,7 +1012,7 @@ const JR = props => {
 
       {/* thanks page */}
       {!props.wrong && props.num !== 0 && props.success && (
-      // {true && (
+        // {true && (
         <div className={styles.suicaThx}>
           <div className={styles.headerThx}>
             <div className={styles.thxBg}>

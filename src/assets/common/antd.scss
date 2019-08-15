@@ -1,0 +1,50 @@
+:global(.am-modal-content) {
+  background-color: #B7343E;
+  font-family: Montserrat,
+    'Noto Sans JP',
+    sans-serif;
+}
+
+:global(.am-modal-alert-content) {
+  color: $white !important;
+  text-align: left;
+  font-size: $font16 !important;
+
+  a {
+    color: $white !important;
+    text-decoration: underline;
+    font-weight: 600;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: $font16 !important;
+  }
+}
+
+:global(.am-modal-button) {
+  position: absolute !important;
+  top: 5px !important;
+  right: 10px !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+
+  &::before {
+    height: 0 !important;
+  }
+}
+
+:global(.am-modal-button-active) {
+  background-color: #B7343E !important;
+}
+
+
+:global(.am-modal-body) {
+  margin: 20px 0 !important;
+}
+
+:global(.am-modal-transparent) {
+  width: 330px !important;
+}
