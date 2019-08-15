@@ -654,6 +654,93 @@ const JR = props => {
               {props.t("Haneda Airport International Terminal")}
             </div>
           </section>
+          <section className={styles.module6}>
+            <p className={styles.header6}>
+              {props.t("Promotion Terms and Conditions")}
+            </p>
+            <div className={styles.item6}>
+              <p className={styles.subHeader6}>
+                <span className={styles.number6}>1. </span>
+                <span>{props.t("Campaign Participation")}</span>
+              </p>
+              <div className={styles.subContent6}>
+                <p>
+                  {props.t(
+                    "(1) Please make your campaign entry through this promotion website."
+                  )}
+                </p>
+                <p>
+                  {props.t(
+                    "(2) By participating in this promotion, you agree to these terms and conditions."
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className={styles.item6}>
+              <p className={styles.subHeader6}>
+                <span className={styles.number6}>2. </span>
+                <span>{props.t("Reception of the campaign reward")}</span>
+              </p>
+              <div className={styles.subContent6}>
+                <p>
+                  {props.t(
+                    "You will receive the campaign reward by showing the successful campaign entry screen to the hotel staff after completing your entry to this promotion. There are limited supplies of rewards so the offer is only valid while supplies last."
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className={styles.item6}>
+              <p className={styles.subHeader6}>
+                <span className={styles.number6}>3. </span>
+                <span>
+                  {props.t("Handling of Welcome Suica related information")}
+                </span>
+              </p>
+              <div className={styles.subContent6}>
+                <p>
+                  {props.t(
+                    "The information related to Welcome Suica will be used for this promotion as follows by the users defined in item (3) : the users will not disclose or provide your information to any third parties except to the scope of users described in (3), without your consent (except when they are obliged to comply with the law)."
+                  )}
+                </p>
+                <p>{props.t("(1) Purpose of data collection")}</p>
+                <p>
+                  {props.t("Marketing research and other research and studies")}
+                </p>
+                <p>{props.t("(2) Data to be used")}</p>
+                <p>
+                  {props.t(
+                    "Your Welcome Suica ID number, Welcome Suica usage record during the promotion (including date and time of use, shops, amount paid, etc.)"
+                  )}
+                </p>
+                <p>{props.t("(3) Users")}</p>
+                <p>
+                  {props.t(
+                    "East Japan Railway Company and their business partners"
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className={styles.item6}>
+              <p className={styles.subHeader6}>
+                <span className={styles.number6}>4. </span>
+                <span>
+                  {props.t(
+                    "The users may use the information related to this promotion for marketing research and other research and studies in the form of statistical information without identifying any individuals."
+                  )}
+                </span>
+              </p>
+            </div>
+            <div className={styles.item6}>
+              <p className={styles.subHeader6}>
+                <span className={styles.number6}>※ </span>
+                <span>
+                  {props.t(
+                    "The English version of this “Terms and Conditions” is for reference and convenience only. The Japanese language shall be controlling in all respects."
+                  )}
+                </span>
+              </p>
+            </div>
+          </section>
         </div>
       )}
 
@@ -686,23 +773,26 @@ const JR = props => {
 
       {/* page */}
       <div className={styles.footer}>
-        <div>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <img
+          className={styles.footerBgImg}
+          src={require("../../assets/jr/new/bg_footer.svg")}
+          alt=""
+        />
+        <div className={styles.topFooter}>
           <img
-            onClick={onReturn}
-            className={styles.logo}
-            src={require("../../assets/jr/hi_logo.svg")}
+            src={require("../../assets/jr/new/section6_footer_logo.png")}
+            alt=""
           />
+          <p>{props.t("Contact us")}</p>
+          <a class="mobile-br" href="tel:050-3185-3500">
+            {props.t("Tel:")}050-3185-3500
+          </a>
+          <p>{props.t("Business hour: 09:00-18:00")}</p>
+          <p>{props.t("* Japanese only")}</p>
         </div>
-        <div>
-          <a className={styles.maila}>お問い合せ</a>
+        <div className={styles.copyright}>
+          2019 © hi Japan Co., Ltd. All Rights Reserved.
         </div>
-        <div>
-          <p className={styles.downp}>
-            2019 © hi Japan Co., Ltd. All Rights Reserved.
-          </p>
-        </div>
-        <DebugIt />
       </div>
     </div>
   );

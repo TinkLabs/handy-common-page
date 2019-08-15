@@ -519,4 +519,34 @@
       }
     }
   }
+
+  .module6 {
+    padding: 32px;
+    p {
+      line-height: 1.7;
+    }
+
+    .header6 {
+      color: $mainColor;
+      font-size: $font24;
+      text-align: center;
+      width: 300px;
+      font-weight: 400;
+      margin: 0px 0 30px;
+      line-height: 1;
+    }
+
+    .subHeader6 {
+      margin: 14px 0 6px;
+
+      .number6 {
+        font-size: $font16;
+        color: $mainColor;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .footer {
+  }
 }
