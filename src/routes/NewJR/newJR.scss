@@ -22,6 +22,19 @@
   }
 
   .firstPage {
+    .findForm {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      z-index: 9999;
+
+      img {
+        width: 80px;
+        opacity: 0.8;
+      }
+
+    }
+
     .header {
       padding: 0 16px;
       color: $mainColor;
@@ -237,6 +250,7 @@
       p {
         font-size: $font24;
         color: $mainColor;
+        font-weight: 400;
         margin: 10px 0 -10px 40px;
       }
     }

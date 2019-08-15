@@ -175,6 +175,17 @@ const JR = props => {
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
         <div className={styles.firstPage}>
+          <div
+            className={styles.findForm}
+            onClick={() => {
+              document.documentElement.scrollTop = 2930;
+            }}
+          >
+            <img
+              src={require("../../assets/jr/new/goods_get_icon_en.svg")}
+              alt=""
+            />
+          </div>
           <div className={styles.bgImg} />
           {/* header and choose language */}
           <section className={styles.header}>
@@ -246,9 +257,13 @@ const JR = props => {
                 </p>
               </div>
               <div className={styles.knowMore}>
-                <a href="#module3">
-                  <button>{props.t("Know more")}</button>
-                </a>
+                <button
+                  onClick={() => {
+                    document.documentElement.scrollTop = 1549;
+                  }}
+                >
+                  {props.t("Know more")}
+                </button>
               </div>
             </section>
 
@@ -785,9 +800,7 @@ const JR = props => {
           />
           <p>{props.t("Contact us")}</p>
           <p>
-            <a href="tel:050-3185-3500">
-              {props.t("Tel")}: 050-3185-3500
-            </a>
+            <a href="tel:050-3185-3500">{props.t("Tel")}: 050-3185-3500</a>
           </p>
 
           <p>{props.t("Business hour")}: 09:00-18:00</p>
