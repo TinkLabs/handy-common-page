@@ -1,6 +1,8 @@
 @import "../../assets/common/index.scss";
 
 .root {
+  width: 360px;
+  overflow: hidden;
   position: relative;
   margin: 0 auto;
   max-width: 414px;

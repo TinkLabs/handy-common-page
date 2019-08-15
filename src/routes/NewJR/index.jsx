@@ -182,6 +182,7 @@ const JR = props => {
             className={styles.findForm}
             onClick={() => {
               document.documentElement.scrollTop = 2930;
+              document.body.scrollTop = 2930;
             }}
           >
             <img
@@ -263,6 +264,7 @@ const JR = props => {
                 <button
                   onClick={() => {
                     document.documentElement.scrollTop = 1549;
+                    document.body.scrollTop = 1549;
                   }}
                 >
                   {props.t("Know more")}
