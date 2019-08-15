@@ -4,7 +4,7 @@
   position: relative;
   margin: 0 auto;
   max-width: 414px;
-  padding: 20px 0;
+  padding: 20px 0 0;
   font-weight: 300;
   box-sizing: border-box;
   font-family: Montserrat,
@@ -522,6 +522,7 @@
 
   .module6 {
     padding: 32px;
+
     p {
       line-height: 1.7;
     }
@@ -548,5 +549,41 @@
   }
 
   .footer {
+    position: relative;
+    margin-top: 250px;
+
+    .footerBgImg {
+      position: absolute;
+      bottom: 0;
+      width: 1600px;
+      z-index: -9999;
+      left: -330px;
+    }
+
+    .topFooter {
+      text-align: center;
+      color: $white;
+      font-size: $font12;
+
+      p {
+        margin: 3px 0;
+      }
+
+      a {
+        color: $white;
+        font-size: $font12;
+      }
+
+      img {
+        width: 100px;
+      }
+    }
+
+    .copyright {
+      font-size: 6px;
+      color: $white;
+      text-align: right;
+      padding: 30px 16px 30px;
+    }
   }
 }

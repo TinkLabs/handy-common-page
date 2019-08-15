@@ -784,10 +784,13 @@ const JR = props => {
             alt=""
           />
           <p>{props.t("Contact us")}</p>
-          <a class="mobile-br" href="tel:050-3185-3500">
-            {props.t("Tel:")}050-3185-3500
-          </a>
-          <p>{props.t("Business hour: 09:00-18:00")}</p>
+          <p>
+            <a href="tel:050-3185-3500">
+              {props.t("Tel")}: 050-3185-3500
+            </a>
+          </p>
+
+          <p>{props.t("Business hour")}: 09:00-18:00</p>
           <p>{props.t("* Japanese only")}</p>
         </div>
         <div className={styles.copyright}>
