@@ -49,6 +49,7 @@ export default {
           },
         });
         document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
       } catch (e) {
         let success = false;
         yield put({
