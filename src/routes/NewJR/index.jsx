@@ -202,10 +202,8 @@ const JR = props => {
                 <ul className={styles.langList}>
                   <li onClick={changeLang.bind(null, "ja_JP")}>日本語</li>
                   <li onClick={changeLang.bind(null, "en_US")}>English</li>
-                  <li onClick={changeLang.bind(null, "zh_CN")}>中国语（简）</li>
-                  <li onClick={changeLang.bind(null, "zh_HK")}>
-                    中国語（繁体）
-                  </li>
+                  <li onClick={changeLang.bind(null, "zh_CN")}>中文（简体）</li>
+                  <li onClick={changeLang.bind(null, "zh_HK")}>中文（繁體）</li>
                 </ul>
               )}
             </section>
@@ -223,21 +221,32 @@ const JR = props => {
                   src={require("../../assets/jr/new/header_welcomesuica_image.png")}
                   alt=""
                 />
-                <p>
-                  <span
-                    className={
-                      props.i18n.language === "en_US"
-                        ? `${styles.englishVersion}`
-                        : ""
-                    }
-                  >
-                    <Trans i18nKey="For Tourist">
-                      For
-                      <br />
-                      Tourist
-                    </Trans>
-                  </span>
-                </p>
+                <div className={styles.infoImg}>
+                  {props.i18n.language === "en_US" && (
+                    <img
+                      src={require("../../assets/jr/new/header_greencircle_en.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "ja_JP" && (
+                    <img
+                      src={require("../../assets/jr/new/header_greencircle_jp.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "zh_CN" && (
+                    <img
+                      src={require("../../assets/jr/new/header_greencircle_cn.svg")}
+                      alt=""
+                    />
+                  )}
+                  {props.i18n.language === "zh_HK" && (
+                    <img
+                      src={require("../../assets/jr/new/header_greencircle_tw.svg")}
+                      alt=""
+                    />
+                  )}
+                </div>
               </div>
               <div className={styles.text}>
                 <p className={styles.rightBig}>BUY</p>
@@ -287,15 +296,32 @@ const JR = props => {
                 />
                 <p>
                   <Trans i18nKey="Our desire is">
-                    Our desire is to provide a safe and comfortable travel and
-                    shopping experience for everyone who visits Japan.And as
-                    part of fulfilling our goal,East Japan Railway Company and
-                    hi Japan Co.,Ltd.are collaborating with selected hotels to
-                    offer “Welcome Suica Campaign” with handy smartphones in the
-                    hotel rooms.
+                    Our desire is to provide a safe and
+                    <br />
+                    comfortable travel and shopping
+                    <br />
+                    experience for everyone who visits Japan.
+                    <br />
+                    And as part of fulfilling our goal,
+                    <br />
+                    East Japan Railway Company and hi Japan
+                    <br />
+                    are collaborating with selected hotels to offer “Welcome
+                    Suica Campaign” with handy smartphones in the hotel rooms.{" "}
                     <br />
                     Participating hotels: JR-East Hotel Mets Shibuya, The Tokyo
                     Station Hotel, and The Hotel Metropolitan.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans i18nKey="Participating hotels">
+                    Participating hotels:
+                    <br />
+                    JR-East Hotel Mets Shibuya,
+                    <br />
+                    The Tokyo Station Hotel,
+                    <br />
+                    and The Hotel Metropolitan.
                   </Trans>
                 </p>
               </header>
@@ -452,7 +478,7 @@ const JR = props => {
                   )}
                   {props.wrong ? (
                     <span className={styles.failedstatus}>
-                      <p>{props.t("Please Check Your Suica Number")}</p>
+                      <p>{props.t("Please confirm your card number.")}</p>
                     </span>
                   ) : props.num === 0 ? (
                     <span />
@@ -590,7 +616,7 @@ const JR = props => {
                 <div className={styles.subHeader4}>
                   <span className={styles.subNumber}>2.</span>
                   <span className={styles.subHeaderText}>
-                    <Trans i18nKey="Easy shopping:">
+                    <Trans i18nKey="Easy shopping">
                       Easy shopping:
                       <br />
                       Making payments with a single touch
@@ -611,12 +637,12 @@ const JR = props => {
                 <div className={styles.subHeader4}>
                   <span className={styles.subNumber}>3.</span>
                   <span className={styles.subHeaderText}>
-                    <Trans i18nKey="Others:">Others:</Trans>
+                    <Trans i18nKey="Others">Others:</Trans>
                   </span>
                 </div>
                 <div className={styles.subContent}>
                   <p>
-                    <Trans i18nKey="・Reusable (rechargeable) function">
+                    <Trans i18nKey="Reusable (rechargeable) function">
                       ・Reusable (rechargeable) function
                       <br />⇒ when the balance is not enough
                       <br />
@@ -636,7 +662,12 @@ const JR = props => {
             </div>
           </section>
           <section className={styles.module5}>
-            <p className={styles.header5}>{props.t("Where to Buy")}</p>
+            <p className={styles.header5}>
+              <Trans i18nKey="Where to Buy">
+                Where to Buy
+                <br />
+              </Trans>
+            </p>
             <p className={styles.text5}>
               {props.t("JR EAST Travel Service Center")}
             </p>
@@ -645,7 +676,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Narita Airport Terminal 1 - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -669,7 +700,10 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans
+                    i18nKey="Narita Airport Terminal 2·3 - alert"
+                    parent="p"
+                  >
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -693,7 +727,10 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans
+                    i18nKey="Haneda Airport International Terminal (Tokyo Monorail) - alert"
+                    parent="p"
+                  >
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -719,7 +756,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Tokyo Station - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -743,7 +780,10 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans
+                    i18nKey="Shinjuku Station New South Gate - alert"
+                    parent="p"
+                  >
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -767,7 +807,10 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans
+                    i18nKey="Shinjuku Station East Exit - alert"
+                    parent="p"
+                  >
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -791,7 +834,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Shibuya Station - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -815,7 +858,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Ikebukuro Station - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -841,7 +884,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Ueno Station - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -867,7 +910,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="JR EAST Travel Service Center">
+                  <Trans i18nKey="Hamamatsucho Station - alert" parent="p">
                     + JR EAST Travel Service Center
                     <br />
                     <a
@@ -894,7 +937,7 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="Narita Airport Station">
+                  <Trans i18nKey="Narita Airport Station - alert" parent="p">
                     + Narita Airport Station
                     <br />
                     Depends on the train operation time
@@ -910,7 +953,10 @@ const JR = props => {
               onClick={() =>
                 alert(
                   "",
-                  <Trans i18nKey="Haneda Airport International Terminal">
+                  <Trans
+                    i18nKey="Haneda Airport International Terminal - alert"
+                    parent="p"
+                  >
                     + Haneda Airport International Terminal
                     <br />
                     Depends on the train operation time

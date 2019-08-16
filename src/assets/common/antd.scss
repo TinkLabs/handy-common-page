@@ -18,6 +18,10 @@
     margin: 10px 0;
     font-size: $font16 !important;
   }
+
+  p {
+    line-height: 2 !important;
+  }
 }
 
 :global(.am-modal-button) {
