@@ -54,8 +54,8 @@
   "Welcome Suica ticket vending machine": "Welcome Suica自动售票机",
   "Promotion Terms and Conditions": "促销活动参与条款和条件",
   "Campaign Participation": "参加条件",
-  "(1) Please make your campaign entry through this promotion website.": "(1) 请通过此促销网站参加此次活动。",
-  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) 如果您参加此次促销活动即表示您同意以下条款和条件。 ",
+  "(1) Please make your campaign entry through this promotion website": "(1) 请通过此促销网站参加此次活动。",
+  "(2) By participating in this promotion, you agree to these terms and conditions": "(2) 如果您参加此次促销活动即表示您同意以下条款和条件。 ",
   "Reception of the campaign reward": "领取奖励品",
   "You will receive the campaign reward": "您完成参加本促销活动后,向酒店员工出示成功参加的网页画面，以获得奖励。奖励品供应有限，送完即止。",
   "Handling of Welcome Suica related information": "Welcome Suica相关信息的处理",
@@ -67,5 +67,12 @@
   "(3) Users": "(3) 用户",
   "East Japan Railway Company and their business partners": "东日本旅客铁路公司和此公司的业务合作公司",
   "The users may use the information related to": "用户们将使用与不可确定个人信息的统计信息的形式去运用此促销相关的信息进行市场调查和其他研究。",
-  "The English version of this": "本条款和条件的中文版仅供参考，一切与日语为主。"
+  "The English version of this": "本条款和条件的中文版仅供参考，一切与日语为主。",
+  "Contact us": "详情咨询*",
+  "Tel": "Tel",
+  "Business hour": "营业时间",
+  "* Japanese only": "* 仅限日语",
+  "Please show this screen to the hotel front to receive premium goods": "将此屏幕出示在您入住的酒店接待处<1 />即能领取惊喜好礼。",
+  "Consumer Feedback Survey": "客户意见反馈表",
+  "Let us hear your voice": "请配合问卷调查。 （所需时间2分钟）"
 }

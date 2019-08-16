@@ -54,8 +54,8 @@
   "Welcome Suica ticket vending machine": "Welcome Suica ticket vending machine",
   "Promotion Terms and Conditions": "Promotion Terms and Conditions",
   "Campaign Participation": "Campaign Participation",
-  "(1) Please make your campaign entry through this promotion website.": "(1) Please make your campaign entry through this promotion website.",
-  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) By participating in this promotion, you agree to these terms and conditions.",
+  "(1) Please make your campaign entry through this promotion website": "(1) Please make your campaign entry through this promotion website.",
+  "(2) By participating in this promotion, you agree to these terms and conditions": "(2) By participating in this promotion, you agree to these terms and conditions.",
   "Reception of the campaign reward": "Reception of the campaign reward",
   "You will receive the campaign reward": "You will receive the campaign reward by showing the successful campaign entry screen to the hotel staff after completing your entry to this promotion. There are limited supplies of rewards so the offer is only valid while supplies last.",
   "Handling of Welcome Suica related information": "Handling of Welcome Suica related information",
@@ -67,5 +67,12 @@
   "(3) Users": "(3) Users",
   "East Japan Railway Company and their business partners": "East Japan Railway Company and their business partners",
   "The users may use the information related to": "The users may use the information related to this promotion for marketing research and other research and studies in the form of statistical information without identifying any individuals.",
-  "The English version of this": "The English version of this \"Terms and Conditions\" is for reference and convenience only. The Japanese language shall be controlling in all respects."
+  "The English version of this": "The English version of this \"Terms and Conditions\" is for reference and convenience only. The Japanese language shall be controlling in all respects.",
+  "Contact us": "Contact us",
+  "Tel": "Tel",
+  "Business hour": "Business hour",
+  "* Japanese only": "* Japanese only",
+  "Please show this screen to the hotel front to receive premium goods": "Please show this screen to the hotel front to receive premium goods.",
+  "Consumer Feedback Survey": "Consumer Feedback Survey",
+  "Let us hear your voice": "Let us hear your voice. (Only 2 min)"
 }

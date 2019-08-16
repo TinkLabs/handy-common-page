@@ -41,7 +41,6 @@ const JR = props => {
   };
 
   const validate = (data, index) => {
-    console.log(data.target.value);
     // console.log("get ",props.suica)
     if (data.target.value === "") {
       props.dispatch({
@@ -185,10 +184,30 @@ const JR = props => {
               document.body.scrollTop = 2930;
             }}
           >
-            <img
-              src={require("../../assets/jr/new/goods_get_icon_en.svg")}
-              alt=""
-            />
+            {props.i18n.language === "en_US" && (
+              <img
+                src={require("../../assets/jr/new/goods_get_icon_en.svg")}
+                alt=""
+              />
+            )}
+            {props.i18n.language === "ja_JP" && (
+              <img
+                src={require("../../assets/jr/new/goods_get_icon.svg")}
+                alt=""
+              />
+            )}
+            {props.i18n.language === "zh_CN" && (
+              <img
+                src={require("../../assets/jr/new/goods_get_icon_cn.svg")}
+                alt=""
+              />
+            )}
+            {props.i18n.language === "zh_HK" && (
+              <img
+                src={require("../../assets/jr/new/goods_get_icon_tw.svg")}
+                alt=""
+              />
+            )}
           </div>
           <div className={styles.bgImg} />
           {/* header and choose language */}
@@ -478,7 +497,7 @@ const JR = props => {
                   )}
                   {props.wrong ? (
                     <span className={styles.failedstatus}>
-                      <p>{props.t("Please confirm your card number.")}</p>
+                      <p>{props.t("Please confirm your card number")}</p>
                     </span>
                   ) : props.num === 0 ? (
                     <span />
@@ -980,12 +999,12 @@ const JR = props => {
               <div className={styles.subContent6}>
                 <p>
                   {props.t(
-                    "(1) Please make your campaign entry through this promotion website."
+                    "(1) Please make your campaign entry through this promotion website"
                   )}
                 </p>
                 <p>
                   {props.t(
-                    "(2) By participating in this promotion, you agree to these terms and conditions."
+                    "(2) By participating in this promotion, you agree to these terms and conditions"
                   )}
                 </p>
               </div>
@@ -1057,9 +1076,11 @@ const JR = props => {
               <p className={styles.thxTextHeader}>{props.t("Thank you!")}</p>
               <img src={require("../../assets/jr/new/star.svg")} alt="" />
               <p>
-                {props.t(
-                  "Please show this screen to the hotel front to receive premium goods."
-                )}
+                <Trans i18nKey="Please show this screen to the hotel front to receive premium goods">
+                  Please show this screen to the <br /> hotel front to receive
+                  premium goods
+                  <br />
+                </Trans>
               </p>
             </div>
           </div>
@@ -1069,17 +1090,49 @@ const JR = props => {
               {props.t("Consumer Feedback Survey")}
             </p>
             <p className={styles.jrThxSurveyTex}>
-              {props.t("Let us hear your voice. (Only 2 min)")}
+              {props.t("Let us hear your voice")}
             </p>
             <div className={styles.iframeContainer}>
-              <iframe
-                title="survey"
-                width="310"
-                height="265"
-                frameBorder="0"
-                allowtransparency="true"
-                src="https://www.surveymonkey.com/r/XHXXGPH?embedded=1"
-              />
+              {props.i18n.language === "en_US" && (
+                <iframe
+                  title="survey"
+                  width="310"
+                  height="265"
+                  frameBorder="0"
+                  allowtransparency="true"
+                  src="https://www.surveymonkey.com/r/XHXXGPH?embedded=1"
+                />
+              )}
+              {props.i18n.language === "ja_JP" && (
+                <iframe
+                  title="survey"
+                  width="310"
+                  height="265"
+                  frameBorder="0"
+                  allowtransparency="true"
+                  src="https://www.surveymonkey.com/r/XHYYL82?embedded=1"
+                />
+              )}
+              {props.i18n.language === "zh_CN" && (
+                <iframe
+                  title="survey"
+                  width="310"
+                  height="265"
+                  frameBorder="0"
+                  allowtransparency="true"
+                  src="https://www.surveymonkey.com/r/XHHD2PM?embedded=1"
+                />
+              )}
+              {props.i18n.language === "zh_HK" && (
+                <iframe
+                  title="survey"
+                  width="310"
+                  height="265"
+                  frameBorder="0"
+                  allowtransparency="true"
+                  src="https://www.surveymonkey.com/r/XHZMDNH?embedded=1"
+                />
+              )}
             </div>
           </div>
         </div>

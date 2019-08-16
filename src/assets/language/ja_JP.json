@@ -54,8 +54,8 @@
   "Welcome Suica ticket vending machine": "Welcome Suica 専用発売機",
   "Promotion Terms and Conditions": "キャンペーン規約",
   "Campaign Participation": "エントリーについて",
-  "(1) Please make your campaign entry through this promotion website.": "(1) 本キャンペーンサイトから、エントリーを完了してください｡",
-  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) キャンペーンへのエントリーをもって、本規約に同意したものとします。",
+  "(1) Please make your campaign entry through this promotion website": "(1) 本キャンペーンサイトから、エントリーを完了してください｡",
+  "(2) By participating in this promotion, you agree to these terms and conditions": "(2) キャンペーンへのエントリーをもって、本規約に同意したものとします。",
   "Reception of the campaign reward": "商品のお渡しについて",
   "You will receive the campaign reward": "エントリー完了後のWEBページをホテルの受付スタッフに見せて頂くことで、商品をお渡しさせていただきます。ただし、商品の数に制限がありますので、必ず商品がお渡しできるとは限りません。",
   "Handling of Welcome Suica related information": "Welcome Suicaに係る情報の取扱いについて",
@@ -66,5 +66,12 @@
   "Your Welcome Suica ID number, Welcome Suica": "ご入力いただいたWelcome SuicaのID番号、キャンペーン対象期間中のWelcome Suica利用に関する履歴（利用日時、利用店舗、利用金額等に関する 情報を含みます）等の情報",
   "(3) Users": "(3) 利用者",
   "East Japan Railway Company and their business partners": "東日本旅客鉄道株式会社とその業務委託先",
-  "The users may use the information related to": "利用者は本キャンペーンに関する情報は、市場調査その他の調査研究のため、個人を特定しない統計情報の形で利用させていただくことがございます"
+  "The users may use the information related to": "利用者は本キャンペーンに関する情報は、市場調査その他の調査研究のため、個人を特定しない統計情報の形で利用させていただくことがございます",
+  "Contact us": "お問い合わせ",
+  "Tel": "Tel",
+  "Business hour": "営業時間",
+  "* Japanese only": "* 日本語のみ対応可",
+  "Please show this screen to the hotel front to receive premium goods": "ホテルフロントにこの画面を提示して、<1 />プレミアムグッズをお受け取り下さい。",
+  "Consumer Feedback Survey": "アンケート",
+  "Let us hear your voice": "アンケートにご協力下さい。（所要時間2分）"
 }
