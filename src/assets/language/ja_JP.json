@@ -50,5 +50,21 @@
   "Narita Airport Station": "成田空港駅",
   "Narita Airport Station - alert": "+ 成田空港駅<1 />電車の運行時間に基づく<1 />〒282-0004千葉県成田市古込字古込1番1号",
   "Haneda Airport International Terminal": "東京モノレール羽田空港国際線ビル駅",
-  "Haneda Airport International Terminal - alert": "+ 東京モノレール線<1 />羽田空港国際線ビル駅<1 />電車の運行時間に基づく<1 />東京都大田区羽田空港2-6-5"
+  "Haneda Airport International Terminal - alert": "+ 東京モノレール線<1 />羽田空港国際線ビル駅<1 />電車の運行時間に基づく<1 />東京都大田区羽田空港2-6-5",
+  "Welcome Suica ticket vending machine": "Welcome Suica 専用発売機",
+  "Promotion Terms and Conditions": "キャンペーン規約",
+  "Campaign Participation": "エントリーについて",
+  "(1) Please make your campaign entry through this promotion website.": "(1) 本キャンペーンサイトから、エントリーを完了してください｡",
+  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) キャンペーンへのエントリーをもって、本規約に同意したものとします。",
+  "Reception of the campaign reward": "商品のお渡しについて",
+  "You will receive the campaign reward": "エントリー完了後のWEBページをホテルの受付スタッフに見せて頂くことで、商品をお渡しさせていただきます。ただし、商品の数に制限がありますので、必ず商品がお渡しできるとは限りません。",
+  "Handling of Welcome Suica related information": "Welcome Suicaに係る情報の取扱いについて",
+  "The information related to Welcome Suica": "利用者は本キャンペーンに関し、Welcome Suicaに係る情報を、次のとおり利用します。なお、お客さまの同意なく、かかる情報を(3)の範囲を超えて第三者に開示・提供することはございません（法令等により開示を求められた場合を除きます）。",
+  "(1) Purpose of data collection": "(1) 目的",
+  "Marketing research and other research and studies": "市場調査、その他の調査研究のため",
+  "(2) Data to be used": "(2)利用する項目",
+  "Your Welcome Suica ID number, Welcome Suica": "ご入力いただいたWelcome SuicaのID番号、キャンペーン対象期間中のWelcome Suica利用に関する履歴（利用日時、利用店舗、利用金額等に関する 情報を含みます）等の情報",
+  "(3) Users": "(3) 利用者",
+  "East Japan Railway Company and their business partners": "東日本旅客鉄道株式会社とその業務委託先",
+  "The users may use the information related to": "利用者は本キャンペーンに関する情報は、市場調査その他の調査研究のため、個人を特定しない統計情報の形で利用させていただくことがございます"
 }

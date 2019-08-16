@@ -50,5 +50,22 @@
   "Narita Airport Station": "成田机场站",
   "Narita Airport Station - alert": "+ 成田机场站<1 />根据电车运行时间",
   "Haneda Airport International Terminal": "羽田机场国际线大楼站（东京单轨电车）",
-  "Haneda Airport International Terminal - alert": "+ 羽田机场国际线大楼站（东京单轨电车）<1 />根据电车运行时间"
+  "Haneda Airport International Terminal - alert": "+ 羽田机场国际线大楼站（东京单轨电车）<1 />根据电车运行时间",
+  "Welcome Suica ticket vending machine": "Welcome Suica自动售票机",
+  "Promotion Terms and Conditions": "促销活动参与条款和条件",
+  "Campaign Participation": "参加条件",
+  "(1) Please make your campaign entry through this promotion website.": "(1) 请通过此促销网站参加此次活动。",
+  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) 如果您参加此次促销活动即表示您同意以下条款和条件。 ",
+  "Reception of the campaign reward": "领取奖励品",
+  "You will receive the campaign reward": "您完成参加本促销活动后,向酒店员工出示成功参加的网页画面，以获得奖励。奖励品供应有限，送完即止。",
+  "Handling of Welcome Suica related information": "Welcome Suica相关信息的处理",
+  "The information related to Welcome Suica": "有关Welcome Suica的信息将用于此促销活动，如下所示。未经您的同意， 第 (3) 项指定的用户不会向自身以外的第三方披露或提供您的信息（ 除非由于法律义务上的开示要求）。",
+  "(1) Purpose of data collection": "(1) 目的",
+  "Marketing research and other research and studies": "为了支持市场研究和其他研究",
+  "(2) Data to be used": "(2) 使用的项目",
+  "Your Welcome Suica ID number, Welcome Suica": "促销期间的·Welcome Suica ID号，Welcome Suica使用记录包括使用日期和时间， 商店， 支付金额等）",
+  "(3) Users": "(3) 用户",
+  "East Japan Railway Company and their business partners": "东日本旅客铁路公司和此公司的业务合作公司",
+  "The users may use the information related to": "用户们将使用与不可确定个人信息的统计信息的形式去运用此促销相关的信息进行市场调查和其他研究。",
+  "The English version of this": "本条款和条件的中文版仅供参考，一切与日语为主。"
 }

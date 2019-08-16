@@ -50,5 +50,22 @@
   "Narita Airport Station": "Narita Airport Station",
   "Narita Airport Station - alert": "+ Narita Airport Station<1 />Depends on the train operation time",
   "Haneda Airport International Terminal": "Haneda Airport International Terminal",
-  "Haneda Airport International Terminal - alert": "+ Haneda Airport International Terminal<1 />Depends on the train operation time"
+  "Haneda Airport International Terminal - alert": "+ Haneda Airport International Terminal<1 />Depends on the train operation time",
+  "Welcome Suica ticket vending machine": "Welcome Suica ticket vending machine",
+  "Promotion Terms and Conditions": "Promotion Terms and Conditions",
+  "Campaign Participation": "Campaign Participation",
+  "(1) Please make your campaign entry through this promotion website.": "(1) Please make your campaign entry through this promotion website.",
+  "(2) By participating in this promotion, you agree to these terms and conditions.": "(2) By participating in this promotion, you agree to these terms and conditions.",
+  "Reception of the campaign reward": "Reception of the campaign reward",
+  "You will receive the campaign reward": "You will receive the campaign reward by showing the successful campaign entry screen to the hotel staff after completing your entry to this promotion. There are limited supplies of rewards so the offer is only valid while supplies last.",
+  "Handling of Welcome Suica related information": "Handling of Welcome Suica related information",
+  "The information related to Welcome Suica": "The information related to Welcome Suica will be used for this promotion as follows by the users defined in item (3) : the users will not disclose or provide your information to any third parties except to the scope of users described in (3), without your consent (except when they are obliged to comply with the law).",
+  "(1) Purpose of data collection": "(1) Purpose of data collection",
+  "Marketing research and other research and studies": "Marketing research and other research and studies",
+  "(2) Data to be used": "(2) Data to be used",
+  "Your Welcome Suica ID number, Welcome Suica": "Your Welcome Suica ID number, Welcome Suica usage record during the promotion (including date and time of use, shops, amount paid, etc.)",
+  "(3) Users": "(3) Users",
+  "East Japan Railway Company and their business partners": "East Japan Railway Company and their business partners",
+  "The users may use the information related to": "The users may use the information related to this promotion for marketing research and other research and studies in the form of statistical information without identifying any individuals.",
+  "The English version of this": "The English version of this \"Terms and Conditions\" is for reference and convenience only. The Japanese language shall be controlling in all respects."
 }

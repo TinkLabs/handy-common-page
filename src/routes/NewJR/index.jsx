@@ -996,11 +996,7 @@ const JR = props => {
                 <span>{props.t("Reception of the campaign reward")}</span>
               </p>
               <div className={styles.subContent6}>
-                <p>
-                  {props.t(
-                    "You will receive the campaign reward by showing the successful campaign entry screen to the hotel staff after completing your entry to this promotion. There are limited supplies of rewards so the offer is only valid while supplies last."
-                  )}
-                </p>
+                <p>{props.t("You will receive the campaign reward")}</p>
               </div>
             </div>
             <div className={styles.item6}>
@@ -1011,21 +1007,13 @@ const JR = props => {
                 </span>
               </p>
               <div className={styles.subContent6}>
-                <p>
-                  {props.t(
-                    "The information related to Welcome Suica will be used for this promotion as follows by the users defined in item (3) : the users will not disclose or provide your information to any third parties except to the scope of users described in (3), without your consent (except when they are obliged to comply with the law)."
-                  )}
-                </p>
+                <p>{props.t("The information related to Welcome Suica")}</p>
                 <p>{props.t("(1) Purpose of data collection")}</p>
                 <p>
                   {props.t("Marketing research and other research and studies")}
                 </p>
                 <p>{props.t("(2) Data to be used")}</p>
-                <p>
-                  {props.t(
-                    "Your Welcome Suica ID number, Welcome Suica usage record during the promotion (including date and time of use, shops, amount paid, etc.)"
-                  )}
-                </p>
+                <p>{props.t("Your Welcome Suica ID number, Welcome Suica")}</p>
                 <p>{props.t("(3) Users")}</p>
                 <p>
                   {props.t(
@@ -1038,22 +1026,18 @@ const JR = props => {
               <p className={styles.subHeader6}>
                 <span className={styles.number6}>4. </span>
                 <span>
-                  {props.t(
-                    "The users may use the information related to this promotion for marketing research and other research and studies in the form of statistical information without identifying any individuals."
-                  )}
+                  {props.t("The users may use the information related to")}
                 </span>
               </p>
             </div>
-            <div className={styles.item6}>
-              <p className={styles.subHeader6}>
-                <span className={styles.number6}>※ </span>
-                <span>
-                  {props.t(
-                    "The English version of this “Terms and Conditions” is for reference and convenience only. The Japanese language shall be controlling in all respects."
-                  )}
-                </span>
-              </p>
-            </div>
+            {props.i18n.language !== "ja_JP" && (
+              <div className={styles.item6}>
+                <p className={styles.subHeader6}>
+                  <span className={styles.number6}>※ </span>
+                  <span>{props.t("The English version of this")}</span>
+                </p>
+              </div>
+            )}
           </section>
         </div>
       )}
