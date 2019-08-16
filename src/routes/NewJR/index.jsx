@@ -371,7 +371,7 @@ const JR = props => {
               </section>
               <section>
                 <div className={styles.top}>
-                  <span className={styles.circle}>01</span>
+                  <span className={styles.circle}>03</span>
                   <p>
                     <Trans i18nKey="Show the screen at the hotel front desk">
                       Show the screen at the hotel front desk
