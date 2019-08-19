@@ -46,9 +46,35 @@
 
 
 :global(.am-modal-body) {
-  margin: 20px 0 !important;
+  margin: 20px 0;
 }
 
 :global(.am-modal-transparent) {
   width: 330px !important;
+}
+
+:global(.stationModal .am-modal-content) {
+  background-color: #fff !important;
+}
+
+:global(.stationModal .am-modal-body) {
+  margin: 0;
+}
+
+:global(.stationModal .am-modal-footer .am-modal-button) {
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+:global(.stationModal .am-modal-body .stationModalContainer::-webkit-scrollbar) {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+:global(.stationModal) {
+  width: 340px !important;
+}
+
+:global(.am-modal-button) {
+  color: #999 !important;
 }

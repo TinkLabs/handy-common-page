@@ -18,6 +18,7 @@ export default {
     numberWrong: false,
     letterWrong: false,
     showLangList: false,
+    showStationModal: false,
   },
   effects: {
     *validcode(
@@ -74,6 +75,9 @@ export default {
     },
     controlLangList(state, action) {
       return { ...state, ...{ showLangList: action.showLangList } };
+    },
+    controlStationModal(state, action) {
+      return { ...state, ...{ showStationModal: action.showStationModal } };
     },
   },
 

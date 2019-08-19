@@ -1,0 +1,80 @@
+@import "../../../../assets/common/index.scss";
+
+.module5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, #FFF5BA, #FFB290);
+  padding: 24px 0;
+
+  .header5 {
+    font-size: $font24;
+    color: $mainColor;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .text5 {
+    position: relative;
+    font-size: $font16;
+    color: $mainColor;
+    font-weight: 600;
+    margin-left: 20px;
+    width: 280px;
+    text-align: left;
+
+    &::before {
+      position: absolute;
+      left: -20px;
+      top: -3px;
+      font-size: 18px;
+      content: "■ ";
+    }
+  }
+
+  .item5 {
+    position: relative;
+    margin: 10px 10px;
+    padding: 16px 16px 16px 30px;
+    color: $white;
+    background-color: #B7343E;
+    width: 260px;
+    cursor: pointer;
+    text-align: left;
+
+    &:before {
+      position: absolute;
+      left: 16px;
+      top: 30%;
+      color: $white;
+      content: "+ ";
+    }
+  }
+}
+
+:global(.stationModalDiv) {
+  background-image: linear-gradient(to right, #fff, #fff);
+  padding-top: 0;
+  margin-top: 8px;
+
+  // background-color: #fff;
+  .item5 {
+    position: relative;
+    margin: 10px 10px;
+    padding: 16px 16px 16px 30px;
+    color: $white;
+    background-color: #B7343E;
+    width: 260px;
+    cursor: pointer;
+  }
+
+  .header5 {
+    padding: 0 0 20px 20px;
+    margin: 10px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+  }
+}
