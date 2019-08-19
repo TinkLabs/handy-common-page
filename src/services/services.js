@@ -22,10 +22,17 @@ let suicaLog = (barcode, suica, deviceuserid) => {
     _send_time: timestamp,
     _device_user_id: deviceuserid,
   };
-  return axios.get(`https://staging.handy.travel/apis/suica_campaign_log`, {
-    params: param,
-    timeout: 3000,
-  });
+  if (window.location.href.indexOf("environment") === -1) {
+    return axios.get(`https://staging.handy.travel/apis/suica_campaign_log`, {
+      params: param,
+      timeout: 3000,
+    });
+  } else {
+    return axios.get(`https://hk.handy.travel/apis/suica_campaign_log`, {
+      params: param,
+      timeout: 3000,
+    });
+  }
 };
 
 let getCMSAdKeyValueFn = (urlPar = {}) => {
