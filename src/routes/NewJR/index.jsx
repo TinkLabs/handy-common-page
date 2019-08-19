@@ -52,16 +52,13 @@ const JR = props => {
     if (data.target.value.length > 3) {
       return;
     } else {
-      if (index === 0) {
-        if (props.suica0 === data.target.value) {
-          props.dispatch({
-            type: "jr/save",
-            payload: { numberWrong: true, wrong: false, letterWrong: false },
-          });
-          return;
-        }
-      } else if (index === 1) {
-        if (props.suica1 === data.target.value) {
+      if (index < 2) {
+        if (
+          !(
+            (data.keyCode >= 48 && data.keyCode <= 57) ||
+            (data.keyCode >= 96 && data.keyCode <= 105)
+          )
+        ) {
           props.dispatch({
             type: "jr/save",
             payload: { numberWrong: true, wrong: false, letterWrong: false },
@@ -107,19 +104,13 @@ const JR = props => {
     });
   };
 
-  const onKeyDown = data => {
+  const onKeyUp = data => {
     switch (data.target.name) {
       case "name0":
         validate(data, 0);
-        // if (checkNumb(data.target.value) && data.target.value.length === 3) {
-        //   textInput1.current.focus();
-        // }
         break;
       case "name1":
         validate(data, 1);
-        // if (checkNumb(data.target.value) && data.target.value.length === 3) {
-        //   textInput2.current.focus();
-        // }
         break;
       default:
         break;
@@ -129,13 +120,19 @@ const JR = props => {
   var onValueChange = data => {
     switch (data.target.name) {
       case "name0":
-        validate(data, 0);
+        props.dispatch({
+          type: "jr/save",
+          payload: { [`suica0`]: data.target.value },
+        });
         if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput1.current.focus();
         }
         break;
       case "name1":
-        validate(data, 1);
+        props.dispatch({
+          type: "jr/save",
+          payload: { [`suica1`]: data.target.value },
+        });
         if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput2.current.focus();
         }
@@ -625,7 +622,7 @@ const JR = props => {
                 <div className={styles.suicaContainer}>
                   <input
                     value={props.suica0}
-                    onKeyDown={onKeyDown}
+                    onKeyUp={onKeyUp}
                     onChange={onValueChange}
                     className={styles.number}
                     placeholder={props.t("ex") + ":123"}
@@ -633,7 +630,7 @@ const JR = props => {
                     name="name0"
                   />
                   <input
-                    onKeyDown={onKeyDown}
+                    onKeyUp={onKeyUp}
                     value={props.suica1}
                     onChange={onValueChange}
                     className={styles.number}

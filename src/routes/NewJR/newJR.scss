@@ -341,11 +341,14 @@
             border: 1px solid $hexe3;
             width: 56px;
             height: 32px;
+            line-height: 32px;
             border-radius: 3px;
             text-align: center;
 
             &::placeholder {
               font-size: $font12;
+              height: 32px;
+              line-height: 32px;
             }
           }
         }
