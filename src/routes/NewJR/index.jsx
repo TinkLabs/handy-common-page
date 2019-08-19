@@ -5,7 +5,7 @@ import { Trans, withTranslation } from "react-i18next";
 import { Modal } from "antd-mobile";
 import styles from "./newJR.scss";
 import Station from "./components/Station/index";
-const alert = Modal.alert;
+import { Helmet } from "react-helmet";
 
 const JR = props => {
   let textInput1 = React.createRef();
@@ -164,16 +164,31 @@ const JR = props => {
     });
   };
 
-  const changeLang = lang => {
+  const changeLang = (lang, title, htmlLang) => {
     props.i18n.changeLanguage(lang);
     props.dispatch({
       type: "jr/controlLangList",
       showLangList: false,
+      title,
+      htmlLang,
     });
   };
 
   return (
     <div className={styles.root}>
+      <Helmet>
+        <html lang={props.htmlLang} />
+        <meta charSet="utf-8" />
+        <title>{props.title}</title>
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i,700|Noto+Sans+JP:400,500,600i,700&display=swap&subset=japanese"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+      </Helmet>
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
         // {false && (
@@ -220,10 +235,46 @@ const JR = props => {
               </span>
               {props.showLangList && (
                 <ul className={styles.langList}>
-                  <li onClick={changeLang.bind(null, "ja_JP")}>日本語</li>
-                  <li onClick={changeLang.bind(null, "en_US")}>English</li>
-                  <li onClick={changeLang.bind(null, "zh_CN")}>中文（简体）</li>
-                  <li onClick={changeLang.bind(null, "zh_HK")}>中文（繁體）</li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "ja_JP",
+                      "JR EAST x handy コラボキャンペーン",
+                      "ja"
+                    )}
+                  >
+                    日本語
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "en_US",
+                      "JR EAST x handy Collaboration Campaign",
+                      "en"
+                    )}
+                  >
+                    English
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "zh_CN",
+                      "JR EAST x handy 特别活动",
+                      "zh-CN"
+                    )}
+                  >
+                    中文（简体）
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "zh_HK",
+                      "JR EAST x handy 特別活動",
+                      "zh-TW"
+                    )}
+                  >
+                    中文（繁體）
+                  </li>
                 </ul>
               )}
             </section>
@@ -398,7 +449,7 @@ const JR = props => {
                       visible={props.showStationModal}
                       transparent
                       maskClosable
-                      className='stationModal'
+                      className="stationModal"
                       footer={[
                         {
                           text: "x",
@@ -412,7 +463,10 @@ const JR = props => {
                         },
                       ]}
                     >
-                      <div className="stationModalContainer" style={{ height: 600, overflow: "scroll" }}>
+                      <div
+                        className="stationModalContainer"
+                        style={{ height: 600, overflow: "scroll" }}
+                      >
                         <Station className="stationModalDiv" />
                       </div>
                     </Modal>
@@ -801,8 +855,8 @@ const JR = props => {
               <img src={require("../../assets/jr/new/star.svg")} alt="" />
               <p>
                 <Trans i18nKey="Please show this screen to the hotel front to receive premium goods">
-                  Please show this screen to the <br /> hotel front to receive
-                  premium goods
+                  Please show this screen to the hotel front to receive premium
+                  goods
                   <br />
                 </Trans>
               </p>

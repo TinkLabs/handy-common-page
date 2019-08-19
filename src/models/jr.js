@@ -19,6 +19,8 @@ export default {
     letterWrong: false,
     showLangList: false,
     showStationModal: false,
+    title: "JR EAST x handy コラボキャンペーン",
+    htmlLang: "ja",
   },
   effects: {
     *validcode(
@@ -74,7 +76,14 @@ export default {
       return { ...state, ...action.payload };
     },
     controlLangList(state, action) {
-      return { ...state, ...{ showLangList: action.showLangList } };
+      return {
+        ...state,
+        ...{
+          showLangList: action.showLangList,
+          title: action.title,
+          htmlLang: action.htmlLang,
+        },
+      };
     },
     controlStationModal(state, action) {
       return { ...state, ...{ showStationModal: action.showStationModal } };
@@ -86,7 +95,6 @@ export default {
     setup({ dispatch, history }) {
       history.listen(location => {
         if (location.pathname.includes("suica")) {
-          console.log("jr");
           document.title = "Buy Welcome Suica Get Premium Goods";
         }
       });
