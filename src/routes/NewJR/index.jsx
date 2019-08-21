@@ -28,10 +28,6 @@ const JR = props => {
     });
   });
 
-  var onReturn = () => {
-    window.location.href = "https://www.hiinc.com/ja/";
-  };
-
   const checkChar = value => {
     const reg = /^[A-Za-z]{0,3}$/;
     return reg.test(value);
@@ -49,16 +45,12 @@ const JR = props => {
         payload: { [`suica${index}`]: data.target.value },
       });
     }
+
     if (data.target.value.length > 3) {
       return;
     } else {
       if (index < 2) {
-        if (
-          !(
-            (data.keyCode >= 48 && data.keyCode <= 57) ||
-            (data.keyCode >= 96 && data.keyCode <= 105)
-          )
-        ) {
+        if (!checkNumb(data.target.value)) {
           props.dispatch({
             type: "jr/save",
             payload: {
@@ -114,35 +106,16 @@ const JR = props => {
     });
   };
 
-  const onKeyUp = data => {
-    switch (data.target.name) {
-      case "name0":
-        validate(data, 0);
-        break;
-      case "name1":
-        validate(data, 1);
-        break;
-      default:
-        break;
-    }
-  };
-
   var onValueChange = data => {
     switch (data.target.name) {
       case "name0":
-        props.dispatch({
-          type: "jr/save",
-          payload: { [`suica0`]: data.target.value },
-        });
+        validate(data, 0);
         if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput1.current.focus();
         }
         break;
       case "name1":
-        props.dispatch({
-          type: "jr/save",
-          payload: { [`suica1`]: data.target.value },
-        });
+        validate(data, 1);
         if (checkNumb(data.target.value) && data.target.value.length === 3) {
           textInput2.current.focus();
         }
@@ -632,20 +605,20 @@ const JR = props => {
                 <div className={styles.suicaContainer}>
                   <input
                     value={props.suica0}
-                    onKeyUp={onKeyUp}
+                    // onKeyUp={onKeyUp}
                     onChange={onValueChange}
                     className={styles.number}
                     placeholder={props.t("ex") + ":123"}
-                    type="number"
+                    type="tel"
                     name="name0"
                   />
                   <input
-                    onKeyUp={onKeyUp}
+                    // onKeyUp={onKeyUp}
                     value={props.suica1}
                     onChange={onValueChange}
                     className={styles.number}
                     placeholder={props.t("ex") + ":456"}
-                    type="number"
+                    type="tel"
                     name="name1"
                     ref={textInput1}
                   />
