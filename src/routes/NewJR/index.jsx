@@ -692,7 +692,15 @@ const JR = props => {
             </div>
             <div className={styles.moviePic}>
               <p>Special Movie</p>
-              <img src={require("../../assets/jr/new/tv_icon.svg")} alt="" />
+              <iframe
+                title="Welcom Suica Video"
+                width="328"
+                height="185"
+                src="https://www.youtube.com/embed/E1imydawlpc"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
             </div>
           </section>
           {/* module4 */}
