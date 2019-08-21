@@ -179,6 +179,17 @@ const JR = props => {
       title,
       htmlLang,
     });
+
+    // remove error text after change language
+    props.dispatch({
+      type: "jr/save",
+      payload: {
+        numberWrong: false,
+        wrong: false,
+        letterWrong: false,
+        num: 0,
+      },
+    });
   };
 
   return (
