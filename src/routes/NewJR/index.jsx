@@ -720,7 +720,7 @@ const JR = props => {
                 <div className={styles.subHeader4}>
                   <span className={styles.subNumber}>1.</span>
                   <span className={styles.subHeaderText}>
-                    <Trans i18nKey="Easy train and bus rides:">
+                    <Trans i18nKey="Easy train and bus rides">
                       Easy train and bus rides:
                       <br />
                       Walking through the gate
