@@ -61,7 +61,12 @@ const JR = props => {
         ) {
           props.dispatch({
             type: "jr/save",
-            payload: { numberWrong: true, wrong: false, letterWrong: false },
+            payload: {
+              numberWrong: true,
+              wrong: false,
+              letterWrong: false,
+              num: 0,
+            },
           });
           return;
         }
@@ -69,7 +74,12 @@ const JR = props => {
         if (!checkChar(data.target.value)) {
           props.dispatch({
             type: "jr/save",
-            payload: { letterWrong: true, wrong: false, numberWrong: false },
+            payload: {
+              letterWrong: true,
+              wrong: false,
+              numberWrong: false,
+              num: 0,
+            },
           });
           return;
         } else {
@@ -614,7 +624,7 @@ const JR = props => {
                     </span>
                   ) : (
                     <span className={styles.failedstatus}>
-                      <p>{props.t("Something went wrong! Please try again")}</p>
+                      <p>{props.t("Something went wrong")}</p>
                     </span>
                   )}
                 </div>
