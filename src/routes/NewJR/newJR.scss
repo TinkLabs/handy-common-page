@@ -396,6 +396,8 @@
 
     .header4 {
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       p {
         font-size: $font18;
@@ -411,9 +413,6 @@
       }
 
       p:last-child {
-        position: absolute;
-        top: 55px;
-        right: 0;
         text-align: right;
         width: 320px;
         color: $hex19;
@@ -421,7 +420,7 @@
         background-color: #FFB290;
         border-top-left-radius: 100px;
         border-bottom-left-radius: 100px;
-        z-index: -9999;
+        align-self: flex-end;
       }
     }
 
