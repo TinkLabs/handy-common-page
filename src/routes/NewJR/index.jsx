@@ -697,7 +697,7 @@ const JR = props => {
                 width="328"
                 height="185"
                 src="https://www.youtube.com/embed/E1imydawlpc"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
