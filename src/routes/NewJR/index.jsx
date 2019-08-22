@@ -483,7 +483,6 @@ const JR = props => {
                     >
                       <div
                         className="stationModalContainer"
-                        style={{ height: 600, overflow: "scroll" }}
                       >
                         <Station className="stationModalDiv" />
                       </div>
