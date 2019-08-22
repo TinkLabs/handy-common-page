@@ -483,7 +483,7 @@ const JR = props => {
                     >
                       <div
                         className="stationModalContainer"
-                        style={{ height: '90vh', overflow: "scroll" }}
+                        style={{ height: "90vh", overflow: "scroll" }}
                       >
                         <Station className="stationModalDiv" />
                       </div>
@@ -699,7 +699,7 @@ const JR = props => {
                 src="https://www.youtube.com/embed/E1imydawlpc"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               />
             </div>
           </section>
