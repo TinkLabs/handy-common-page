@@ -21,6 +21,36 @@ const JR = props => {
       setChangeLangByUrlTimes(changeLangByUrlTimes + 1);
       setTimeout(() => {
         props.i18n.changeLanguage(urlLang);
+        switch (urlLang) {
+          case "ja_JP":
+            props.dispatch({
+              type: "jr/controlLangList",
+              title: "JR EAST x handy コラボキャンペーン",
+              htmlLang: "ja",
+            });
+            break;
+          case "en_US":
+            props.dispatch({
+              type: "jr/controlLangList",
+              title: "JR EAST x handy Collaboration Campaign",
+              htmlLang: "en",
+            });
+            break;
+          case "zh_CN":
+            props.dispatch({
+              type: "jr/controlLangList",
+              title: "JR EAST x handy 特别活动",
+              htmlLang: "zh-CN",
+            });
+            break;
+          default:
+            props.dispatch({
+              type: "jr/controlLangList",
+              title: "JR EAST x handy 特別活動",
+              htmlLang: "zh-TW",
+            });
+            break;
+        }
       }, 0);
     }
   };
