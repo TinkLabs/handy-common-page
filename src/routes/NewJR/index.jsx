@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { Trans, withTranslation } from "react-i18next";
@@ -11,6 +11,23 @@ const JR = props => {
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
+  const [changeLangByUrlTimes, setChangeLangByUrlTimes] = useState(0);
+
+  const changeLangByUrlParam = () => {
+    const href = window.location.href;
+    const urlLang = href.substr(href.indexOf("lang=") + 5, 5);
+    if (props.i18n.language !== urlLang && changeLangByUrlTimes === 0) {
+      // just change language by url once
+      setChangeLangByUrlTimes(changeLangByUrlTimes + 1);
+      setTimeout(() => {
+        props.i18n.changeLanguage(urlLang);
+      }, 0);
+    }
+  };
+
+  useEffect(() => {
+    changeLangByUrlParam();
+  });
 
   document.addEventListener("click", event => {
     if (
@@ -236,7 +253,7 @@ const JR = props => {
                 alt=""
               />
             )}
-            {props.i18n.language === "zh_HK" && (
+            {props.i18n.language === "zh_TW" && (
               <img
                 src={require("../../assets/jr/new/goods_get_icon_tw.svg")}
                 alt=""
@@ -286,7 +303,7 @@ const JR = props => {
                   <li
                     onClick={changeLang.bind(
                       null,
-                      "zh_HK",
+                      "zh_TW",
                       "JR EAST x handy 特別活動",
                       "zh-TW"
                     )}
@@ -329,7 +346,7 @@ const JR = props => {
                       alt=""
                     />
                   )}
-                  {props.i18n.language === "zh_HK" && (
+                  {props.i18n.language === "zh_TW" && (
                     <img
                       src={require("../../assets/jr/new/header_greencircle_tw.svg")}
                       alt=""
@@ -553,7 +570,7 @@ const JR = props => {
                   alt=""
                 />
               )}
-              {props.i18n.language === "zh_HK" && (
+              {props.i18n.language === "zh_TW" && (
                 <img
                   src={require("../../assets/jr/new/premium_goods_sp_tw.png")}
                   alt=""
@@ -680,7 +697,7 @@ const JR = props => {
                       alt=""
                     />
                   )}
-                  {props.i18n.language === "zh_HK" && (
+                  {props.i18n.language === "zh_TW" && (
                     <img
                       src={require("../../assets/jr/new/section3_campaignhowto_infoillust_tw.svg")}
                       alt=""
@@ -929,7 +946,7 @@ const JR = props => {
                   src="https://www.surveymonkey.com/r/XHHD2PM?embedded=1"
                 />
               )}
-              {props.i18n.language === "zh_HK" && (
+              {props.i18n.language === "zh_TW" && (
                 <iframe
                   title="survey"
                   width="310"
