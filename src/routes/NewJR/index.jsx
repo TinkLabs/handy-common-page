@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { Trans, withTranslation } from "react-i18next";
@@ -6,11 +6,20 @@ import { Modal } from "antd-mobile";
 import styles from "./newJR.scss";
 import Station from "./components/Station/index";
 import { Helmet } from "react-helmet";
+import { CSSTransition } from "react-transition-group";
+import transiton from "../../assets/common/transition.module.scss";
 
 const JR = props => {
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
+  const [showElement, setShowElement] = useState(false);
+  const [showHeaderImg1, setShowHeaderImg1] = useState(false);
+
+  // component did mount
+  useEffect(() => {
+    setShowElement(true);
+  });
 
   document.addEventListener("click", event => {
     if (
@@ -198,14 +207,6 @@ const JR = props => {
         <html lang={props.htmlLang} />
         <meta charSet="utf-8" />
         <title>{props.title}</title>
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i,700|Noto+Sans+JP:400,500,600i,700&display=swap&subset=japanese"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
       </Helmet>
       {/* first page */}
       {!(!props.wrong && props.num !== 0 && props.success) && (
@@ -300,10 +301,29 @@ const JR = props => {
             {/* module1 */}
             <section className={styles.module1}>
               <header>
-                <img
+                {/* <img
                   src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
                   alt=""
-                />
+                  onLoad={() => {
+                    console.log(1111);
+                    setShowHeaderImg1(true);
+                  }}
+                  style={{ height: 0 }}
+                /> */}
+                <CSSTransition
+                  in={true}
+                  timeout={2000}
+                  classNames={{
+                    enter: transiton["fade-enter"],
+                    enterActive: transiton["fade-enter-active"],
+                  }}
+                  unmountOnExit
+                >
+                  <img
+                    src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
+                    alt=""
+                  />
+                </CSSTransition>
               </header>
               <div className={styles.welcome}>
                 <img
@@ -338,25 +358,37 @@ const JR = props => {
                 </div>
               </div>
               <div className={styles.text}>
-                <p className={styles.rightBig}>BUY</p>
-                <p>
-                  <span className={styles.rightBig}>&</span>
-                  <span className={styles.leftSmall}>
-                    Welcome
-                    <br />
-                    Suica
-                  </span>
-                </p>
-                <p>
-                  <span className={styles.rightBig}>GET!</span>
-                </p>
-                <p>
-                  <span className={styles.leftSmall}>
-                    Premium
-                    <br />
-                    Goods
-                  </span>
-                </p>
+                <CSSTransition
+                  in={showElement}
+                  timeout={2000}
+                  classNames={{
+                    enter: transiton["fade-enter"],
+                    enterActive: transiton["fade-enter-active"],
+                  }}
+                  unmountOnExit
+                >
+                  <div>
+                    <p className={styles.rightBig}>BUY</p>
+                    <p>
+                      <span className={styles.rightBig}>&</span>
+                      <span className={styles.leftSmall}>
+                        Welcome
+                        <br />
+                        Suica
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.rightBig}>GET!</span>
+                    </p>
+                    <p>
+                      <span className={styles.leftSmall}>
+                        Premium
+                        <br />
+                        Goods
+                      </span>
+                    </p>
+                  </div>
+                </CSSTransition>
               </div>
               <div className={styles.knowMore}>
                 <button
