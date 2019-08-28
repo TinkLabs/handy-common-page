@@ -2,8 +2,6 @@ import * as srv from "../services/services";
 import { getBarcode, getDeviceUserID } from "../utils/env";
 import constants from "../utils/constants";
 
-console.log(constants.urlLang);
-
 export default {
   // this namespce is used for displatch
   namespace: "jr",
