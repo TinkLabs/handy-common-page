@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { Trans, withTranslation } from "react-i18next";
@@ -11,53 +11,6 @@ const JR = props => {
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
-  const [changeLangByUrlTimes, setChangeLangByUrlTimes] = useState(0);
-
-  const changeLangByUrlParam = () => {
-    const href = window.location.href;
-    const urlLang = href.substr(href.indexOf("lang=") + 5, 5);
-    if (props.i18n.language !== urlLang && changeLangByUrlTimes === 0) {
-      // just change language by url once
-      setChangeLangByUrlTimes(changeLangByUrlTimes + 1);
-      setTimeout(() => {
-        props.i18n.changeLanguage(urlLang);
-        switch (urlLang) {
-          case "ja_JP":
-            props.dispatch({
-              type: "jr/controlLangList",
-              title: "JR EAST x handy コラボキャンペーン",
-              htmlLang: "ja",
-            });
-            break;
-          case "en_US":
-            props.dispatch({
-              type: "jr/controlLangList",
-              title: "JR EAST x handy Collaboration Campaign",
-              htmlLang: "en",
-            });
-            break;
-          case "zh_CN":
-            props.dispatch({
-              type: "jr/controlLangList",
-              title: "JR EAST x handy 特别活动",
-              htmlLang: "zh-CN",
-            });
-            break;
-          default:
-            props.dispatch({
-              type: "jr/controlLangList",
-              title: "JR EAST x handy 特別活動",
-              htmlLang: "zh-TW",
-            });
-            break;
-        }
-      }, 0);
-    }
-  };
-
-  useEffect(() => {
-    changeLangByUrlParam();
-  });
 
   document.addEventListener("click", event => {
     if (

@@ -1,8 +1,10 @@
+import constant from "../constants";
+
 export default {
   // load: "currentOnly",
   // lng: navigator.language || navigator.userLanguage,
   // preset
-  lng: "ja_JP",
+  lng: constant.urlLang,
   fallbackLng: "ja_JP",
   // lngs: [
   //   'en_US',

@@ -68,7 +68,32 @@ currencymap["RUB"] = "RUB_Russian Ruble.svg";
 currencymap["SGD"] = "SGD_Singapore Dollar.svg";
 currencymap["THB"] = "THB_Thai Baht.svg";
 
+const href = window.location.href;
+const urlLang = href.substr(href.indexOf("lang=") + 5, 5);
+let title = "JR EAST x handy コラボキャンペーン";
+let htmlLang = "ja";
+
+switch (urlLang) {
+  case "en_US":
+    title = "JR EAST x handy Collaboration Campaign";
+    htmlLang = "en";
+    break;
+  case "zh_CN":
+    title = "JR EAST x handy 特别活动";
+    htmlLang = "zh-CN";
+    break;
+  case "zh_TW":
+    title = "JR EAST x handy 特別活動";
+    htmlLang = "zh-TW";
+    break;
+  default:
+    break;
+}
+
 export default {
   weathermap,
   currencymap,
+  urlLang,
+  title,
+  htmlLang,
 };
