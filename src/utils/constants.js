@@ -69,7 +69,8 @@ currencymap["SGD"] = "SGD_Singapore Dollar.svg";
 currencymap["THB"] = "THB_Thai Baht.svg";
 
 const href = window.location.href;
-const urlLang = href.substr(href.indexOf("lang=") + 5, 5);
+const urlLang = href.indexOf("lang=") !== -1 ? href.substr(href.indexOf("lang=") + 5, 5) : "ja_JP";
+
 let title = "JR EAST x handy コラボキャンペーン";
 let htmlLang = "ja";
 

@@ -12,6 +12,9 @@
   font-family: Montserrat,
     'Noto Sans JP',
     sans-serif;
+  background-color: hsla(0, 0%, 100%, .8);
+  z-index: -99999;
+
 
   .bgImg {
     position: absolute;
