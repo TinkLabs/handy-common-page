@@ -35,7 +35,6 @@ const JR = props => {
     const module4Top = module4.current.offsetTop + 200;
     const module5Top = module5.current.offsetTop + 200;
     const module6Top = module6.current.offsetTop + 200;
-    console.log(module2Top, module3Top, module4Top, module5Top, module6Top);
     setShowModule1(true);
 
     window.addEventListener("scroll", () => {
@@ -248,7 +247,7 @@ const JR = props => {
     setShowModule6(false);
     setTimeout(() => {
       setShowModule1(true);
-    }, 0);
+    }, 30);
   };
 
   return (
