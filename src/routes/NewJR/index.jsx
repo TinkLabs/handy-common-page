@@ -20,6 +20,8 @@ const JR = props => {
   const module5 = React.createRef();
   const module6 = React.createRef();
 
+  const [showModule1, setShowModule1] = useState(false);
+
   const [showModule2, setShowModule2] = useState(false);
   const [showModule3, setShowModule3] = useState(false);
   const [showModule4, setShowModule4] = useState(false);
@@ -33,6 +35,8 @@ const JR = props => {
     const module4Top = module4.current.offsetTop + 200;
     const module5Top = module5.current.offsetTop + 200;
     const module6Top = module6.current.offsetTop + 200;
+    console.log(module2Top, module3Top, module4Top, module5Top, module6Top);
+    setShowModule1(true);
 
     window.addEventListener("scroll", () => {
       let scrollTop =
@@ -234,6 +238,17 @@ const JR = props => {
         num: 0,
       },
     });
+
+    // when change lang reload animation
+    setShowModule1(false);
+    setShowModule2(false);
+    setShowModule3(false);
+    setShowModule4(false);
+    setShowModule5(false);
+    setShowModule6(false);
+    setTimeout(() => {
+      setShowModule1(true);
+    }, 0);
   };
 
   return (
@@ -331,6 +346,50 @@ const JR = props => {
                   </li>
                 </ul>
               )}
+              {/* {props.showLangList && (
+                <ul className={styles.langList}>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "ja_JP",
+                      "JR EAST x handy コラボキャンペーン",
+                      "ja"
+                    )}
+                  >
+                    日本語
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "en_US",
+                      "JR EAST x handy Collaboration Campaign",
+                      "en"
+                    )}
+                  >
+                    English
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "zh_CN",
+                      "JR EAST x handy 特别活动",
+                      "zh-CN"
+                    )}
+                  >
+                    中文（简体）
+                  </li>
+                  <li
+                    onClick={changeLang.bind(
+                      null,
+                      "zh_TW",
+                      "JR EAST x handy 特別活動",
+                      "zh-TW"
+                    )}
+                  >
+                    中文（繁體）
+                  </li>
+                </ul>
+              )} */}
             </section>
 
             {/* module1 */}
@@ -339,9 +398,17 @@ const JR = props => {
                 <img
                   src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
                   alt=""
+                  className={cx({
+                    addAnimation1: showModule1,
+                  })}
                 />
               </header>
-              <div className={styles.welcome}>
+              <div
+                className={cx({
+                  welcome: true,
+                  addAnimation2: showModule1,
+                })}
+              >
                 <img
                   src={require("../../assets/jr/new/header_welcomesuica_image.png")}
                   alt=""
@@ -373,7 +440,12 @@ const JR = props => {
                   )}
                 </div>
               </div>
-              <div className={styles.text}>
+              <div
+                className={cx({
+                  text: true,
+                  addAnimation3: showModule1,
+                })}
+              >
                 <div>
                   <p className={styles.rightBig}>BUY</p>
                   <p>
@@ -402,6 +474,10 @@ const JR = props => {
                     document.documentElement.scrollTop = 1645;
                     document.body.scrollTop = 1645;
                   }}
+                  className={cx({
+                    text: true,
+                    addAnimation4: showModule1,
+                  })}
                 >
                   {props.t("Know more")}
                 </button>
