@@ -7,8 +7,6 @@ import { Modal } from "antd-mobile";
 import styles from "./newJR.scss";
 import Station from "./components/Station/index";
 import { Helmet } from "react-helmet";
-import { CSSTransition } from "react-transition-group";
-import transiton from "../../assets/common/transition.module.scss";
 
 let cx = classNames.bind(styles);
 
@@ -22,8 +20,6 @@ const JR = props => {
   const module5 = React.createRef();
   const module6 = React.createRef();
 
-  const [showElement, setShowElement] = useState(false);
-
   const [showModule2, setShowModule2] = useState(false);
   const [showModule3, setShowModule3] = useState(false);
   const [showModule4, setShowModule4] = useState(false);
@@ -32,7 +28,6 @@ const JR = props => {
 
   // component did mount
   useEffect(() => {
-    setShowElement(true);
     const module2Top = module2.current.offsetTop + 200;
     const module3Top = module3.current.offsetTop + 200;
     const module4Top = module4.current.offsetTop + 200;
@@ -404,8 +399,8 @@ const JR = props => {
               <div className={styles.knowMore}>
                 <button
                   onClick={() => {
-                    document.documentElement.scrollTop = 1549;
-                    document.body.scrollTop = 1549;
+                    document.documentElement.scrollTop = 1650;
+                    document.body.scrollTop = 1650;
                   }}
                 >
                   {props.t("Know more")}
