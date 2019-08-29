@@ -1,5 +1,6 @@
 import * as srv from "../services/services";
 import { getBarcode, getDeviceUserID } from "../utils/env";
+import constants from "../utils/constants";
 
 export default {
   // this namespce is used for displatch
@@ -19,8 +20,8 @@ export default {
     letterWrong: false,
     showLangList: false,
     showStationModal: false,
-    title: "JR EAST x handy コラボキャンペーン",
-    htmlLang: "ja",
+    title: constants.title,
+    htmlLang: constants.htmlLang,
   },
   effects: {
     *validcode(

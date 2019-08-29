@@ -1,13 +1,15 @@
+import constant from "../constants";
+
 export default {
   // load: "currentOnly",
   // lng: navigator.language || navigator.userLanguage,
   // preset
-  lng: "ja_JP",
+  lng: constant.urlLang,
   fallbackLng: "ja_JP",
   // lngs: [
   //   'en_US',
   //   'ja_JP',
-  //   'zh_HK',
+  //   'zh_TW',
   //   'zh_CN',
   // ],
   // ns: ['translation'], // has to match json file name and resource object eg: "en-US": {translation: en_US}"
