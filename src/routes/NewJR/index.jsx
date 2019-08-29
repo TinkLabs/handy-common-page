@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames/bind";
 import { connect } from "dva";
 import DebugIt from "../../components/mydebug/DebugIt";
 import { Trans, withTranslation } from "react-i18next";
@@ -9,17 +10,56 @@ import { Helmet } from "react-helmet";
 import { CSSTransition } from "react-transition-group";
 import transiton from "../../assets/common/transition.module.scss";
 
+let cx = classNames.bind(styles);
+
 const JR = props => {
   let textInput1 = React.createRef();
   let textInput2 = React.createRef();
   let textInput3 = React.createRef();
+  const module2 = React.createRef();
+  const module3 = React.createRef();
+  const module4 = React.createRef();
+  const module5 = React.createRef();
+  const module6 = React.createRef();
+
   const [showElement, setShowElement] = useState(false);
-  const [showHeaderImg1, setShowHeaderImg1] = useState(false);
+
+  const [showModule2, setShowModule2] = useState(false);
+  const [showModule3, setShowModule3] = useState(false);
+  const [showModule4, setShowModule4] = useState(false);
+  const [showModule5, setShowModule5] = useState(false);
+  const [showModule6, setShowModule6] = useState(false);
 
   // component did mount
   useEffect(() => {
     setShowElement(true);
-  });
+    const module2Top = module2.current.offsetTop + 200;
+    const module3Top = module3.current.offsetTop + 200;
+    const module4Top = module4.current.offsetTop + 200;
+    const module5Top = module5.current.offsetTop + 200;
+    const module6Top = module6.current.offsetTop + 200;
+
+    window.addEventListener("scroll", () => {
+      let scrollTop =
+        (document.body.scrollTop || document.documentElement.scrollTop) + 700;
+
+      if (scrollTop > module2Top && !showModule2) {
+        setShowModule2(true);
+      }
+      if (scrollTop > module3Top && !showModule3) {
+        setShowModule3(true);
+      }
+      if (scrollTop > module4Top && !showModule4) {
+        setShowModule4(true);
+      }
+      if (scrollTop > module5Top && !showModule5) {
+        setShowModule5(true);
+      }
+      if (scrollTop > module6Top && !showModule6) {
+        setShowModule6(true);
+      }
+    });
+  }, []);
 
   document.addEventListener("click", event => {
     if (
@@ -301,29 +341,10 @@ const JR = props => {
             {/* module1 */}
             <section className={styles.module1}>
               <header>
-                {/* <img
+                <img
                   src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
                   alt=""
-                  onLoad={() => {
-                    console.log(1111);
-                    setShowHeaderImg1(true);
-                  }}
-                  style={{ height: 0 }}
-                /> */}
-                <CSSTransition
-                  in={true}
-                  timeout={2000}
-                  classNames={{
-                    enter: transiton["fade-enter"],
-                    enterActive: transiton["fade-enter-active"],
-                  }}
-                  unmountOnExit
-                >
-                  <img
-                    src={require("../../assets/jr/new/section1_header_company_logo_sp.svg")}
-                    alt=""
-                  />
-                </CSSTransition>
+                />
               </header>
               <div className={styles.welcome}>
                 <img
@@ -358,37 +379,27 @@ const JR = props => {
                 </div>
               </div>
               <div className={styles.text}>
-                <CSSTransition
-                  in={showElement}
-                  timeout={2000}
-                  classNames={{
-                    enter: transiton["fade-enter"],
-                    enterActive: transiton["fade-enter-active"],
-                  }}
-                  unmountOnExit
-                >
-                  <div>
-                    <p className={styles.rightBig}>BUY</p>
-                    <p>
-                      <span className={styles.rightBig}>&</span>
-                      <span className={styles.leftSmall}>
-                        Welcome
-                        <br />
-                        Suica
-                      </span>
-                    </p>
-                    <p>
-                      <span className={styles.rightBig}>GET!</span>
-                    </p>
-                    <p>
-                      <span className={styles.leftSmall}>
-                        Premium
-                        <br />
-                        Goods
-                      </span>
-                    </p>
-                  </div>
-                </CSSTransition>
+                <div>
+                  <p className={styles.rightBig}>BUY</p>
+                  <p>
+                    <span className={styles.rightBig}>&</span>
+                    <span className={styles.leftSmall}>
+                      Welcome
+                      <br />
+                      Suica
+                    </span>
+                  </p>
+                  <p>
+                    <span className={styles.rightBig}>GET!</span>
+                  </p>
+                  <p>
+                    <span className={styles.leftSmall}>
+                      Premium
+                      <br />
+                      Goods
+                    </span>
+                  </p>
+                </div>
               </div>
               <div className={styles.knowMore}>
                 <button
@@ -403,7 +414,13 @@ const JR = props => {
             </section>
 
             {/* module2 */}
-            <section className={styles.module2}>
+            <section
+              className={cx({
+                module2: true,
+                module2Show: showModule2,
+              })}
+              ref={module2}
+            >
               <div className={styles.bgImg2}>
                 <img
                   src={require("../../assets/jr/new/section2_concept_bg_w375_sp.png")}
@@ -470,7 +487,13 @@ const JR = props => {
             </section>
           </section>
           {/* module3 */}
-          <section className={styles.module3}>
+          <section
+            className={cx({
+              module3: true,
+              module3Show: showModule3,
+            })}
+            ref={module3}
+          >
             <header>
               <p>{props.t("Join the campaign")}</p>
             </header>
@@ -736,7 +759,13 @@ const JR = props => {
             </div>
           </section>
           {/* module4 */}
-          <section className={styles.module4}>
+          <section
+            className={cx({
+              module4: true,
+              module4Show: showModule4,
+            })}
+            ref={module4}
+          >
             <div className={styles.header4}>
               <p>{props.t("What’s Welcome Suica?")}</p>
               <p>
@@ -824,8 +853,22 @@ const JR = props => {
           </section>
 
           {/* station component */}
-          <Station />
-          <section className={styles.module6}>
+          <section
+            className={cx({
+              parentModule5: true,
+              parentModule5Show: showModule5,
+            })}
+            ref={module5}
+          >
+            <Station />
+          </section>
+          <section
+            className={cx({
+              module6: true,
+              module6Show: showModule6,
+            })}
+            ref={module6}
+          >
             <p className={styles.header6}>
               {props.t("Promotion Terms and Conditions")}
             </p>
