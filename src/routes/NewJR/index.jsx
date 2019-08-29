@@ -399,8 +399,8 @@ const JR = props => {
               <div className={styles.knowMore}>
                 <button
                   onClick={() => {
-                    document.documentElement.scrollTop = 1650;
-                    document.body.scrollTop = 1650;
+                    document.documentElement.scrollTop = 1645;
+                    document.body.scrollTop = 1645;
                   }}
                 >
                   {props.t("Know more")}
