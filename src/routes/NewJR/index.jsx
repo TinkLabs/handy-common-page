@@ -822,7 +822,7 @@ const JR = props => {
                   title="Welcom Suica Video"
                   width="328"
                   height="185"
-                  src="https://www.youtube.com/watch?v=VzlP8MmdGVc&feature=youtu.be"
+                  src="https://www.youtube.com/embed/VzlP8MmdGVc"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -833,7 +833,7 @@ const JR = props => {
                   title="Welcom Suica Video"
                   width="328"
                   height="185"
-                  src="https://www.youtube.com/watch?v=BbyZy1nwwLc&feature=youtu.be"
+                  src="https://www.youtube.com/embed/BbyZy1nwwLc"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -844,7 +844,7 @@ const JR = props => {
                   title="Welcom Suica Video"
                   width="328"
                   height="185"
-                  src="https://www.youtube.com/watch?v=DbPgzNE_gyU&feature=youtu.be"
+                  src="https://www.youtube.com/embed/DbPgzNE_gyU"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -855,7 +855,7 @@ const JR = props => {
                   title="Welcom Suica Video"
                   width="328"
                   height="185"
-                  src="https://www.youtube.com/watch?v=vSgnmgz8Qq4&feature=youtu.be"
+                  src="https://www.youtube.com/embed/vSgnmgz8Qq4"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
