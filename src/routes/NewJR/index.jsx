@@ -817,15 +817,50 @@ const JR = props => {
             </div>
             <div className={styles.moviePic}>
               <p>Special Movie</p>
-              <iframe
-                title="Welcom Suica Video"
-                width="328"
-                height="185"
-                src="https://www.youtube.com/embed/E1imydawlpc"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {props.i18n.language === "en_US" && (
+                <iframe
+                  title="Welcom Suica Video"
+                  width="328"
+                  height="185"
+                  src="https://www.youtube.com/watch?v=VzlP8MmdGVc&feature=youtu.be"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+              {props.i18n.language === "ja_JP" && (
+                <iframe
+                  title="Welcom Suica Video"
+                  width="328"
+                  height="185"
+                  src="https://www.youtube.com/watch?v=BbyZy1nwwLc&feature=youtu.be"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+              {props.i18n.language === "zh_CN" && (
+                <iframe
+                  title="Welcom Suica Video"
+                  width="328"
+                  height="185"
+                  src="https://www.youtube.com/watch?v=DbPgzNE_gyU&feature=youtu.be"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+              {props.i18n.language === "zh_TW" && (
+                <iframe
+                  title="Welcom Suica Video"
+                  width="328"
+                  height="185"
+                  src="https://www.youtube.com/watch?v=vSgnmgz8Qq4&feature=youtu.be"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
           </section>
           {/* module4 */}
