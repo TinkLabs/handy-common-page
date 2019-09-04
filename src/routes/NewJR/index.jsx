@@ -7,6 +7,7 @@ import { Modal } from "antd-mobile";
 import styles from "./newJR.scss";
 import Station from "./components/Station/index";
 import { Helmet } from "react-helmet";
+import ReactGA from "react-ga";
 
 let cx = classNames.bind(styles);
 
@@ -30,6 +31,10 @@ const JR = props => {
 
   // component did mount
   useEffect(() => {
+    // add google analytics
+    ReactGA.initialize("UA-146669692-2");
+    ReactGA.pageview(window.location.hash.slice(1));
+
     const module2Top = module2.current.offsetTop + 200;
     const module3Top = module3.current.offsetTop + 200;
     const module4Top = module4.current.offsetTop + 200;
