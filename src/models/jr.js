@@ -96,7 +96,7 @@ export default {
     setup({ dispatch, history }) {
       history.listen(location => {
         if (location.pathname.includes("suica")) {
-          document.title = "Buy Welcome Suica Get Premium Goods";
+          // document.title = "Buy Welcome Suica Get Premium Goods";
         }
       });
     },
