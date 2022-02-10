@@ -19,7 +19,7 @@
     "history": "^4.9.0",
     "i18next": "^17.0.11",
     "mixpanel-browser": "^2.29.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.6.0",
